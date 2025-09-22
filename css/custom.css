@@ -1,0 +1,63 @@
+/* 修改头部背景图片 */
+.header-body-background {
+  /* 替换为你的图片路径 */
+  background-image: url('/images/background1.png') !important;
+  
+  /* 确保图片铺满整个区域 */
+  background-size: cover !important;
+  
+  /* 图片居中显示，避免关键部分被裁剪 */
+  background-position: center !important;
+  
+  /* 禁止图片重复平铺 */
+  background-repeat: no-repeat !important;
+  
+  /* 可选：调整背景区域高度（根据需要修改数值） */
+  height: 400px !important;
+  
+  /* 可选：添加半透明遮罩，让文字更清晰 */
+  position: relative !important;
+}
+
+/* 半透明遮罩（可选，根据背景图明暗度决定是否添加） */
+.header-body-background::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  /* 白色半透明（0.3为透明度，数值越大越白） */
+  background-color: rgba(255, 255, 255, 0.3) !important;
+  z-index: 1 !important; /* 遮罩在背景图上方，文字下方 */
+}
+
+/* 确保文字和图标在遮罩上方（如果添加了遮罩） */
+.header-body-background-content {
+  position: relative !important;
+  z-index: 2 !important; /* 高于遮罩层级 */
+}
+/* 全局全屏背景图 */
+body {
+  background-image: url('/images/background2.png'); /* 背景图（建议尺寸 1920*1080，压缩后大小 <500KB） */
+  background-size: cover; /* 图片铺满屏幕，可能裁剪边缘 */
+  background-position: center; /* 图片居中显示 */
+  background-attachment: fixed; /* 滚动时背景固定 */
+  background-repeat: no-repeat;
+}
+
+/* 给内容容器加半透明底色，避免文字与背景冲突 */
+#content-container { /* 替换为主题内容区的真实类名，如 .container、.main */
+  background-color: rgba(255, 255, 255, 0.9); /* 白色半透明，0.9 控制透明度 */
+  padding: 20px;
+  border-radius: 8px; /* 可选：加圆角更柔和 */
+  max-width: 1200px; /* 限制内容区宽度，避免大屏显示过宽 */
+  margin: 0 auto; /* 内容区居中 */
+}
+/* 覆盖文章头部背景为纯色 */
+.post-header-background.post-header-color {
+  /* 替换为你想要的颜色（支持十六进制、RGB、颜色名） */
+  background-color: #f0f7ff !important; /* 淡蓝色示例 */
+  /* 清除原有的背景图（如果有），确保纯色生效 */
+  background-image: none !important;
+}
