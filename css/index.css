@@ -1,3 +1,5 @@
+/* 补充文本主题色变量 */
+/* 可根据你的主题调整颜色值 */
 @import "plugin/fancybox.css";
 @import "plugin/gitalk.css";
 #article h1,
@@ -416,14 +418,14 @@
   letter-spacing: 2px;
   text-transform: uppercase;
   text-align: center;
-  color: #12183A;
+  color: #333333;
 }
 .header-body-background-content span {
   display: flex;
   height: 152px;
   font-size: 36px;
   line-height: 48px;
-  color: #12183A;
+  color: #333333;
   align-items: center;
 }
 .header-body-background-content span img {
@@ -603,6 +605,7 @@ hue-6-2: #e6c07b
   background: #ffffff;
   border-radius: 10px;
   flex-direction: column;
+  padding: 20px;
 }
 .about-content-info {
   width: 100%;
@@ -640,6 +643,7 @@ hue-6-2: #e6c07b
   background: #ffffff;
   border-radius: 10px;
   flex-direction: column;
+  padding: 20px;
 }
 .archive-content-data {
   display: flex;
@@ -655,6 +659,7 @@ hue-6-2: #e6c07b
   background: #ffffff;
   border-radius: 10px;
   flex-direction: column;
+  padding: 20px;
 }
 .categories-content-data {
   display: flex;
@@ -794,7 +799,7 @@ hue-6-2: #e6c07b
   font-size: 20px;
   font-weight: 500;
   line-height: 36px;
-  color: #12183A;
+  color: #333333;
 }
 .home .main .post-card-display a img {
   width: 100%;
@@ -834,7 +839,7 @@ hue-6-2: #e6c07b
   margin: 8px 0 0 8px;
   font-size: 12px;
   line-height: 18px;
-  color: #12183A;
+  color: #333333;
 }
 .home .main .post-block {
   padding: 0 calc((100% - 1160px)/2);
@@ -873,7 +878,7 @@ hue-6-2: #e6c07b
   flex-direction: column;
 }
 .home .main .post-block-content-info h2 {
-  color: #12183A;
+  color: #333333;
   font-size: 22px;
   font-weight: 500;
   line-height: 38px;
@@ -998,7 +1003,7 @@ hue-6-2: #e6c07b
   display: flex;
   padding: 0 calc((100% - 1160px)/2);
   margin-bottom: 20px;
-  color: #12183A;
+  color: #333333;
 }
 .home .change-page .p-page {
   display: flex;
@@ -1008,7 +1013,7 @@ hue-6-2: #e6c07b
   flex-grow: 1;
 }
 .home .change-page .p-page a {
-  color: #12183A;
+  color: #333333;
   text-decoration: none;
 }
 .home .change-page .p-page a .previous {
@@ -1037,7 +1042,7 @@ hue-6-2: #e6c07b
   flex-grow: 1;
 }
 .home .change-page .n-page a {
-  color: #12183A;
+  color: #333333;
   text-decoration: none;
 }
 .home .change-page .n-page a .next {
@@ -1066,6 +1071,7 @@ hue-6-2: #e6c07b
   background: #ffffff;
   border-radius: 10px;
   flex-direction: column;
+  padding: 20px;
 }
 .links-content-data {
   display: flex;
@@ -1328,6 +1334,7 @@ hue-6-2: #e6c07b
   background: #ffffff;
   border-radius: 10px;
   flex-direction: column;
+  padding: 20px;
   position: relative;
   z-index: 2;
 }
@@ -1426,6 +1433,7 @@ hue-6-2: #e6c07b
   background: #ffffff;
   border-radius: 10px;
   flex-direction: column;
+  padding: 20px;
 }
 .tag-content-data {
   display: flex;
@@ -1441,6 +1449,7 @@ hue-6-2: #e6c07b
   background: #ffffff;
   border-radius: 10px;
   flex-direction: column;
+  padding: 20px;
 }
 .tags-content-data {
   display: flex;
