@@ -19,6 +19,27 @@
   position: relative !important;
 }
 
+
+
+/* 修改 about 页头部背景：固定背景图（滚动时不动） */
+.about-header-background {
+    background-image: url("/images/background4.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed; /* 关键：背景固定，不随页面滚动 */
+    height: 450px;
+    /* 加遮罩保证文字清晰 */
+    background-color: rgba(0, 0, 0, 0.3);
+    background-blend-mode: overlay;
+}
+
+/* 文字样式同方案 1，确保可读性 */
+.about-header-background-content h1 {
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
 /* 半透明遮罩（可选，根据背景图明暗度决定是否添加） */
 .header-body-background::before {
   content: '' !important;
@@ -60,4 +81,24 @@ body {
   background-color: #f0f7ff !important; /* 淡蓝色示例 */
   /* 清除原有的背景图（如果有），确保纯色生效 */
   background-image: none !important;
+}
+/* 修改 about 页头部副标题文字颜色 */
+.about-header-background-content h1 span {
+    color: #ebfcfa; /* 这里替换为你想要的颜色值 */
+    /* 可选：加文字阴影让颜色更突出 */
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+/* 修改版权区域整体文字颜色 */
+.Copyright {
+    color: #ebfcfa; /* 主文字颜色，可替换为其他值 */
+}
+
+/* 修改版权区域内的链接颜色 */
+.Copyright a {
+    color: #4285f4 !important; /* 链接颜色，!important 确保覆盖原有样式 */
+    /* 可选：添加 hover 效果，鼠标放上去变色 */
+    transition: color 0.3s;
+}
+.Copyright a:hover {
+    color: #2196f3 !important; /* 链接 hover 时的颜色 */
 }

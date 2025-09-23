@@ -287,6 +287,9 @@
     </div>
 </div>
 	<div class="main">
+
+	
+
 		
 			<div class="post-block" id="content">
 				
@@ -392,6 +395,79 @@
 				
 	</div>
 	
+</div>
+	<div id="home-alert" style="
+		
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0,0,0,0.5);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		z-index: 9999;
+		opacity: 0; 
+		pointer-events: none; 
+		transition: opacity 0.3s; 
+	">
+		
+		<div style="
+			background: white;
+			width: 90%;
+			max-width: 500px;
+			padding: 25px;
+			border-radius: 10px;
+			box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+		">
+			
+			<div style="
+				font-size: 18px;
+				font-weight: 600;
+				color: #333;
+				margin-bottom: 15px;
+				display: flex;
+				align-items: center;
+			">
+				<span style="margin-right: 8px; color: #4285f4;">✨</span>
+				欢迎访问
+			</div>
+			
+			<div style="
+				font-size: 14px;
+				color: #666;
+				line-height: 1.6;
+				margin-bottom: 20px;
+			">
+				这里会定期分享学习笔记和绘画作品，最新内容已更新～
+			</div>
+			
+			<button onclick="document.getElementById('home-alert').style.opacity='0'; document.getElementById('home-alert').style.pointerEvents='none'" style="
+				width: 100%;
+				padding: 8px 0;
+				background: #4285f4;
+				color: white;
+				border: none;
+				border-radius: 6px;
+				font-size: 14px;
+				cursor: pointer;
+				transition: background 0.2s;
+			" onmouseover="this.style.background='#3367d6'" onmouseout="this.style.background='#4285f4'">
+				我知道了
+			</button>
+		</div>
+	</div>
+
+	<script>
+		
+		window.onload = function() {
+			setTimeout(function() {
+				document.getElementById('home-alert').style.opacity = '1';
+				document.getElementById('home-alert').style.pointerEvents = 'auto';
+			}, 500); 
+		};
+	</script>
 </div>
 		
 <div class="footer">
