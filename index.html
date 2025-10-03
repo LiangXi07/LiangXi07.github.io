@@ -277,7 +277,7 @@
 </script>
 
 <div class="home">
-	<div class="header-body-background">
+  <div class="header-body-background">
     <div class="header-body-background-content">
         <span>
             <img src="/images/logo1.png" alt="Quiet">
@@ -286,189 +286,383 @@
         <h2>Welcome to ZZX-LiangXi's homepage!</h2>
     </div>
 </div>
-	<div class="main">
-
-	
-
-		
-			<div class="post-block" id="content">
-				
-					<a href="/info/" class="post-block-content">
-						
-							<img src="/images/wenzhang1.png" alt="Quiet">
-						
-						<div class="post-block-content-info">
-							<h2>自我介绍</h2>
-							<span class="post-block-content-info-excerpt">
-								一个热爱代码与画笔的追光者，用逻辑构建世界，用色彩治愈生活
-							</span>
-							<div class="post-block-content-info-exhibition">
-								<div class="post-block-content-info-exhibition-tags">
-									<span class="post-tag">
-										自传
-									</span>
-									<span class="post-tag">
-										2025-09-23
-									</span>
-								</div>
-								<div class="meat-type"></div>
-							</div>
-						</div>
-					</a>
-				
-					<a href="/vue/" class="post-block-content">
-						
-							<img src="/images/wenzhang2.png" alt="Quiet">
-						
-						<div class="post-block-content-info">
-							<h2>Vue3 初尝试</h2>
-							<span class="post-block-content-info-excerpt">
-								一个编程小白的 Vue3 初尝试：从对着文档发呆，到亲手实现增删改查，这个暑假，我好像找到了前端工程师的浪漫
-							</span>
-							<div class="post-block-content-info-exhibition">
-								<div class="post-block-content-info-exhibition-tags">
-									<span class="post-tag">
-										技术学习
-									</span>
-									<span class="post-tag">
-										2025-08-16
-									</span>
-								</div>
-								<div class="meat-type"></div>
-							</div>
-						</div>
-					</a>
-				
-					<a href="/feeling/" class="post-block-content">
-						
-							<img src="/images/wenzhang4.jpg" alt="Quiet">
-						
-						<div class="post-block-content-info">
-							<h2>参加新生训练营的感受</h2>
-							<span class="post-block-content-info-excerpt">
-								虽已不是新生，却在训练营里暴露了 “小白” 本质 ——Github 零经验、外网访问卡壳，才发觉工具学习的缺口远比想象中大，也更坚定了补全基础的决心
-							</span>
-							<div class="post-block-content-info-exhibition">
-								<div class="post-block-content-info-exhibition-tags">
-									<span class="post-tag">
-										学习记录
-									</span>
-									<span class="post-tag">
-										2025-07-21
-									</span>
-								</div>
-								<div class="meat-type"></div>
-							</div>
-						</div>
-					</a>
-				
-					<a href="/shetuan/" class="post-block-content">
-						
-							<img src="/images/logo2.png" alt="Quiet">
-						
-						<div class="post-block-content-info">
-							<h2>对社团的展望</h2>
-							<span class="post-block-content-info-excerpt">
-								我但深知自己只是一个普普通通的入门者；期待在社团里遇见编程高手，在请教与切磋中补全技能短板，朝着 “能写好用功能” 的开发者靠近
-							</span>
-							<div class="post-block-content-info-exhibition">
-								<div class="post-block-content-info-exhibition-tags">
-									<span class="post-tag">
-										社团
-									</span>
-									<span class="post-tag">
-										2025-06-21
-									</span>
-								</div>
-								<div class="meat-type"></div>
-							</div>
-						</div>
-					</a>
-				
-			</div>
-		
-		
-	
-	</div>
-	<div class="change-page">
-		
-				
-	</div>
-	
+  <div class="main">
+    
+      <div class="post-block" id="content">
+        
+          <a href="/info/" class="post-block-content">
+            
+              <img src="/images/wenzhang1.png" alt="Quiet">
+            
+            <div class="post-block-content-info">
+              <h2>自我介绍</h2>
+              <span class="post-block-content-info-excerpt">
+                一个热爱代码与画笔的追光者，用逻辑构建世界，用色彩治愈生活
+              </span>
+              <div class="post-block-content-info-exhibition">
+                <div class="post-block-content-info-exhibition-tags">
+                  <span class="post-tag">
+                    自传
+                  </span>
+                  <span class="post-tag">
+                    2025-09-23
+                  </span>
+                </div>
+                <!-- Block布局按钮组：保留原位置，增大尺寸 -->
+                <div class="interaction-group">
+                  <button class="interaction-btn comment-btn" data-id="info/" onclick="event.stopPropagation()">
+                    <span class="icon">💬</span>
+                    <span class="num">0</span>
+                  </button>
+                  <button class="interaction-btn like-btn" id="likeBtn-info/" data-id="info/" onclick="event.stopPropagation()">
+                    <span class="icon">❤️</span>
+                    <span class="num" id="likeNum-info/">0</span>
+                  </button>
+                  <button class="interaction-btn collect-btn" id="collectBtn-info/" data-id="info/" onclick="event.stopPropagation()">
+                    <span class="icon">⭐</span>
+                    <span class="num" id="collectNum-info/">0</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </a>
+        
+          <a href="/vue/" class="post-block-content">
+            
+              <img src="/images/wenzhang2.png" alt="Quiet">
+            
+            <div class="post-block-content-info">
+              <h2>Vue3 初尝试</h2>
+              <span class="post-block-content-info-excerpt">
+                一个编程小白的 Vue3 初尝试：从对着文档发呆，到亲手实现增删改查，这个暑假，我好像找到了前端工程师的浪漫
+              </span>
+              <div class="post-block-content-info-exhibition">
+                <div class="post-block-content-info-exhibition-tags">
+                  <span class="post-tag">
+                    技术学习
+                  </span>
+                  <span class="post-tag">
+                    2025-08-16
+                  </span>
+                </div>
+                <!-- Block布局按钮组：保留原位置，增大尺寸 -->
+                <div class="interaction-group">
+                  <button class="interaction-btn comment-btn" data-id="vue/" onclick="event.stopPropagation()">
+                    <span class="icon">💬</span>
+                    <span class="num">0</span>
+                  </button>
+                  <button class="interaction-btn like-btn" id="likeBtn-vue/" data-id="vue/" onclick="event.stopPropagation()">
+                    <span class="icon">❤️</span>
+                    <span class="num" id="likeNum-vue/">0</span>
+                  </button>
+                  <button class="interaction-btn collect-btn" id="collectBtn-vue/" data-id="vue/" onclick="event.stopPropagation()">
+                    <span class="icon">⭐</span>
+                    <span class="num" id="collectNum-vue/">0</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </a>
+        
+          <a href="/feeling/" class="post-block-content">
+            
+              <img src="/images/wenzhang4.jpg" alt="Quiet">
+            
+            <div class="post-block-content-info">
+              <h2>参加新生训练营的感受</h2>
+              <span class="post-block-content-info-excerpt">
+                虽已不是新生，却在训练营里暴露了 “小白” 本质 ——Github 零经验、外网访问卡壳，才发觉工具学习的缺口远比想象中大，也更坚定了补全基础的决心
+              </span>
+              <div class="post-block-content-info-exhibition">
+                <div class="post-block-content-info-exhibition-tags">
+                  <span class="post-tag">
+                    学习记录
+                  </span>
+                  <span class="post-tag">
+                    2025-07-21
+                  </span>
+                </div>
+                <!-- Block布局按钮组：保留原位置，增大尺寸 -->
+                <div class="interaction-group">
+                  <button class="interaction-btn comment-btn" data-id="feeling/" onclick="event.stopPropagation()">
+                    <span class="icon">💬</span>
+                    <span class="num">0</span>
+                  </button>
+                  <button class="interaction-btn like-btn" id="likeBtn-feeling/" data-id="feeling/" onclick="event.stopPropagation()">
+                    <span class="icon">❤️</span>
+                    <span class="num" id="likeNum-feeling/">0</span>
+                  </button>
+                  <button class="interaction-btn collect-btn" id="collectBtn-feeling/" data-id="feeling/" onclick="event.stopPropagation()">
+                    <span class="icon">⭐</span>
+                    <span class="num" id="collectNum-feeling/">0</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </a>
+        
+          <a href="/shetuan/" class="post-block-content">
+            
+              <img src="/images/logo2.png" alt="Quiet">
+            
+            <div class="post-block-content-info">
+              <h2>对社团的展望</h2>
+              <span class="post-block-content-info-excerpt">
+                我但深知自己只是一个普普通通的入门者；期待在社团里遇见编程高手，在请教与切磋中补全技能短板，朝着 “能写好用功能” 的开发者靠近
+              </span>
+              <div class="post-block-content-info-exhibition">
+                <div class="post-block-content-info-exhibition-tags">
+                  <span class="post-tag">
+                    社团
+                  </span>
+                  <span class="post-tag">
+                    2025-06-21
+                  </span>
+                </div>
+                <!-- Block布局按钮组：保留原位置，增大尺寸 -->
+                <div class="interaction-group">
+                  <button class="interaction-btn comment-btn" data-id="shetuan/" onclick="event.stopPropagation()">
+                    <span class="icon">💬</span>
+                    <span class="num">0</span>
+                  </button>
+                  <button class="interaction-btn like-btn" id="likeBtn-shetuan/" data-id="shetuan/" onclick="event.stopPropagation()">
+                    <span class="icon">❤️</span>
+                    <span class="num" id="likeNum-shetuan/">0</span>
+                  </button>
+                  <button class="interaction-btn collect-btn" id="collectBtn-shetuan/" data-id="shetuan/" onclick="event.stopPropagation()">
+                    <span class="icon">⭐</span>
+                    <span class="num" id="collectNum-shetuan/">0</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </a>
+        
+      </div>
+    
+  </div>
+  <div class="change-page">
+    
+    
+  </div>
 </div>
-	<div id="home-alert" style="
-		
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background: rgba(0,0,0,0.5);
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		z-index: 9999;
-		opacity: 0; 
-		pointer-events: none; 
-		transition: opacity 0.3s; 
-	">
-		
-		<div style="
-			background: white;
-			width: 90%;
-			max-width: 500px;
-			padding: 25px;
-			border-radius: 10px;
-			box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-		">
-			
-			<div style="
-				font-size: 18px;
-				font-weight: 600;
-				color: #333;
-				margin-bottom: 15px;
-				display: flex;
-				align-items: center;
-			">
-				<span style="margin-right: 8px; color: #4285f4;">✨</span>
-				欢迎访问
-			</div>
-			
-			<div style="
-				font-size: 14px;
-				color: #666;
-				line-height: 1.6;
-				margin-bottom: 20px;
-			">
-				这里会定期分享学习笔记和绘画作品，最新内容已更新～
-			</div>
-			
-			<button onclick="document.getElementById('home-alert').style.opacity='0'; document.getElementById('home-alert').style.pointerEvents='none'" style="
-				width: 100%;
-				padding: 8px 0;
-				background: #4285f4;
-				color: white;
-				border: none;
-				border-radius: 6px;
-				font-size: 14px;
-				cursor: pointer;
-				transition: background 0.2s;
-			" onmouseover="this.style.background='#3367d6'" onmouseout="this.style.background='#4285f4'">
-				我知道了
-			</button>
-		</div>
-	</div>
-
-	<script>
-		
-		window.onload = function() {
-			setTimeout(function() {
-				document.getElementById('home-alert').style.opacity = '1';
-				document.getElementById('home-alert').style.pointerEvents = 'auto';
-			}, 500); 
-		};
-	</script>
+<div id="home-alert" style="
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 0; 
+  pointer-events: none; 
+  transition: opacity 0.3s; 
+">
+  <div style="
+    background: white;
+    width: 90%;
+    max-width: 500px;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  ">
+    <div style="
+      font-size: 18px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+    ">
+      <span style="margin-right: 8px; color: #4285f4;">✨</span>
+      欢迎访问
+    </div>
+    <div style="
+      font-size: 14px;
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    ">
+      这里会定期分享学习笔记和绘画作品，最新内容已更新～
+    </div>
+    <button onclick="document.getElementById('home-alert').style.opacity='0'; document.getElementById('home-alert').style.pointerEvents='none'" style="
+      width: 100%;
+      padding: 8px 0;
+      background: #4285f4;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.2s;
+    " onmouseover="this.style.background='#3367d6'" onmouseout="this.style.background='#4285f4'">
+      我知道了
+    </button>
+  </div>
 </div>
+
+<script>
+  // 欢迎弹窗
+  window.onload = function() {
+    setTimeout(function() {
+      document.getElementById('home-alert').style.opacity = '1';
+      document.getElementById('home-alert').style.pointerEvents = 'auto';
+    }, 500); 
+  };
+
+  // 点赞收藏核心逻辑
+  function initPostInteraction(articleId) {
+    const storageKey = `article_${articleId}`;
+    
+    // 获取本地存储数据
+    const getData = () => {
+      const saved = localStorage.getItem(storageKey);
+      return saved ? JSON.parse(saved) : {
+        likeCount: 0,
+        collectCount: 0,
+        hasLiked: false,
+        hasCollected: false
+      };
+    };
+
+    // 保存数据
+    const saveData = (data) => {
+      localStorage.setItem(storageKey, JSON.stringify(data));
+    };
+
+    // 更新按钮UI
+    const updateUI = () => {
+      const data = getData();
+      const likeBtn = document.getElementById(`likeBtn-${articleId}`);
+      const collectBtn = document.getElementById(`collectBtn-${articleId}`);
+      const likeNum = document.getElementById(`likeNum-${articleId}`);
+      const collectNum = document.getElementById(`collectNum-${articleId}`);
+
+      if (!likeBtn || !collectBtn) return;
+
+      // 更新激活状态
+      likeBtn.classList.toggle('active', data.hasLiked);
+      collectBtn.classList.toggle('active', data.hasCollected);
+      // 更新数字
+      likeNum.textContent = data.likeCount;
+      collectNum.textContent = data.collectCount;
+    };
+
+    // 点赞事件（阻止冒泡+防止默认跳转）
+    document.getElementById(`likeBtn-${articleId}`)?.addEventListener('click', (e) => {
+      e.stopPropagation(); // 阻止事件传到父级a标签
+      e.preventDefault();  // 额外保险，防止跳转
+      
+      const data = getData();
+      if (data.hasLiked) {
+        data.likeCount = Math.max(0, data.likeCount - 1);
+      } else {
+        data.likeCount += 1;
+      }
+      data.hasLiked = !data.hasLiked;
+      saveData(data);
+      updateUI();
+    });
+
+    // 收藏事件（同上）
+    document.getElementById(`collectBtn-${articleId}`)?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      
+      const data = getData();
+      if (data.hasCollected) {
+        data.collectCount = Math.max(0, data.collectCount - 1);
+      } else {
+        data.collectCount += 1;
+      }
+      data.hasCollected = !data.hasCollected;
+      saveData(data);
+      updateUI();
+    });
+
+    // 初始化显示
+    updateUI();
+  }
+
+  // 初始化所有文章
+  document.addEventListener('DOMContentLoaded', () => {
+    const articleIds = [...new Set(
+      Array.from(document.querySelectorAll('.interaction-btn[data-id]'))
+        .map(btn => btn.dataset.id)
+    )];
+    articleIds.forEach(id => initPostInteraction(id));
+  });
+</script>
+
+<style>
+  /* 核心：增大按钮尺寸，保留原位置 */
+  .interaction-group {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* 按钮间距适当增大 */
+  }
+
+  .interaction-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* 图标与数字间距增大 */
+    background: transparent;
+    border: 1px solid #e0e0e0; /* 边框稍明显 */
+    border-radius: 4px;
+    padding: 4px 10px; /* 增大内边距，按钮变大 */
+    font-size: 13px; /* 字体增大 */
+    cursor: pointer;
+    transition: all 0.2s;
+    /* 确保按钮在最上层，不被a标签覆盖 */
+    position: relative;
+    z-index: 2;
+  }
+
+  /* 图标增大 */
+  .interaction-btn .icon {
+    font-size: 16px;
+  }
+
+  /* 激活态样式（更明显） */
+  .interaction-btn.active.like-btn {
+    color: #ef4444;
+    border-color: #fecdd3;
+    background: #fef2f2;
+  }
+  .interaction-btn.active.collect-btn {
+    color: #f59e0b;
+    border-color: #fde68a;
+    background: #fffbeb;
+  }
+  .comment-btn {
+    color: #3b82f6;
+    border-color: #bfdbfe;
+    background: #eff6ff;
+  }
+
+  /* 确保Block布局按钮位置不变 */
+  .post-block-content-info-exhibition {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* 确保Card布局按钮位置不变 */
+  .post-card-meat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* 点击按钮时的反馈动画 */
+  .interaction-btn:active .num {
+    transform: scale(1.1);
+    transition: transform 0.1s;
+  }
+</style>
 		
 <div class="footer">
 	<div class="Copyright">
