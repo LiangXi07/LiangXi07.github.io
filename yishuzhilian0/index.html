@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+<title>医枢智链第0版：我们的项目成长之路-Quiet</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" type="image/x-icon" href="/images/logo1.png">
+
+<link rel="stylesheet" href="/css/index.css">
+
+
+
+<meta name="keywords" content="项目经历,团队协作,技术成长,创新杯,">
+<meta name="description" content="从零到一的“医枢智链”开发之旅，从组建团队到项目落地，从技术攻关到团队磨合，我们不仅实现了一个智能导诊系统，更收获了技术深度与团队情谊的双重成长。">
+
+
+<script src="/js/jquery.min.js"></script>
+
+
+<script src="/js/index.js"></script>
+
+
+<script src="/js/fancybox.umd.js"></script>
+
+
+<script src="/js/fancybox-images.js"></script>
+
+
+<script src="/js/gitalk.min.js"></script>
+
+
+<script src="/js/hljs.min.js"></script>
+ 
+<script>hljs.highlightAll();</script>
+<link rel="stylesheet" href="/css/custom.css">
+
+	<meta name="generator" content="Hexo 8.0.0"></head>
+
+	<body>
+		
+	<div class="header">
+		<div class="header-top" id="header-top">
+			<div class="h-left">
+				<a href="/">
+					<img src="/images/logo-min.png" alt="Quiet">
+				</a>
+			</div>
+			<div class="h-right">
+				<ul>
+					
+						
+								<li>
+									<a href="/">
+										HOME
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/archives">
+										ARCHIVE
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/categories">
+										CATEGORIES
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/tags">
+										TAGS
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/links">
+										LINKS
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/about">
+										ABOUT
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+				</ul>
+			</div>
+			<div class="h-right-close">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+					<path fill="none" d="M0 0h24v24H0z" />
+					<path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z" fill="rgba(68,68,68,1)" />
+				</svg>
+			</div>
+		</div>
+	</div>
+	<div class="sidebar">
+    <div class="topo">
+        <h2>ZZX-LiangXi</h2>
+    </div>
+    <ul>
+        
+        <li>
+            <a href="/">HOME</a>
+        </li>
+        
+        <li>
+            <a href="/archives">ARCHIVE</a>
+        </li>
+        
+        <li>
+            <a href="/categories">CATEGORIES</a>
+        </li>
+        
+        <li>
+            <a href="/tags">TAGS</a>
+        </li>
+        
+        <li>
+            <a href="/links">LINKS</a>
+        </li>
+        
+        <li>
+            <a href="/about">ABOUT</a>
+        </li>
+        
+    </ul>
+    <div class="my_foot">
+        
+        <a target="_blank" rel="noopener" href="https://github.com/79E/hexo-theme-quiet">
+            <img src="https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imggithub.png" alt="Quiet主题">
+        </a>
+        
+    </div>
+</div>
+<div class='shelter'>
+</div>
+<style>
+    .shelter{
+        background-color: #333;
+        opacity:0.5;
+        cursor: pointer;
+        display: none; 
+        position: fixed;
+        left: 0;
+        top: 0; 
+        right: 0;
+        bottom: 0;
+        z-index: 1998;
+    }
+    .sidebar {
+        width: 66%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        bottom: 0;
+        background: #fff;
+        z-index: 1999;
+        text-align: center;
+        box-shadow: -6px 0 20px rgba(98, 94, 94, .815);
+    }
+
+    .topo {
+        width: 100%;
+        height: 200px;
+        background: url(https://api.ixiaowai.cn/gqapi/gqapi.php) no-repeat;
+        background-size: 100% 100%;
+        position: relative;
+        display: flex;
+        align-items: flex-end
+    }
+
+    .topo h2 {
+        color: #fff;
+        z-index: 1;
+        position: relative;
+        margin: 0 0 10px 10px;
+        font-size: 1.2em;
+        box-sizing: border-box
+    }
+
+    .topo:before {
+        content: '';
+        background-image: url(/image/pattern.png);
+        background-repeat: repeat;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 1
+    }
+
+    .sidebar ul {
+        width: 100%;
+        margin-top: 50px
+    }
+
+    .sidebar ul li {
+        height: 50px;
+        list-style: none;
+        font-size: 1.2em;
+        text-align: right;
+        margin-right: 10px
+    }
+
+    .sidebar ul li a {
+        display: grid;
+        color: #5d606a;
+        text-overflow: ellipsis;
+        width: 100%;
+        text-decoration: none
+    }
+
+    .my_foot {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        position: absolute;
+        bottom: 0
+    }
+
+    .my_foot a {
+        text-decoration: none;
+        margin-right: 10px;
+        display: inline-block
+    }
+
+    .my_foot a img {
+        width: 30px;
+        height: 30px
+    }
+</style>
+
+<script>
+    $( function () {
+	$( '.h-right-close>svg' )
+		.click( function () {
+			$( '.sidebar' )
+				.animate( {
+					right: "0"
+				}, 500 );
+			$( '.shelter' )
+				.fadeIn( "slow" )
+		} );
+	$( '.shelter' )
+		.click( function ( e ) {
+			$( '.sidebar' )
+				.animate( {
+					right: "-100%"
+				}, 500 );
+			$( '.shelter' )
+				.fadeOut( "slow" )
+		} )
+} )
+
+</script>
+
+<div class="post">
+    <div class="post-header-background post-header-color"
+    style="background: url('')" 
+>
+    <div class="post-header-background-content">
+        <ul class="post-header-tag">
+            
+            
+            <li><a href="/tags/项目经历">项目经历</a></li>
+            
+            <li><a href="/tags/团队协作">团队协作</a></li>
+            
+            <li><a href="/tags/技术成长">技术成长</a></li>
+            
+            <li><a href="/tags/创新杯">创新杯</a></li>
+            
+            
+        </ul>
+        
+        <h1>医枢智链第0版：我们的项目成长之路</h1>
+        <div class="post-header-info">
+            <div class="post-header-info-author">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                        <g>
+                            <path fill="#12183A"
+                                d="M6.187 15.265A6.47 6.47 0 0 0 10 16.5a6.47 6.47 0 0 0 3.813-1.235A4.99 4.99 0 0 0 10 13.5a4.99 4.99 0 0 0-3.813 1.765zM5.082 14.25A6.485 6.485 0 0 1 10 12c1.965 0 3.726.872 4.918 2.25a6.5 6.5 0 1 0-9.836 0zM10 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0-1.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z">
+                            </path>
+                        </g>
+                    </svg>
+                
+                <span class="post-header-info-author-text"> <a href="https://LiangXi07.github.io">ZZX-LiangXi</a></span>
+                <div class="post-header-info-author-categories">
+                    
+                         <a href="../../categories/项目实践/" target="_blank" >项目实践</a>
+                    
+                </div>
+                <p>2025-11-30 21:45:09</p>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="post-content" id="content">
+  
+  <div id="article" class="post-content-info">
+    
+
+    <div class="intro-box">
+从零到一的“医枢智链”开发之旅，从组建团队到项目落地，从技术攻关到团队磨合，我们不仅实现了一个智能导诊系统，更收获了技术深度与团队情谊的双重成长。
+</div>
+
+<h2 id="🚀-项目起点：从想法到团队组建"><a href="#🚀-项目起点：从想法到团队组建" class="headerlink" title="🚀 项目起点：从想法到团队组建"></a>🚀 项目起点：从想法到团队组建</h2><p>万事开头难。当“医枢智链——大模型驱动智能导诊系统”这个想法刚刚萌生时，我们面对的是空白的文档和不确定的技术路径。如何将AI能力与医疗场景深度结合？如何设计既智能又可靠的系统架构？这些问题让我们既兴奋又忐忑。</p>
+<p>团队的组建是第一个挑战。擅长原型设计和后端开发的我，专注AI服务的蒋心橦，精通前端交互与测试与运维的武博研和李泽昊。每个人都有自己的技术专长和思维习惯，但幸运的是，我们都有一个共同的目标：我们想要做一个属于自己的项目！</p>
+<h3 id="📐-原型设计：从草图到交互"><a href="#📐-原型设计：从草图到交互" class="headerlink" title="📐 原型设计：从草图到交互"></a>📐 原型设计：从草图到交互</h3><figure class="gallery">
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="/images/原型设计.png" alt="部分原型设计" loading="lazy">
+      <figcaption>展示了部分原型设计，正好我的专业课程中包含了原型设计相关教学，且我作为项目负责人，对整体需求也比较熟悉，因此我主动承接了原型设计的任务。</figcaption>
+    </div>
+</figure>
+
+<h2 id="💡-技术攻坚：从迷茫到清晰"><a href="#💡-技术攻坚：从迷茫到清晰" class="headerlink" title="💡 技术攻坚：从迷茫到清晰"></a>💡 技术攻坚：从迷茫到清晰</h2><p>在项目的技术选型阶段，我们经历了多次深入讨论与观点碰撞。前端框架的选择上，我们在 Vue 与 React 之间反复权衡；后端架构上，是沿用成熟的 Spring MVC，还是选用更轻量的新框架，也引发了团队的积极思辨。与此同时，对于 AI 模块如何有效集成大语言模型能力，我们也进行了多轮探索。</p>
+<p>最终，在指导老师的建议下，我们决定采用若依（RuoYi）框架进行二次开发。这一方面可以显著降低我们的基础工程量，另一方面也能借此深入理解一个成熟企业级框架的设计与实践，为项目的顺利推进奠定坚实基础。</p>
+<p>我们经历了无数次技术讨论会：</p>
+<ul>
+<li><strong>架构设计阶段</strong>：每周一晚8:00的会议，疯狂寻找无人教室的焦急，以及在白板上反复绘制系统架构图</li>
+<li><strong>数据库设计</strong>：为了设计出既能满足当前需求又具备扩展性的表结构，我们参考了多个医疗系统的数据模型</li>
+<li><strong>AI模块集成</strong>：LangChain的学习曲线陡峭，我们通过大量阅读文档和实际调试，才逐步掌握了其核心用法</li>
+</ul>
+<p>最难忘的是第一次成功让AI分析出症状对应的科室那一刻。当系统准确地将”咳嗽、发热、乏力”推荐到呼吸内科时，整个团队都感受到了技术突破带来的喜悦。</p>
+<h2 id="🖥️-前端实现：响应式网页设计"><a href="#🖥️-前端实现：响应式网页设计" class="headerlink" title="🖥️ 前端实现：响应式网页设计"></a>🖥️ 前端实现：响应式网页设计</h2><figure class="gallery">
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="/images/网页1.png" alt="主页" loading="lazy">
+      <figcaption>主页</figcaption>
+    </div>
+    <div class="gallery-item">
+      <img src="/images/网页6.png" alt="挂号选择页面" loading="lazy">
+      <figcaption>挂号选择页面</figcaption>
+    </div>
+    <div class="gallery-item">
+      <img src="/images/网页2.png" alt="智能挂号页面" loading="lazy">
+      <figcaption>智能挂号页面</figcaption>
+    </div>
+    <div class="gallery-item">
+      <img src="/images/网页3.png" alt="智能反馈页面1" loading="lazy">
+      <figcaption>智能反馈页面1</figcaption>
+    </div>
+    <div class="gallery-item">
+      <img src="/images/网页4.png" alt="智能反馈页面2" loading="lazy">
+      <figcaption>智能反馈页面2</figcaption>
+    </div>
+    <div class="gallery-item">
+      <img src="/images/网页5.png" alt="传统挂号页面" loading="lazy">
+      <figcaption>传统挂号页面</figcaption>
+    </div>
+  </div>
+</figure>
+
+<h3 id="📱-移动端适配：多设备兼容"><a href="#📱-移动端适配：多设备兼容" class="headerlink" title="📱 移动端适配：多设备兼容"></a>📱 移动端适配：多设备兼容</h3><figure class="gallery">
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="/images/移动端1.jpg" alt="部分移动端页面" loading="lazy" style="border: 1px solid #e2e8f0;">
+      <figcaption>部分移动端页面</figcaption>
+    </div>
+  </div>
+</figure>
+
+<h2 id="🤝-团队协作：从分工到融合"><a href="#🤝-团队协作：从分工到融合" class="headerlink" title="🤝 团队协作：从分工到融合"></a>🤝 团队协作：从分工到融合</h2><p>随着”双培计划”的实施，我们的团队面临了物理距离的挑战。除了我的其他成员为了自己的理想去了新的校舍，我们不能再像以前那样随时面对面讨论。</p>
+<p>但我们没有让距离成为障碍：</p>
+<ul>
+<li><strong>线上协作常态化</strong>：每周固定的线上会议，雷打不动</li>
+<li><strong>代码协作规范化</strong>：严格的Git分支管理和流程</li>
+<li><strong>文档同步即时化</strong>：所有设计决策和技术方案都详细记录在共享文档中</li>
+</ul>
+<p>这种跨越距离的协作，反而让我们的沟通更加高效，每个人都更加珍惜每一次的讨论机会。当项目遇到技术瓶颈时，即使已是深夜，大家也会在群里一起排查问题；当一个功能模块成功上线时，我们会在线上会议里分享这份喜悦。</p>
+<h2 id="📈-技术成长：从使用到理解"><a href="#📈-技术成长：从使用到理解" class="headerlink" title="📈 技术成长：从使用到理解"></a>📈 技术成长：从使用到理解</h2><p>通过这个项目，我们不仅学会了使用各种技术工具，更重要的是理解了它们背后的设计思想：</p>
+<ul>
+<li><strong>Spring MVC</strong>：从最初的配置困惑，到理解其分层架构的设计哲学</li>
+<li><strong>LangChain</strong>：从简单的API调用，到掌握其链式思维和智能体设计的精髓</li>
+<li><strong>微服务架构</strong>：从单体应用到服务拆分的实际权衡与决策</li>
+</ul>
+<p>最宝贵的收获是工程思维的培养。我们学会了如何从用户需求出发，倒推技术方案；如何在资源有限的情况下，做出合理的技术选型；如何在保证系统稳定性的前提下，进行快速迭代。</p>
+<h2 id="❤️-超越代码：团队的情感联结"><a href="#❤️-超越代码：团队的情感联结" class="headerlink" title="❤️ 超越代码：团队的情感联结"></a>❤️ 超越代码：团队的情感联结</h2><p>项目开发过程中，有攻克难题时的兴奋，也有遇到瓶颈时的焦虑；有第一次集成成功的喜悦，也有调试bug到深夜的坚持。这些共同的经历，在代码之外，建立起了我们之间深厚的情感联结。</p>
+<p>即使现在我们身处不同的环境，但那段一起奋斗的时光，那份对技术的热情，那种团队协作的默契，已经深深烙印在我们心中。我们知道，无论未来各自走向何方，这份经历和情谊，都将是我们继续前行的力量源泉。</p>
+<figure class="gallery">
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="/images/队员合影.jpg" alt="大合影" loading="lazy" style="border: 1px solid #e2e8f0;">
+      <figcaption>大合影（从左至右分别是武博研、李泽昊、朱梓熹、蒋心橦）</figcaption>
+    </div>
+  </div>
+</figure>
+<br>
+
+<p><strong>“医枢智链”不仅仅是一个项目，它是我们技术成长的见证，是团队协作的结晶，更是青春岁月中一起奋斗的珍贵记忆。</strong> 这段经历让我们明白：好的技术产品需要扎实的技术功底，更需要团队的默契与坚持。我们期待未来能带着这份收获，继续在技术的道路上探索前行。</p>
+<h2 id="🙏-致谢"><a href="#🙏-致谢" class="headerlink" title="🙏 致谢"></a>🙏 致谢</h2><p>最后，我想在此真诚地感谢每一位为这个项目付出过努力的人：</p>
+<p><strong>感谢我的团队成员</strong>：<br>感谢蒋心橦在AI服务模块的专注投入，感谢武博研、李泽昊在前端交互上的巧思以及在测试运维方面的细致。正是因为你们的专业能力和无私奉献，这个项目才能从想法变为现实。即使如今我们身在不同的校园，那份共同奋斗的情谊始终相连。</p>
+<p><strong>感谢我们的指导老师尤建清老师</strong>：<br>感谢您在项目关键节点给予的宝贵建议，特别是关于若依框架的技术选型指导，为项目的顺利推进指明了方向。您的悉心指导和专业支持，让我们少走了许多弯路，也学到了许多课堂之外的知识。</p>
+<p><strong>感谢所有关心和支持这个项目的老师和同学</strong>：<br>你们的每一次建议、每一份鼓励，都是我们前进的动力。</p>
+<p>正是因为有这样一群优秀的伙伴和师长，我们的“医枢智链”才能一步步成长。这段经历，因你们而更加珍贵。</p>
+<figure class="gallery">
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="/images/第0版获奖.jpg" alt="获奖" loading="lazy" style="border: 1px solid #e2e8f0;">
+      <figcaption>第189号，三等奖</figcaption>
+    </div>
+  </div>
+</figure>
+---
+
+<div class="thank-box">
+  <p style="text-align: center; font-style: italic; color: #666; margin-top: 30px;">
+    —— 致我们共同的青春与梦想
+  </p>
+</div>
+
+<style>
+  #article h1 {
+    border-bottom: 2px solid #8ab4f8 !important;
+    padding-bottom: 0.5rem !important;
+    margin: 2rem 0 1.2rem !important;
+    color: #334155 !important;
+  }
+  .intro-box {
+    background: #f5f8ff;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 25px 0;
+    font-family: 'Microsoft YaHei', sans-serif;
+    color: #334155;
+    border-left: 5px solid #8ab4f8;
+    line-height: 1.8;
+    font-size: 1.1em;
+    box-shadow: 0 4px 12px rgba(138, 180, 248, 0.1);
+  }
+  #article h2 {
+    margin-top: 2.5rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid #e2e8f0;
+    color: #2d3748;
+  }
+  #article h3 {
+    margin-top: 1.8rem;
+    color: #4299e1;
+  }
+  #article table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    background: #f8fafc;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+  #article th {
+    background: #8ab4f8;
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+  }
+  #article td {
+    padding: 15px;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  #article tr:hover {
+    background: #f0f7ff;
+  }
+  #article ul {
+    background: #f8fafc;
+    padding: 20px 20px 20px 40px;
+    border-radius: 8px;
+    margin: 20px 0;
+    border-left: 4px solid #8ab4f8;
+  }
+  #article li {
+    margin: 10px 0;
+    line-height: 1.7;
+  }
+  .gallery {
+    margin: 30px 0;
+  }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+  }
+  .gallery-item {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 15px;
+  }
+
+  .gallery-item figcaption {
+    font-weight: bold;
+    color: #2d3748;
+    text-align: center;
+    font-size: 0.9em;
+  }
+  @media (max-width: 768px) {
+    .gallery-grid {
+      grid-template-columns: 1fr;
+    }
+    #article table {
+      font-size: 0.9em;
+    }
+  }
+</style>
+  </div>
+  <div id=""></div>
+</div>
+
+<script>
+  
+Fancybox.bind('[data-fancybox="fancybox-gallery-img"]', {
+  dragToClose: true,
+  Toolbar: true,
+  closeButton: "top",
+  Image: {
+    zoom: true,
+  },
+  on: {
+    initCarousel: (fancybox) => {
+      const slide = fancybox.Carousel.slides[fancybox.Carousel.page];
+      fancybox.$container.style.setProperty(
+        "--bg-image",
+        `url("${slide.$thumb.src}")`
+      );
+    },
+    "Carousel.change": (fancybox, carousel, to, from) => {
+      const slide = carousel.slides[to];
+      fancybox.$container.style.setProperty(
+        "--bg-image",
+        `url("${slide.$thumb.src}")`
+      );
+    },
+  },
+});
+</script>
+
+<style>
+    #noneimg img {
+        display: none;
+        z-index: 9999;
+        /* width: 600px !important; */
+        min-width: 0%;
+        max-width: 90%;
+        max-height: 80%;
+        border-radius: 0px;
+        position: fixed;
+        box-shadow: 0 0 0px #c3c3c300 !important;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto !important;
+    }
+
+    @media screen and (max-width:600px) {
+        #noneimg img {
+            max-width: 88%
+        }
+    }
+</style>
+
+    <div class="post-paging">
+    
+    <a href="/shixi1/">
+        <div class="post-paging-last">
+            <span>上一篇</span>
+            <p>实习初体验</p>
+        </div>
+    </a>
+    
+
+    
+    <a href="/vue/">
+        <div class="post-paging-next">
+            <span>下一篇</span>
+            <p>Vue3 初尝试</p>
+        </div>
+    </a>
+    
+</div>
+</div>
+		
+<div class="footer">
+	<div class="Copyright">
+		©2026 By ZZX-LiangXi. 主题：<a
+			style="text-decoration: none;display: contents; color: #898F9F;"
+			target="_blank" rel="noopener" href="https://github.com/79e/hexo-theme-quiet">Quiet</a>
+	</div>
+	<div class="contact">
+		
+		<a target="_blank" rel="noopener" href="https://github.com/79E/hexo-theme-quiet">
+			<img src="https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imggithub.png" alt="Quiet主题">
+		</a>
+		
+	</div>
+</div>
+
+<script src="/js/gotop.js"></script>
+
+
+<style type="text/css">
+    @media screen and (min-width: 600px) {
+        .goTop>span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            opacity: 0.8;
+            background: rgba(18, 24, 58, 0.06);
+            text-align: center;
+            transition: border .5s;
+            border: 1px solid rgba(18, 24, 58, 0.06);
+
+            -moz-transition: border .5s;
+            /* Firefox 4 */
+            -webkit-transition: border .5s;
+            /* Safari 和 Chrome */
+            -o-transition: border .5s;
+            /* Opera */
+        }
+
+        .goTop>span:hover {
+            border: 1px solid #6680B3;
+        }
+
+
+        .goTop {
+            position: fixed;
+            right: 30px;
+            bottom: 80px;
+        }
+
+        .goTop>span>svg {
+            width: 20px;
+            height: 20px;
+            opacity: 0.7;
+        }
+
+    }
+
+    @media screen and (max-width: 600px) {
+        .goTop {
+            display: none;
+        }
+    }
+</style>
+<div class="goTop" id="js-go_top">
+    <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <g>
+                <path d="M13 12v8h-2v-8H4l8-8 8 8z"></path>
+            </g>
+        </svg>
+    </span>
+</div>
+<script>
+    $( '#js-go_top' )
+	.gotoTop( {
+		offset: 500,
+		speed: 300,
+		animationShow: {
+			'transform': 'translate(0,0)',
+			'transition': 'transform .5s ease-in-out'
+		},
+		animationHide: {
+			'transform': 'translate(100px,0)',
+			'transition': 'transform .5s ease-in-out'
+		}
+	} );
+</script>
+
+
+<!-- Baidu Analytics -->
+<script defer>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?4b5fe1472f22fadsfs";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+    <!-- Gitalk -->
+    <script>
+        const data = '{"clientID":"02b3c","clientSecret":"adfc7b4","repo":"gimment","owner":"duneng","admin":"duneng"}'
+        const gitalk = new Gitalk({
+            ...JSON.parse( data),
+            id:location.pathname,
+            distractionFreeMode:false
+        })
+        
+        if(Boolean('false')){
+            gitalk.render('gitalk-container')
+        }
+    </script>
+
+<script>
+	console.log('\n %c Hexo-Quiet 主题 %c https://github.com/79e/hexo-theme-quiet \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
+</script>
+	</body>
+</html>
+
