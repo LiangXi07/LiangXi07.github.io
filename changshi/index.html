@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+<title>从零开始的勇气：大一竞赛初体验-Quiet</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" type="image/x-icon" href="/images/logo1.png">
+
+<link rel="stylesheet" href="/css/index.css">
+
+
+
+<meta name="keywords" content="竞赛经历,挑战杯,大一成长,Datawhale,">
+<meta name="description" content="大一，我同时开启了挑战杯和Datawhale Vibe Coding两段竞赛旅程。从完全不懂数据分析的小白，到帮助高中商科同学完成数据分析；从第一次听说AI编程，到获得优秀营员称号。这两次“第一次”的尝试让我明白：敢于迈出第一步，比站在原地更有意义。">
+
+
+<script src="/js/jquery.min.js"></script>
+
+
+<script src="/js/index.js"></script>
+
+
+<script src="/js/fancybox.umd.js"></script>
+
+
+<script src="/js/fancybox-images.js"></script>
+
+
+<script src="/js/gitalk.min.js"></script>
+
+
+<script src="/js/hljs.min.js"></script>
+ 
+<script>hljs.highlightAll();</script>
+<link rel="stylesheet" href="/css/custom.css">
+
+	<meta name="generator" content="Hexo 8.0.0"></head>
+
+	<body>
+		
+	<div class="header">
+		<div class="header-top" id="header-top">
+			<div class="h-left">
+				<a href="/">
+					<img src="/images/logo-min.png" alt="Quiet">
+				</a>
+			</div>
+			<div class="h-right">
+				<ul>
+					
+						
+								<li>
+									<a href="/">
+										HOME
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/archives">
+										ARCHIVE
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/categories">
+										CATEGORIES
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/tags">
+										TAGS
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/links">
+										LINKS
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/about">
+										ABOUT
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+				</ul>
+			</div>
+			<div class="h-right-close">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+					<path fill="none" d="M0 0h24v24H0z" />
+					<path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z" fill="rgba(68,68,68,1)" />
+				</svg>
+			</div>
+		</div>
+	</div>
+	<div class="sidebar">
+    <div class="topo">
+        <h2>ZZX-LiangXi</h2>
+    </div>
+    <ul>
+        
+        <li>
+            <a href="/">HOME</a>
+        </li>
+        
+        <li>
+            <a href="/archives">ARCHIVE</a>
+        </li>
+        
+        <li>
+            <a href="/categories">CATEGORIES</a>
+        </li>
+        
+        <li>
+            <a href="/tags">TAGS</a>
+        </li>
+        
+        <li>
+            <a href="/links">LINKS</a>
+        </li>
+        
+        <li>
+            <a href="/about">ABOUT</a>
+        </li>
+        
+    </ul>
+    <div class="my_foot">
+        
+        <a target="_blank" rel="noopener" href="https://github.com/79E/hexo-theme-quiet">
+            <img src="https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imggithub.png" alt="Quiet主题">
+        </a>
+        
+    </div>
+</div>
+<div class='shelter'>
+</div>
+<style>
+    .shelter{
+        background-color: #333;
+        opacity:0.5;
+        cursor: pointer;
+        display: none; 
+        position: fixed;
+        left: 0;
+        top: 0; 
+        right: 0;
+        bottom: 0;
+        z-index: 1998;
+    }
+    .sidebar {
+        width: 66%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        bottom: 0;
+        background: #fff;
+        z-index: 1999;
+        text-align: center;
+        box-shadow: -6px 0 20px rgba(98, 94, 94, .815);
+    }
+
+    .topo {
+        width: 100%;
+        height: 200px;
+        background: url(https://api.ixiaowai.cn/gqapi/gqapi.php) no-repeat;
+        background-size: 100% 100%;
+        position: relative;
+        display: flex;
+        align-items: flex-end
+    }
+
+    .topo h2 {
+        color: #fff;
+        z-index: 1;
+        position: relative;
+        margin: 0 0 10px 10px;
+        font-size: 1.2em;
+        box-sizing: border-box
+    }
+
+    .topo:before {
+        content: '';
+        background-image: url(/image/pattern.png);
+        background-repeat: repeat;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 1
+    }
+
+    .sidebar ul {
+        width: 100%;
+        margin-top: 50px
+    }
+
+    .sidebar ul li {
+        height: 50px;
+        list-style: none;
+        font-size: 1.2em;
+        text-align: right;
+        margin-right: 10px
+    }
+
+    .sidebar ul li a {
+        display: grid;
+        color: #5d606a;
+        text-overflow: ellipsis;
+        width: 100%;
+        text-decoration: none
+    }
+
+    .my_foot {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        position: absolute;
+        bottom: 0
+    }
+
+    .my_foot a {
+        text-decoration: none;
+        margin-right: 10px;
+        display: inline-block
+    }
+
+    .my_foot a img {
+        width: 30px;
+        height: 30px
+    }
+</style>
+
+<script>
+    $( function () {
+	$( '.h-right-close>svg' )
+		.click( function () {
+			$( '.sidebar' )
+				.animate( {
+					right: "0"
+				}, 500 );
+			$( '.shelter' )
+				.fadeIn( "slow" )
+		} );
+	$( '.shelter' )
+		.click( function ( e ) {
+			$( '.sidebar' )
+				.animate( {
+					right: "-100%"
+				}, 500 );
+			$( '.shelter' )
+				.fadeOut( "slow" )
+		} )
+} )
+
+</script>
+
+<div class="post">
+    <div class="post-header-background post-header-color"
+    style="background: url('')" 
+>
+    <div class="post-header-background-content">
+        <ul class="post-header-tag">
+            
+            
+            <li><a href="/tags/竞赛经历">竞赛经历</a></li>
+            
+            <li><a href="/tags/挑战杯">挑战杯</a></li>
+            
+            <li><a href="/tags/大一成长">大一成长</a></li>
+            
+            <li><a href="/tags/Datawhale">Datawhale</a></li>
+            
+            
+        </ul>
+        
+        <h1>从零开始的勇气：大一竞赛初体验</h1>
+        <div class="post-header-info">
+            <div class="post-header-info-author">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                        <g>
+                            <path fill="#12183A"
+                                d="M6.187 15.265A6.47 6.47 0 0 0 10 16.5a6.47 6.47 0 0 0 3.813-1.235A4.99 4.99 0 0 0 10 13.5a4.99 4.99 0 0 0-3.813 1.765zM5.082 14.25A6.485 6.485 0 0 1 10 12c1.965 0 3.726.872 4.918 2.25a6.5 6.5 0 1 0-9.836 0zM10 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0-1.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z">
+                            </path>
+                        </g>
+                    </svg>
+                
+                <span class="post-header-info-author-text"> <a href="https://LiangXi07.github.io">ZZX-LiangXi</a></span>
+                <div class="post-header-info-author-categories">
+                    
+                         <a href="../../categories/竞赛实践/" target="_blank" >竞赛实践</a>
+                    
+                </div>
+                <p>2025-03-10 15:20:00</p>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="post-content" id="content">
+  
+  <div id="article" class="post-content-info">
+    
+
+    <div class="intro-box">
+我做了两件之前从没想过的事：在编程小白的情况下帮高中同学参加挑战杯，独自参加Datawhale的Vibe Coding比赛。两个完全陌生的领域，两个“第一次”的尝试，最终收获了三等奖和优秀营员的意外惊喜。这段经历让我明白：成长的起点，往往就是那个“试试看”的瞬间。
+</div>
+
+<h2 id="🌱-缘起：为什么选择尝试？"><a href="#🌱-缘起：为什么选择尝试？" class="headerlink" title="🌱 缘起：为什么选择尝试？"></a>🌱 缘起：为什么选择尝试？</h2><p>大一刚入学，我对大学竞赛的了解几乎为零。当高中同学找到我，想要找一个计算机学院的队友，我的第一反应是：“我能行吗？”</p>
+<p>那时的我：</p>
+<ul>
+<li>没系统学过数据分析</li>
+<li>不知道挑战杯是什么</li>
+<li>不会用python</li>
+<li>对编程竞赛更是一无所知</li>
+</ul>
+<p>就是这句“试试看”，让我开始了这段奇妙的竞赛之旅。</p>
+<h2 id="📊-挑战杯：帮高中同学做数据分析"><a href="#📊-挑战杯：帮高中同学做数据分析" class="headerlink" title="📊 挑战杯：帮高中同学做数据分析"></a>📊 挑战杯：帮高中同学做数据分析</h2><h3 id="🤝-高中校友的缘分"><a href="#🤝-高中校友的缘分" class="headerlink" title="🤝 高中校友的缘分"></a>🤝 高中校友的缘分</h3><p>高中的同学在做商科的挑战杯项目，需要一定的代码支持，但他们团队里没有擅长技术的人。知道我在学计算机相关专业，就抱着试试看的心态来找我，这一次的挑战杯项目，我负责数据处理和统计分析，他们负责商业调研、文献整理和报告撰写。</p>
+<figure class="gallery">
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="/images/调研1.jpg" alt="调研1" loading="lazy">
+      <figcaption>大家一起讨论的瞬间</figcaption>
+    </div>
+    <div class="gallery-item">
+      <img src="/images/调研2.jpg" alt="调研2" loading="lazy">
+      <figcaption>大合影（从左至右分别是何雅文、陈文博、刘语彤、朱梓熹）</figcaption>
+    </div>
+  </div>
+</figure>
+
+<h3 id="🏆-三等奖：意外的惊喜"><a href="#🏆-三等奖：意外的惊喜" class="headerlink" title="🏆 三等奖：意外的惊喜"></a>🏆 三等奖：意外的惊喜</h3><p>当同学告诉我获得三等奖时，我有点不敢相信：</p>
+<p><strong>收获的意义</strong>：</p>
+<ul>
+<li><strong>第一次竞赛就有成果</strong>：虽然是三等奖，但这是从零开始的证明</li>
+<li><strong>跨学科合作体验</strong>：理解了商科和技术如何结合</li>
+<li><strong>发现问题能力</strong>：意识到自己能力的不足</li>
+<li><strong>建立信心</strong>：原来我也可以做到，只是需要时间和努力。</li>
+</ul>
+<blockquote>
+<p>“这个奖不是终点，而是告诉我：你可以尝试更多。”</p>
+</blockquote>
+<figure class="gallery">
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="/images/获奖1.jpg" alt="获奖1" loading="lazy">
+      <figcaption>奖状</figcaption>
+    </div>   
+  </div>
+</figure>
+
+<h2 id="💻-Vibe-Coding：独自参赛的挑战"><a href="#💻-Vibe-Coding：独自参赛的挑战" class="headerlink" title="💻 Vibe Coding：独自参赛的挑战"></a>💻 Vibe Coding：独自参赛的挑战</h2><h3 id="🎯-第一次听说AI编程"><a href="#🎯-第一次听说AI编程" class="headerlink" title="🎯 第一次听说AI编程"></a>🎯 第一次听说AI编程</h3><p>挑战杯还没结束，我又在朋友圈看到Datawhale的Vibe Coding比赛信息。那时候第一次听说“Vibe Coding”这个词：</p>
+<ul>
+<li>用AI辅助编程</li>
+<li>快速实现想法</li>
+<li>适合新手尝试</li>
+</ul>
+<p><strong>犹豫了很久</strong>：</p>
+<ul>
+<li>一个人参加？没人组队</li>
+<li>才学了一点编程基础</li>
+<li>不知道AI编程是什么</li>
+</ul>
+<p>但想到挑战杯的经历，我告诉自己：不试试怎么知道？</p>
+<h3 id="🚀-参赛过程：摸着石头过河"><a href="#🚀-参赛过程：摸着石头过河" class="headerlink" title="🚀 参赛过程：摸着石头过河"></a>🚀 参赛过程：摸着石头过河</h3><p><strong>一个人参赛的日常</strong>：</p>
+<p><strong>选题阶段</strong>：</p>
+<ul>
+<li>想做个什么项目？</li>
+<li>太难了做不出来</li>
+<li>太简单没意思</li>
+<li>最后选了个“差不多能完成”的</li>
+</ul>
+<p><strong>开发阶段</strong>：</p>
+<ul>
+<li>每天和AI对话：“这个功能怎么实现？”</li>
+<li>AI给代码 → 看不懂 → 让AI解释</li>
+<li>运行报错 → 复制错误给AI → 修改</li>
+<li>循环往复，像在教一个“不会编程的自己”</li>
+</ul>
+<p><strong>收获时刻</strong>：</p>
+<ul>
+<li>第一次跑通全部功能时的兴奋</li>
+<li>看着项目从想法变成现实</li>
+<li>提交作品时的成就感</li>
+</ul>
+<figure class="gallery">
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="/images/vb1.jpg" alt="主页" loading="lazy">
+      <figcaption>主页</figcaption>
+    </div>
+    <div class="gallery-item">
+      <img src="/images/vb4.jpg" alt="其他页面" loading="lazy">
+      <figcaption>其他页面1<figcaption>
+    </div>
+    <div class="gallery-item">
+      <img src="/images/vb5.jpg" alt="其他页面" loading="lazy">
+      <figcaption>其他页面2</figcaption>
+    </div>
+  </div>
+</figure>
+
+<h3 id="🌟-优秀营员：意料之外的认可"><a href="#🌟-优秀营员：意料之外的认可" class="headerlink" title="🌟 优秀营员：意料之外的认可"></a>🌟 优秀营员：意料之外的认可</h3><p>当看到自己名字出现在“优秀营员”名单里时，真的又惊又喜：</p>
+<figure class="gallery">
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="/images/vb3.jpg" alt="优秀营员" loading="lazy">
+      <figcaption>加入优秀学习者大群</figcaption>
+    </div>
+  </div>
+</figure>
+
+
+<p><strong>为什么会得奖</strong>？</p>
+<ul>
+<li>也许是完整完成了项目</li>
+<li>也许是记录了学习过程</li>
+<li>也许是展现了“敢于尝试”的态度</li>
+</ul>
+<p><strong>最重要的收获不是奖项，而是</strong>：</p>
+<ul>
+<li><strong>了解AI编程</strong>：原来AI可以这样辅助学习</li>
+<li><strong>独立完成项目</strong>：从想法到落地的完整体验</li>
+<li><strong>认识同好</strong>：在Datawhale社区找到志同道合的人</li>
+<li><strong>建立学习路径</strong>：知道接下来该学什么</li>
+</ul>
+<figure class="gallery">
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="/images/vb2.png" alt="结营证书" loading="lazy">
+      <figcaption>结营证书</figcaption>
+    </div>
+  </div>
+</figure>
+
+
+<h2 id="💭-对比与感悟：两个第一次的成长"><a href="#💭-对比与感悟：两个第一次的成长" class="headerlink" title="💭 对比与感悟：两个第一次的成长"></a>💭 对比与感悟：两个第一次的成长</h2><h3 id="📊-两段经历的不同与相似"><a href="#📊-两段经历的不同与相似" class="headerlink" title="📊 两段经历的不同与相似"></a>📊 两段经历的不同与相似</h3><table>
+<thead>
+<tr>
+<th>维度</th>
+<th>挑战杯</th>
+<th>Vibe Coding</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>合作方式</td>
+<td>团队合作（高中+大学）</td>
+<td>独立完成</td>
+</tr>
+<tr>
+<td>技术难度</td>
+<td>基础数据分析</td>
+<td>简单项目开发+AI辅助</td>
+</tr>
+<tr>
+<td>最大挑战</td>
+<td>理解商科需求</td>
+<td>独自解决问题</td>
+</tr>
+<tr>
+<td>收获成果</td>
+<td>三等奖</td>
+<td>优秀营员</td>
+</tr>
+<tr>
+<td>核心成长</td>
+<td>跨学科沟通</td>
+<td>自主学习能力</td>
+</tr>
+</tbody></table>
+<h3 id="🌈-共同的启示：迈出第一步"><a href="#🌈-共同的启示：迈出第一步" class="headerlink" title="🌈 共同的启示：迈出第一步"></a>🌈 共同的启示：迈出第一步</h3><p>这两段经历虽然完全不同，但给了我相同的启示：</p>
+<p><strong>1. 不要等“准备好了”再开始</strong></p>
+<p>挑战杯时我没学过数据分析，Vibe Coding时我没接触过AI编程。但如果等到“学完再做”，可能永远都不会开始。</p>
+<p><strong>2. 第一次做得不好，也很正常</strong></p>
+<p>第一次数据分析，代码写得乱糟糟；第一次用AI编程，很多功能实现不了。但这些“不完美”的第一次，是通往更好的必经之路。</p>
+<p><strong>3. 尝试本身就有意义</strong></p>
+<p>即使没有获奖，这两个经历也让我：</p>
+<ul>
+<li>知道什么是挑战杯</li>
+<li>了解AI编程的现状</li>
+<li>发现自己喜欢什么、不喜欢什么</li>
+<li>明确下一步该学什么</li>
+</ul>
+<p><strong>4. 大学的竞赛，不是为了获奖</strong></p>
+<p>这两次经历让我明白，竞赛的意义远不止奖项：</p>
+<ul>
+<li>挑战杯让我理解技术与商业的结合</li>
+<li>Vibe Coding让我接触AI编程的前沿</li>
+<li>最重要的是，它们让我知道自己可以</li>
+</ul>
+<h2 id="❤️-致谢：感谢每一个“试试看”"><a href="#❤️-致谢：感谢每一个“试试看”" class="headerlink" title="❤️ 致谢：感谢每一个“试试看”"></a>❤️ 致谢：感谢每一个“试试看”</h2><h3 id="🙏-感谢的人"><a href="#🙏-感谢的人" class="headerlink" title="🙏 感谢的人"></a>🙏 感谢的人</h3><p><strong>高中同学</strong>：谢谢你当初问“能不能帮忙”，没有你的邀请，就没有第一次的尝试。</p>
+<p><strong>Datawhale社区</strong>：感谢提供这样一个包容的学习环境，让新手也能参与比赛。</p>
+<p><strong>AI辅助工具</strong>：在Vibe Coding中，AI就像一个耐心的老师，教会了我很多。</p>
+<p><strong>自己</strong>：感谢那个虽然害怕、犹豫，但最终还是选择“试试看”的自己。</p>
+<h3 id="💪-给同样是大一的你"><a href="#💪-给同样是大一的你" class="headerlink" title="💪 给同样是大一的你"></a>💪 给同样是大一的你</h3><p>如果你也和我一样：</p>
+<ul>
+<li>刚进大学，对竞赛一无所知</li>
+<li>想参加比赛，但怕自己不行</li>
+<li>被邀请合作，但不确定能不能做好</li>
+</ul>
+<p><strong>我想说</strong>：</p>
+<ul>
+<li>没有人是从“准备好”开始的</li>
+<li>第一次做不好，再正常不过</li>
+<li>迈出第一步，比站在原地更重要</li>
+<li>即使没获奖，尝试本身就有价值</li>
+</ul>
+<h2 id="🌟-写在最后"><a href="#🌟-写在最后" class="headerlink" title="🌟 写在最后"></a>🌟 写在最后</h2><p>大一的这两个“第一次”，让我明白了一个道理：</p>
+<p><strong>成长不是等到准备好了才开始，而是在开始中慢慢准备好。</strong></p>
+<p>挑战杯的三等奖和Vibe Coding的优秀营员，不是我能力的证明，而是我“敢于尝试”的见证。它们告诉我：在陌生的领域，只要愿意迈出第一步，就已经赢过了那个“不敢开始的自己”。</p>
+<p>现在的我，依然有很多不懂的东西，依然会在新挑战面前犹豫。但每当这时，我都会想起这两段经历——</p>
+<p><strong>第一次，总是最难的。但只要开始了，就会有无数种可能。</strong></p>
+<p>感谢这两次尝试，让我在成为更好的自己的路上，又前进了一小步。</p>
+<style>
+  #article h1 {
+    border-bottom: 2px solid #8ab4f8 !important;
+    padding-bottom: 0.5rem !important;
+    margin: 2rem 0 1.2rem !important;
+    color: #334155 !important;
+  }
+  .intro-box {
+    background: #f5f8ff;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 25px 0;
+    font-family: 'Microsoft YaHei', sans-serif;
+    color: #334155;
+    border-left: 5px solid #8ab4f8;
+    line-height: 1.8;
+    font-size: 1.1em;
+    box-shadow: 0 4px 12px rgba(138, 180, 248, 0.1);
+  }
+  #article h2 {
+    margin-top: 2.5rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid #e2e8f0;
+    color: #2d3748;
+  }
+  #article h3 {
+    margin-top: 1.8rem;
+    color: #4299e1;
+  }
+  #article table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    background: #f8fafc;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+  #article th {
+    background: #8ab4f8;
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+  }
+  #article td {
+    padding: 15px;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  #article tr:hover {
+    background: #f0f7ff;
+  }
+  #article ul {
+    background: #f8fafc;
+    padding: 20px 20px 20px 40px;
+    border-radius: 8px;
+    margin: 20px 0;
+    border-left: 4px solid #8ab4f8;
+  }
+  #article li {
+    margin: 10px 0;
+    line-height: 1.7;
+  }
+  .thank-box {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f8ff 100%);
+    padding: 30px;
+    border-radius: 12px;
+    margin: 40px 0;
+    border: 2px dashed #8ab4f8;
+    text-align: center;
+  }
+  .gallery {
+    margin: 30px 0;
+  }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+  }
+  .gallery-item {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 15px;
+  }
+
+  .gallery-item figcaption {
+    font-weight: bold;
+    color: #2d3748;
+    text-align: center;
+    font-size: 0.9em;
+  }
+  @media (max-width: 768px) {
+    .gallery-grid {
+      grid-template-columns: 1fr;
+    }
+    #article table {
+      font-size: 0.9em;
+    }
+  }
+</style>
+  </div>
+  <div id=""></div>
+</div>
+
+<script>
+  
+Fancybox.bind('[data-fancybox="fancybox-gallery-img"]', {
+  dragToClose: true,
+  Toolbar: true,
+  closeButton: "top",
+  Image: {
+    zoom: true,
+  },
+  on: {
+    initCarousel: (fancybox) => {
+      const slide = fancybox.Carousel.slides[fancybox.Carousel.page];
+      fancybox.$container.style.setProperty(
+        "--bg-image",
+        `url("${slide.$thumb.src}")`
+      );
+    },
+    "Carousel.change": (fancybox, carousel, to, from) => {
+      const slide = carousel.slides[to];
+      fancybox.$container.style.setProperty(
+        "--bg-image",
+        `url("${slide.$thumb.src}")`
+      );
+    },
+  },
+});
+</script>
+
+<style>
+    #noneimg img {
+        display: none;
+        z-index: 9999;
+        /* width: 600px !important; */
+        min-width: 0%;
+        max-width: 90%;
+        max-height: 80%;
+        border-radius: 0px;
+        position: fixed;
+        box-shadow: 0 0 0px #c3c3c300 !important;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto !important;
+    }
+
+    @media screen and (max-width:600px) {
+        #noneimg img {
+            max-width: 88%
+        }
+    }
+</style>
+
+    <div class="post-paging">
+    
+    <a href="/vue/">
+        <div class="post-paging-last">
+            <span>上一篇</span>
+            <p>Vue3 初尝试</p>
+        </div>
+    </a>
+    
+
+    
+    <a href="/info/">
+        <div class="post-paging-next">
+            <span>下一篇</span>
+            <p>自我介绍</p>
+        </div>
+    </a>
+    
+</div>
+</div>
+		
+<div class="footer">
+	<div class="Copyright">
+		©2026 By ZZX-LiangXi. 主题：<a
+			style="text-decoration: none;display: contents; color: #898F9F;"
+			target="_blank" rel="noopener" href="https://github.com/79e/hexo-theme-quiet">Quiet</a>
+	</div>
+	<div class="contact">
+		
+		<a target="_blank" rel="noopener" href="https://github.com/79E/hexo-theme-quiet">
+			<img src="https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imggithub.png" alt="Quiet主题">
+		</a>
+		
+	</div>
+</div>
+
+<script src="/js/gotop.js"></script>
+
+
+<style type="text/css">
+    @media screen and (min-width: 600px) {
+        .goTop>span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            opacity: 0.8;
+            background: rgba(18, 24, 58, 0.06);
+            text-align: center;
+            transition: border .5s;
+            border: 1px solid rgba(18, 24, 58, 0.06);
+
+            -moz-transition: border .5s;
+            /* Firefox 4 */
+            -webkit-transition: border .5s;
+            /* Safari 和 Chrome */
+            -o-transition: border .5s;
+            /* Opera */
+        }
+
+        .goTop>span:hover {
+            border: 1px solid #6680B3;
+        }
+
+
+        .goTop {
+            position: fixed;
+            right: 30px;
+            bottom: 80px;
+        }
+
+        .goTop>span>svg {
+            width: 20px;
+            height: 20px;
+            opacity: 0.7;
+        }
+
+    }
+
+    @media screen and (max-width: 600px) {
+        .goTop {
+            display: none;
+        }
+    }
+</style>
+<div class="goTop" id="js-go_top">
+    <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <g>
+                <path d="M13 12v8h-2v-8H4l8-8 8 8z"></path>
+            </g>
+        </svg>
+    </span>
+</div>
+<script>
+    $( '#js-go_top' )
+	.gotoTop( {
+		offset: 500,
+		speed: 300,
+		animationShow: {
+			'transform': 'translate(0,0)',
+			'transition': 'transform .5s ease-in-out'
+		},
+		animationHide: {
+			'transform': 'translate(100px,0)',
+			'transition': 'transform .5s ease-in-out'
+		}
+	} );
+</script>
+
+
+<!-- Baidu Analytics -->
+<script defer>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?4b5fe1472f22fadsfs";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+    <!-- Gitalk -->
+    <script>
+        const data = '{"clientID":"02b3c","clientSecret":"adfc7b4","repo":"gimment","owner":"duneng","admin":"duneng"}'
+        const gitalk = new Gitalk({
+            ...JSON.parse( data),
+            id:location.pathname,
+            distractionFreeMode:false
+        })
+        
+        if(Boolean('false')){
+            gitalk.render('gitalk-container')
+        }
+    </script>
+
+<script>
+	console.log('\n %c Hexo-Quiet 主题 %c https://github.com/79e/hexo-theme-quiet \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
+</script>
+	</body>
+</html>
+
