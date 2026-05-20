@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+<title>灵巧手大创纪实：一个AI小白的硬件突围战-Quiet</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" type="image/x-icon" href="/images/logo1.png">
+
+<link rel="stylesheet" href="/css/index.css">
+
+
+
+<meta name="keywords" content="项目经历,技术成长,团队协作,大创项目,">
+<meta name="description" content="从操控六个陌生数值开始，到在云端服务器和网络代理的泥潭中挣扎。作为大创队员，我经历了硬件带来的新奇、接入大模型时的震撼，以及跑通开源代码的九九八十一难。这是一篇关于VLA灵巧手项目的真实体验，也是一次痛并快乐着的AI之旅。">
+
+
+<script src="/js/jquery.min.js"></script>
+
+
+<script src="/js/index.js"></script>
+
+
+<script src="/js/fancybox.umd.js"></script>
+
+
+<script src="/js/fancybox-images.js"></script>
+
+
+<script src="/js/gitalk.min.js"></script>
+
+
+<script src="/js/hljs.min.js"></script>
+ 
+<script>hljs.highlightAll();</script>
+<link rel="stylesheet" href="/css/custom.css">
+
+	<meta name="generator" content="Hexo 8.1.1"></head>
+
+	<body>
+		
+	<div class="header">
+		<div class="header-top" id="header-top">
+			<div class="h-left">
+				<a href="/">
+					<img src="/images/logo-min.png" alt="Quiet">
+				</a>
+			</div>
+			<div class="h-right">
+				<ul>
+					
+						
+								<li>
+									<a href="/">
+										HOME
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/archives">
+										ARCHIVE
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/categories">
+										CATEGORIES
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/tags">
+										TAGS
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/links">
+										LINKS
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/about">
+										ABOUT
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+				</ul>
+			</div>
+			<div class="h-right-close">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+					<path fill="none" d="M0 0h24v24H0z" />
+					<path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z" fill="rgba(68,68,68,1)" />
+				</svg>
+			</div>
+		</div>
+	</div>
+	<div class="sidebar">
+    <div class="topo">
+        <h2>ZZX-LiangXi</h2>
+    </div>
+    <ul>
+        
+        <li>
+            <a href="/">HOME</a>
+        </li>
+        
+        <li>
+            <a href="/archives">ARCHIVE</a>
+        </li>
+        
+        <li>
+            <a href="/categories">CATEGORIES</a>
+        </li>
+        
+        <li>
+            <a href="/tags">TAGS</a>
+        </li>
+        
+        <li>
+            <a href="/links">LINKS</a>
+        </li>
+        
+        <li>
+            <a href="/about">ABOUT</a>
+        </li>
+        
+    </ul>
+    <div class="my_foot">
+        
+        <a target="_blank" rel="noopener" href="https://github.com/79E/hexo-theme-quiet">
+            <img src="https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imggithub.png" alt="Quiet主题">
+        </a>
+        
+    </div>
+</div>
+<div class='shelter'>
+</div>
+<style>
+    .shelter{
+        background-color: #333;
+        opacity:0.5;
+        cursor: pointer;
+        display: none; 
+        position: fixed;
+        left: 0;
+        top: 0; 
+        right: 0;
+        bottom: 0;
+        z-index: 1998;
+    }
+    .sidebar {
+        width: 66%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        bottom: 0;
+        background: #fff;
+        z-index: 1999;
+        text-align: center;
+        box-shadow: -6px 0 20px rgba(98, 94, 94, .815);
+    }
+
+    .topo {
+        width: 100%;
+        height: 200px;
+        background: url(https://api.ixiaowai.cn/gqapi/gqapi.php) no-repeat;
+        background-size: 100% 100%;
+        position: relative;
+        display: flex;
+        align-items: flex-end
+    }
+
+    .topo h2 {
+        color: #fff;
+        z-index: 1;
+        position: relative;
+        margin: 0 0 10px 10px;
+        font-size: 1.2em;
+        box-sizing: border-box
+    }
+
+    .topo:before {
+        content: '';
+        background-image: url(/image/pattern.png);
+        background-repeat: repeat;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 1
+    }
+
+    .sidebar ul {
+        width: 100%;
+        margin-top: 50px
+    }
+
+    .sidebar ul li {
+        height: 50px;
+        list-style: none;
+        font-size: 1.2em;
+        text-align: right;
+        margin-right: 10px
+    }
+
+    .sidebar ul li a {
+        display: grid;
+        color: #5d606a;
+        text-overflow: ellipsis;
+        width: 100%;
+        text-decoration: none
+    }
+
+    .my_foot {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        position: absolute;
+        bottom: 0
+    }
+
+    .my_foot a {
+        text-decoration: none;
+        margin-right: 10px;
+        display: inline-block
+    }
+
+    .my_foot a img {
+        width: 30px;
+        height: 30px
+    }
+</style>
+
+<script>
+    $( function () {
+	$( '.h-right-close>svg' )
+		.click( function () {
+			$( '.sidebar' )
+				.animate( {
+					right: "0"
+				}, 500 );
+			$( '.shelter' )
+				.fadeIn( "slow" )
+		} );
+	$( '.shelter' )
+		.click( function ( e ) {
+			$( '.sidebar' )
+				.animate( {
+					right: "-100%"
+				}, 500 );
+			$( '.shelter' )
+				.fadeOut( "slow" )
+		} )
+} )
+
+</script>
+
+<div class="post">
+    <div class="post-header-background post-header-color"
+    style="background: url('')" 
+>
+    <div class="post-header-background-content">
+        <ul class="post-header-tag">
+            
+            
+            <li><a href="/tags/项目经历">项目经历</a></li>
+            
+            <li><a href="/tags/技术成长">技术成长</a></li>
+            
+            <li><a href="/tags/团队协作">团队协作</a></li>
+            
+            <li><a href="/tags/大创项目">大创项目</a></li>
+            
+            
+        </ul>
+        
+        <h1>灵巧手大创纪实：一个AI小白的硬件突围战</h1>
+        <div class="post-header-info">
+            <div class="post-header-info-author">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                        <g>
+                            <path fill="#12183A"
+                                d="M6.187 15.265A6.47 6.47 0 0 0 10 16.5a6.47 6.47 0 0 0 3.813-1.235A4.99 4.99 0 0 0 10 13.5a4.99 4.99 0 0 0-3.813 1.765zM5.082 14.25A6.485 6.485 0 0 1 10 12c1.965 0 3.726.872 4.918 2.25a6.5 6.5 0 1 0-9.836 0zM10 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0-1.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z">
+                            </path>
+                        </g>
+                    </svg>
+                
+                <span class="post-header-info-author-text"> <a href="https://LiangXi07.github.io">ZZX-LiangXi</a></span>
+                <div class="post-header-info-author-categories">
+                    
+                         <a href="../../categories/项目实践/" target="_blank" >项目实践</a>
+                    
+                </div>
+                <p>2026-05-20 10:41:00</p>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="post-content" id="content">
+  
+  <div id="article" class="post-content-info">
+    
+
+    <blockquote>
+<p>当我第一次看到那六个从0到100的数值，能精准控制五个手指的运动时，我感到了一种前所未有的新奇。这不是游戏里的虚拟角色，而是真实世界里的物理反馈。随着项目深入，我们的野心从“简单操控”升级到“AI自主生成动作”，而我，也从此踏上了一条与网络代理、显存容量斗智斗勇的“不归路”。</p>
+</blockquote>
+<h2 id="📖-玩转基础：让灵巧手“动起来”"><a href="#📖-玩转基础：让灵巧手“动起来”" class="headerlink" title="📖 玩转基础：让灵巧手“动起来”"></a>📖 玩转基础：让灵巧手“动起来”</h2><p>有幸加入“多模态环境感知的灵巧手自主行为生成算法研究”这个大创项目后，我被分配到了一个听起来就很硬核的职位——<strong>灵巧手控制</strong>。</p>
+<p>拿到灵巧手的第一件事，当然就是——<strong>玩它！</strong></p>
+<p>我们迫不及待地开始尝试各种数值组合，探索这只手的“动作边界”。从最简单的握拳、张开，到更复杂的单指弯曲、两指捏合、打枪手势……每一次新的数值排列，都像在解锁一个隐藏技能。</p>
+<div style="text-align: center; margin: 20px auto;">
+  <video controls style="width: 100%; max-width: 600px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+    <source src="/videos/dexterous_hand_basics.mp4" type="video/mp4">
+    您的浏览器不支持视频标签。
+  </video>
+  <figcaption style="color:#666; font-size:0.9em; margin-top: 8px;">视频：灵巧手基础动作演示</figcaption>
+</div>
+
+<p>这只手不仅能完成各种姿态，还搭载了高精度<strong>温度感应</strong>与<strong>压力感应</strong>双传感模块。轻轻按压指节，压力传感器就能实时反馈力度数值；靠近热源时，温度传感器也会灵敏响应。触觉+温觉的双重感知，让机械手有了“感觉”——这也为我们后续做康复训练的动作监测埋下了伏笔。</p>
+<h2 id="📖-初识灵巧手：六个数值的魔法"><a href="#📖-初识灵巧手：六个数值的魔法" class="headerlink" title="📖 初识灵巧手：六个数值的魔法"></a>📖 初识灵巧手：六个数值的魔法</h2><p>说实话，一开始我对硬件的认知基本为零。在我的想象中，控制一只机器手，要么需要写复杂的动力学方程，要么需要戴数据手套做“动作捕捉”。直到组长把SDK文档甩到我面前，我才发现——<strong>控制这只手的，竟然只是六个0到100的整数！</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">通道编号</th>
+<th align="center">控制部位</th>
+<th align="center">数值范围</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">大拇指（垂直）</td>
+<td align="center">0 ~ 100</td>
+<td align="center">0&#x3D;弯曲, 100&#x3D;伸直</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">大拇指（左右）</td>
+<td align="center">0 ~ 100</td>
+<td align="center">0&#x3D;并拢, 100&#x3D;张开</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">食指（垂直）</td>
+<td align="center">0 ~ 100</td>
+<td align="center">0&#x3D;弯曲, 100&#x3D;伸直</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">中指（垂直）</td>
+<td align="center">0 ~ 100</td>
+<td align="center">0&#x3D;弯曲, 100&#x3D;伸直</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">无名指（垂直）</td>
+<td align="center">0 ~ 100</td>
+<td align="center">0&#x3D;弯曲, 100&#x3D;伸直</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center">小拇指（垂直）</td>
+<td align="center">0 ~ 100</td>
+<td align="center">0&#x3D;弯曲, 100&#x3D;伸直</td>
+</tr>
+</tbody></table>
+<p><strong>全0是握拳，全100是手掌张开。</strong></p>
+<p>除此之外，这款灵巧手还搭载了高精度<strong>温度感应</strong>与<strong>压力感应</strong>双传感模块，硬件感知能力十分全面。日常使用中轻轻按压手指指节、指尖部位，内置压力传感器便能实时捕捉按压力度大小，同步反馈精准压力数值；同时温度传感器可实时采集手部接触环境温度，实现触觉、温觉双重感知反馈，让机械手拥有贴近真人手部的感知能力。</p>
+<p>这套映射规则简单到令人怀疑——这真的是在控制“灵巧手”吗？但当我把<code>[100, 100, 100, 100, 100, 100]</code>这组数据发送出去，亲眼看着那只机械手从蜷缩状态缓缓舒展开来，向远方挥了挥手时，那种“创造生命”的震撼感，瞬间击中了我的天灵盖。</p>
+<blockquote>
+<p>那一刻，我理解了为什么那么多工程师痴迷于机器人——因为你发给它的每一行代码，都能在物理世界中产生回响。</p>
+</blockquote>
+<h2 id="📖-进阶挑战：让大模型“看懂”自然语言"><a href="#📖-进阶挑战：让大模型“看懂”自然语言" class="headerlink" title="📖 进阶挑战：让大模型“看懂”自然语言"></a>📖 进阶挑战：让大模型“看懂”自然语言</h2><p>很快，我们就不满足于手动输入<code>[0,0,0,0,0,0]</code>和<code>[100,100,100,100,100,100]</code>这类固定数值来实现简单握拳、张掌动作了。单纯手动赋值操作方式单一、灵活性不足，无法发挥灵巧手真正的使用价值，于是我们开始思考全新的控制思路：<strong>能不能让AI听懂日常自然语言，自主完成比手势、抓取物件等多样化实操动作？</strong></p>
+<p>这也成为了我们项目最核心的创新方向——<strong>基于VLA视觉语言动作模型的灵巧手自主行为生成方案</strong>。整套方案逻辑清晰，形成完整的智能控制闭环：</p>
+<ol>
+<li><strong>听懂自然语言</strong>：精准识别用户下达的各类口语化动作指令</li>
+<li><strong>结合视觉环境</strong>：依托摄像头识别当前手部姿态与周边环境，适配动作执行条件</li>
+<li><strong>自主生成动作</strong>：结合硬件传感反馈与场景信息，输出适配流畅的六维关节数值，完成姿态平稳切换</li>
+</ol>
+<p>在项目分工里，我主要负责动作落地执行模块，核心工作就是将大模型输出的抽象动作逻辑与动作序列，转化为灵巧手SDK能够直接识别调用的标准关节数值，搭建起AI算法层与实体硬件之间的通信桥梁，保障指令实时稳定下发执行。</p>
+<p>为了落地这一功能，我们选用DeepSeek大模型进行对接开发，搭建出<strong>S6灵巧手纯AI自然语言控制系统</strong>。该系统摒弃传统预设动作库的开发模式，完全依靠大模型自主理解语义生成关节角度，严格遵循硬件<code>0代表握拳弯曲、100代表伸直张开</code>的数值规则，同时适配灵巧手自带的压力、温度传感数据，让动作生成更贴合真实物理交互场景。</p>
+<ul>
+<li><p><strong>标准流程</strong>：</p>
+<pre><code class="language-python">
+
+# 1. 数据加载
+def execute_command(self, command: str):
+  # 调用DeepSeek大模型解析自然语言指令
+  action_data = self._call_ai_for_action(command)
+  
+  # 区分单动作与连续动作序列，自动适配执行
+  if action_data[&#39;type&#39;] == &#39;sequence&#39;:
+      # 分步有序执行模型生成的全套连贯动作
+      for step in action_data[&#39;actions&#39;]:
+          self.set_angles_safe(step[&#39;angles&#39;], step[&#39;name&#39;])
+</code></pre>
+</li>
+</ul>
+<p>整套代码还内置智能容错机制，在动作执行受阻时可自动复位手掌重新执行，大幅提升硬件运行稳定性。在实际调试运行过程中，我们通过终端交互界面下发各类日常指令，无论是简单的比耶、点赞手势，还是抓取棋子、拿捏物品等实操指令，大模型都能快速解析语义，匹配对应关节角度。</p>
+<figure class="gallery">
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="/images/lqs1.png" alt="自然语言控制Demo运行效果" loading="lazy">
+      <figcaption>自然语言控制Demo运行效果</figcaption>
+    </div>
+   
+  </div>
+</figure>
+
+<p>当大模型精准输出合规的六维动作数值，实体灵巧手顺利复刻出对应手势与抓取动作时，真切实现了自然语言指令到实体机器人动作的完整落地。这也让我们切实体会到，借助大模型赋能实体硬件，能够极大降低智能机械手的操控门槛，让灵巧手摆脱固定程序束缚，真正实现智能化、拟人化自主动作执行。</p>
+<h2 id="📖-九九八十一难：UniDex与ManipTrans的“地狱级”复现之路"><a href="#📖-九九八十一难：UniDex与ManipTrans的“地狱级”复现之路" class="headerlink" title="📖 九九八十一难：UniDex与ManipTrans的“地狱级”复现之路"></a>📖 九九八十一难：UniDex与ManipTrans的“地狱级”复现之路</h2><p>但兴奋感来得快，去得也快。我们很快发现，简单的LLM映射对于复杂动作（比如“用两根手指捏起一颗螺丝”）就完全失效了。它缺乏对物理世界和接触力学的理解。<br>为了解决这个问题，UniDex，一个基于扩散模型的灵巧手抓取生成算法。如果能把它跑通，融入到我们的VLA框架里，那项目的技术深度将直接起飞。<br>组长把这个光荣而艰巨的任务交给了我：“你去把UniDex的代码跑起来，环境就用AutoDL。”<br>当时我心想：Git Clone嘛，Pip Install嘛，能有多难？<br>事实证明，我太天真了。这是一场真正的“恶战”，而UniDex的通关，仅仅是这场战役的上半场。</p>
+<div style="text-align: center;">
+  <img src="/images/lqs0.png" alt="吓哭了" style="max-width: 180px;border-radius: 6px;box-shadow: 0 2px 6px rgba(0,0,0,0.05);margin: 0 auto;">
+</div>
+
+<h3 id="🚧-第一关：网络天堑（UniDex篇）"><a href="#🚧-第一关：网络天堑（UniDex篇）" class="headerlink" title="🚧 第一关：网络天堑（UniDex篇）"></a>🚧 第一关：网络天堑（UniDex篇）</h3><p>问题：git clone UniDex官方仓库，速度堪比蜗牛，频繁超时失败，偶尔好不容易走到一半，直接弹出“fatal: the remote end hung up unexpectedly”。<br>尝试1：换用代理、国内镜像。结果仓库里有子模块（submodule），镜像站根本拉不全，要么缺少关键配置文件，要么依赖路径错乱。<br>尝试2：手动下载每个子模块的压缩包，再解压到对应目录。折腾一下午，依赖路径乱成一锅粥，后续安装依赖时，各种“找不到模块”的报错接踵而至。<br>最终：在组长的远程协助下，用了一台能稳定访问外网的服务器，才把完整的代码库拖下来，那一刻，我仿佛看到了曙光。</p>
+<h3 id="🚧-第二关：版本地狱（UniDex篇）"><a href="#🚧-第二关：版本地狱（UniDex篇）" class="headerlink" title="🚧 第二关：版本地狱（UniDex篇）"></a>🚧 第二关：版本地狱（UniDex篇）</h3><p>问题：好不容易不报OOM了，开始报各种ImportError和AttributeError——PyTorch、CUDA、cuDNN、Transformers的版本之间在“打架”，你依赖我，我不兼容你，陷入死循环。<br>解决：用 conda 创建了一个“纯净”的虚拟环境，照着论文作者提供的environment.yml，一个一个库手动手动安装。降级、升级、再降级……循环往复，有时候为了一个兼容的版本，要来回测试十几次。<br>那段时间，我的浏览器历史记录全是：<br>“AutoDL 如何提高 git clone 速度”<br>“conda 安装指定版本 pytorch”<br>“ImportError: cannot import name ‘xxx’ from ‘yyy’”<br>“RuntimeError: CUDA error: no kernel image is available for device”</p>
+<h3 id="✨-曙光初现（UniDex篇）"><a href="#✨-曙光初现（UniDex篇）" class="headerlink" title="✨ 曙光初现（UniDex篇）"></a>✨ 曙光初现（UniDex篇）</h3><p>在经历了无数个“想砸电脑”的瞬间后，某个深夜，当我再次运行训练脚本，看到终端里开始飞速滚动 loss: 0.234 的训练日志时，我甚至有点不敢相信自己的眼睛。<br>它……跑起来了？<br>我赶紧打开可视化界面，看着loss曲线稳步下降，生成的动作序列也越来越平滑。那一刻，实验室里只有我一个人，但我激动得差点喊出来。</p>
+<h3 id="🚧-第四关：网络再劫（ManipTrans篇）"><a href="#🚧-第四关：网络再劫（ManipTrans篇）" class="headerlink" title="🚧 第四关：网络再劫（ManipTrans篇）"></a>🚧 第四关：网络再劫（ManipTrans篇）</h3><p>本以为UniDex跑通后，后续的部署会一帆风顺。没想到，组长又给了一个新任务：部署ManipTrans项目，还要和UniDex联动，生成老师要的3D可视化抓取效果。<br>噩梦再次上演——git clone ManipTrans官方仓库，依旧是熟悉的超时、报错，“fatal: unable to access ‘<a target="_blank" rel="noopener" href="https://ghproxy.com/xxx%E2%80%99">https://ghproxy.com/xxx’</a>: Failed to connect to ghproxy.com port 443: Connection timed out”。<br>尝试1：用ghproxy代理克隆，结果网页解析失败，代理链接直接失效，连仓库页面都打不开。<br>尝试2：换用国内GitCode镜像，克隆倒是能启动，结果克隆下来的仓库内容错乱，根本不是ManipTrans的代码，而是无关的历史文档，白忙活一场。<br>尝试3：用wget下载ZIP压缩包，要么链接失效，要么下载到一半中断，反复尝试几十次，始终无法获得完整的项目文件。</p>
+<figure class="gallery">
+  <div class="gallery-grid">
+      <div class="gallery-item">
+      <img src="/images/lqs3.png" alt="报错啊！！报错！！" loading="lazy">
+      <figcaption>报错啊！！报错！！</figcaption>
+    </div>
+    <div class="gallery-item">
+       <img src="/images/lqs4.png" alt="我已红温" loading="lazy">
+      <figcaption>我已红温</figcaption>
+    </div>
+  </div>
+</figure>
+
+<p>疑惑：难道AutoDL的无卡机器，就注定无法克隆海外项目？直到我偶然发现，AutoDL有卡机器的网络优化远好于无卡机器——哪怕开最低配的GPU，海外访问速度也会瞬间提升。<br>最终：咬牙开了一小时最低配GPU，运行官方克隆命令，这一次，没有超时，没有报错，代码秒速克隆完成，那一刻，我差点喜极而泣。</p>
+<h3 id="🚧-第五关：环境隔离与依赖混战（ManipTrans篇）"><a href="#🚧-第五关：环境隔离与依赖混战（ManipTrans篇）" class="headerlink" title="🚧 第五关：环境隔离与依赖混战（ManipTrans篇）"></a>🚧 第五关：环境隔离与依赖混战（ManipTrans篇）</h3><p>新的难题又出现了：ManipTrans的依赖的版本，和UniDex的环境严重冲突——UniDex需要PyTorch 2.0+，而ManipTrans对部分库的版本有严格限制，直接在同一个环境安装，会导致其中一个项目无法运行。<br>更棘手的是，ManipTrans官方要求Python 3.8，而UniDex用的是Python 3.9，一旦混用，各种版本不兼容的报错会瞬间淹没终端。<br>解决：再次求助conda，为ManipTrans创建独立的虚拟环境“maniptrans”，和UniDex的“unidex”环境完全隔离，两个环境的依赖互不干扰、互不覆盖。然后照着官方文档，一步步安装依赖，从PyTorch的指定版本，到pybullet、open3d等仿真库，每一步都小心翼翼，生怕一个版本选错，又要从头再来。<br>期间，还遇到了“pip install 依赖时报错”“模型权重下载超时”等小插曲，只能一次次换下载链接、手动下载权重放到指定目录，慢慢磨，慢慢试。</p>
+<h3 id="🚧-第六关：可视化的最后一道坎（ManipTrans篇）"><a href="#🚧-第六关：可视化的最后一道坎（ManipTrans篇）" class="headerlink" title="🚧 第六关：可视化的最后一道坎（ManipTrans篇）"></a>🚧 第六关：可视化的最后一道坎（ManipTrans篇）</h3><p>环境搭好、模型下载完成，本以为运行demo就能出老师要的3D可视化效果，结果又出问题：AutoDL无卡机器无法弹出PyBullet的GUI窗口，有卡机器虽然能运行，但可视化窗口无法正常渲染，只能看到黑屏。<br>解决：查阅官方文档，发现可以用“–save_video”参数，让脚本在无界面模式下生成可视化视频，不需要弹出窗口。调整命令，加上“–device cpu”强制用CPU运行（避免GPU显存不足），运行后，终端缓慢滚动日志，每一秒都过得格外漫长。<br>当看到项目目录里出现“demo_result.mp4”文件的那一刻，我知道，这场持久战，我终于赢了。</p>
+<div style="text-align: center; margin: 20px auto;">
+  <video controls style="width: 100%; max-width: 600px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+    <source src="/videos/Mshow.mp4" type="video/mp4">
+    您的浏览器不支持视频标签。
+  </video>
+  <figcaption style="color:#666; font-size:0.9em; margin-top: 8px;"跑通视频</figcaption>
+</div>
+
+<h3 id="🌟-终章：不止于“跑通”"><a href="#🌟-终章：不止于“跑通”" class="headerlink" title="🌟 终章：不止于“跑通”"></a>🌟 终章：不止于“跑通”</h3><p>回望这段跨越两个项目的复现之路，从UniDex的网络天堑、显存刺客、版本地狱，到ManipTrans的网络再劫、环境隔离、可视化难题，每一步都走得异常艰难。无数个深夜的debug，无数次失败后的重新尝试，无数次对着终端里的报错发呆，甚至有过“放弃算了”的念头。<br>但现在回头看，跑通UniDex和ManipTrans本身，或许不是最大的收获。<br>我学会了如何在网络受限的情况下，寻找各种替代方案，从镜像、代理到手动下载，不放过任何一丝可能；学会了如何在版本冲突的“泥潭”里，理清依赖关系，耐心调试，步步为营；学会了如何在无卡、有卡环境之间灵活切换，利用有限的资源解决问题；更学会了在一片混乱和未知中，像一个侦探一样，耐心地寻找线索、解决问题。<br>这种“debug耐力”，这种“不撞南墙不回头”的韧劲，这种在困境中寻找解决办法的能力，是任何课堂都教不会的，也是这段“地狱级”复现之路，给我最珍贵的礼物。<br>原来，所有看似“不可能”的难题，只要一步步拆解、一点点尝试，终会迎来曙光。而那些熬夜debug的时光，那些咬牙坚持的瞬间，终会成为成长路上最坚实的印记。</p>
+<h2 id="📖-我们的VLA灵巧手：项目全景与我的角色"><a href="#📖-我们的VLA灵巧手：项目全景与我的角色" class="headerlink" title="📖 我们的VLA灵巧手：项目全景与我的角色"></a>📖 我们的VLA灵巧手：项目全景与我的角色</h2><p>至此，我们项目“多模态环境感知的灵巧手自主行为生成算法研究”的完整技术链条，终于在我眼前清晰了起来。下面这张图就是我们项目的核心路线，而我的工作，就像胶水一样，把图中的多个模块粘合在了一起。</p>
+<figure class="gallery">
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="/images/lqs2.png" alt="完整技术链条" loading="lazy">
+      <figcaption>完整技术链条</figcaption>
+    </div>
+   
+  </div>
+</figure>
+
+<p>简单来说：我的工作就是让AI“大脑”里想的动作，变成灵巧手“身体”的真实运动。</p>
+<h2 id="📖-写在最后：痛并快乐着的AI探索之旅"><a href="#📖-写在最后：痛并快乐着的AI探索之旅" class="headerlink" title="📖 写在最后：痛并快乐着的AI探索之旅"></a>📖 写在最后：痛并快乐着的AI探索之旅</h2><p>“加油吧，自嘲一下！” 这是我在项目日志里写过的一句话，也是我此刻心情的真实写照。</p>
+<p>参加这个大创项目，让我一个连硬件都没摸过的小白，硬生生地被逼成了“全栈工程师”——从前端指令理解，到后端模型部署，再到底层硬件通信。</p>
+<p>我体验过成功驱动灵巧手挥手的狂喜，也经历过被UniDex按在地上摩擦的绝望；我见识过大模型“一本正经地胡说八道”的幽默，也感受过debug到凌晨三点，屏幕上终于出现正确结果的激动。</p>
+<p>这段经历让我深刻体会到：</p>
+<p><strong>纸上得来终觉浅</strong>：教科书里的算法，只有当它在真实硬件上产生物理运动时，你才算真正“学会”了。</p>
+<p><strong>工程师的浪漫在于“解决问题”</strong>：跑通代码的成就感，远大于写出完美代码。因为前者意味着你征服了一个充满不确定性的真实世界。</p>
+<p><strong>开源社区是最好的老师</strong>：Stack Overflow、GitHub Issues、论文代码仓库……这些是真正能学到东西的地方。</p>
+<p>未来，我们的VLA灵巧手项目还在继续。我希望它能真正应用到帕金森患者的康复训练中，让技术更有温度。而这段“痛并快乐着”的大创经历，无疑将成为我AI之路上最宝贵的起点。</p>
+<p>路虽远，行则将至；事虽难，做则必成。</p>
+<style>
+  #article h1 {
+    border-bottom: 2px solid #8ab4f8 !important;
+    padding-bottom: 0.5rem !important;
+    margin: 2rem 0 1.2rem !important;
+    color: #334155 !important;
+  }
+  .intro-box {
+    background: #f5f8ff;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 25px 0;
+    font-family: 'Microsoft YaHei', sans-serif;
+    color: #334155;
+    border-left: 5px solid #8ab4f8;
+    line-height: 1.8;
+    font-size: 1.1em;
+    box-shadow: 0 4px 12px rgba(138, 180, 248, 0.1);
+  }
+  #article h2 {
+    margin-top: 2.5rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid #e2e8f0;
+    color: #2d3748;
+  }
+  #article h3 {
+    margin-top: 1.8rem;
+    color: #4299e1;
+  }
+  #article table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    background: #f8fafc;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+  #article th {
+    background: #8ab4f8;
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+  }
+  #article td {
+    padding: 15px;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  #article tr:hover {
+    background: #f0f7ff;
+  }
+  #article ul {
+    background: #f8fafc;
+    padding: 20px 20px 20px 40px;
+    border-radius: 8px;
+    margin: 20px 0;
+    border-left: 4px solid #8ab4f8;
+  }
+  #article li {
+    margin: 10px 0;
+    line-height: 1.7;
+  }
+  .gallery {
+    margin: 30px 0;
+  }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+  }
+  .gallery-item {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 15px;
+  }
+
+  .gallery-item figcaption {
+    font-weight: bold;
+    color: #2d3748;
+    text-align: center;
+    font-size: 0.9em;
+  }
+  @media (max-width: 768px) {
+    .gallery-grid {
+      grid-template-columns: 1fr;
+    }
+    #article table {
+      font-size: 0.9em;
+    }
+  }
+</style>
+  </div>
+  <div id=""></div>
+</div>
+
+<script>
+  
+Fancybox.bind('[data-fancybox="fancybox-gallery-img"]', {
+  dragToClose: true,
+  Toolbar: true,
+  closeButton: "top",
+  Image: {
+    zoom: true,
+  },
+  on: {
+    initCarousel: (fancybox) => {
+      const slide = fancybox.Carousel.slides[fancybox.Carousel.page];
+      fancybox.$container.style.setProperty(
+        "--bg-image",
+        `url("${slide.$thumb.src}")`
+      );
+    },
+    "Carousel.change": (fancybox, carousel, to, from) => {
+      const slide = carousel.slides[to];
+      fancybox.$container.style.setProperty(
+        "--bg-image",
+        `url("${slide.$thumb.src}")`
+      );
+    },
+  },
+});
+</script>
+
+<style>
+    #noneimg img {
+        display: none;
+        z-index: 9999;
+        /* width: 600px !important; */
+        min-width: 0%;
+        max-width: 90%;
+        max-height: 80%;
+        border-radius: 0px;
+        position: fixed;
+        box-shadow: 0 0 0px #c3c3c300 !important;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto !important;
+    }
+
+    @media screen and (max-width:600px) {
+        #noneimg img {
+            max-width: 88%
+        }
+    }
+</style>
+
+    <div class="post-paging">
+    
+
+    
+    <a href="/yishuzhilian1/">
+        <div class="post-paging-next">
+            <span>下一篇</span>
+            <p>医枢智链第1版：在失败中重新认识自己与技术</p>
+        </div>
+    </a>
+    
+</div>
+</div>
+		
+<div class="footer">
+	<div class="Copyright">
+		©2026 By ZZX-LiangXi. 主题：<a
+			style="text-decoration: none;display: contents; color: #898F9F;"
+			target="_blank" rel="noopener" href="https://github.com/79e/hexo-theme-quiet">Quiet</a>
+	</div>
+	<div class="contact">
+		
+		<a target="_blank" rel="noopener" href="https://github.com/79E/hexo-theme-quiet">
+			<img src="https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imggithub.png" alt="Quiet主题">
+		</a>
+		
+	</div>
+</div>
+
+<script src="/js/gotop.js"></script>
+
+
+<style type="text/css">
+    @media screen and (min-width: 600px) {
+        .goTop>span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            opacity: 0.8;
+            background: rgba(18, 24, 58, 0.06);
+            text-align: center;
+            transition: border .5s;
+            border: 1px solid rgba(18, 24, 58, 0.06);
+
+            -moz-transition: border .5s;
+            /* Firefox 4 */
+            -webkit-transition: border .5s;
+            /* Safari 和 Chrome */
+            -o-transition: border .5s;
+            /* Opera */
+        }
+
+        .goTop>span:hover {
+            border: 1px solid #6680B3;
+        }
+
+
+        .goTop {
+            position: fixed;
+            right: 30px;
+            bottom: 80px;
+        }
+
+        .goTop>span>svg {
+            width: 20px;
+            height: 20px;
+            opacity: 0.7;
+        }
+
+    }
+
+    @media screen and (max-width: 600px) {
+        .goTop {
+            display: none;
+        }
+    }
+</style>
+<div class="goTop" id="js-go_top">
+    <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <g>
+                <path d="M13 12v8h-2v-8H4l8-8 8 8z"></path>
+            </g>
+        </svg>
+    </span>
+</div>
+<script>
+    $( '#js-go_top' )
+	.gotoTop( {
+		offset: 500,
+		speed: 300,
+		animationShow: {
+			'transform': 'translate(0,0)',
+			'transition': 'transform .5s ease-in-out'
+		},
+		animationHide: {
+			'transform': 'translate(100px,0)',
+			'transition': 'transform .5s ease-in-out'
+		}
+	} );
+</script>
+
+
+<!-- Baidu Analytics -->
+<script defer>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?4b5fe1472f22fadsfs";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+    <!-- Gitalk -->
+    <script>
+        const data = '{"clientID":"02b3c","clientSecret":"adfc7b4","repo":"gimment","owner":"duneng","admin":"duneng"}'
+        const gitalk = new Gitalk({
+            ...JSON.parse( data),
+            id:location.pathname,
+            distractionFreeMode:false
+        })
+        
+        if(Boolean('false')){
+            gitalk.render('gitalk-container')
+        }
+    </script>
+
+<script>
+	console.log('\n %c Hexo-Quiet 主题 %c https://github.com/79e/hexo-theme-quiet \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
+</script>
+	</body>
+</html>
+
