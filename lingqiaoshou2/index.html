@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+<title>亦智杯·亦庄具身智能挑战赛：线下真机突围成长记-Quiet</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" type="image/x-icon" href="/images/logo1.png">
+
+<link rel="stylesheet" href="/css/index.css">
+
+
+
+<meta name="keywords" content="技术成长,项目经历,团队协作,具身智能,">
+<meta name="description" content="从线上仿真筛选到线下真机实战，从纯软件开发零基础到接触企业级机器人开发，在各路大神云集的赛场中，我在碰壁、求助、深耕中完成蜕变，读懂了竞赛最珍贵的从来不是奖项，而是突破自我的成长。">
+
+
+<script src="/js/jquery.min.js"></script>
+
+
+<script src="/js/index.js"></script>
+
+
+<script src="/js/fancybox.umd.js"></script>
+
+
+<script src="/js/fancybox-images.js"></script>
+
+
+<script src="/js/gitalk.min.js"></script>
+
+
+<script src="/js/hljs.min.js"></script>
+ 
+<script>hljs.highlightAll();</script>
+<link rel="stylesheet" href="/css/custom.css">
+
+	<meta name="generator" content="Hexo 8.1.1"></head>
+
+	<body>
+		
+	<div class="header">
+		<div class="header-top" id="header-top">
+			<div class="h-left">
+				<a href="/">
+					<img src="/images/logo-min.png" alt="Quiet">
+				</a>
+			</div>
+			<div class="h-right">
+				<ul>
+					
+						
+								<li>
+									<a href="/">
+										HOME
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/archives">
+										ARCHIVE
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/categories">
+										CATEGORIES
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/tags">
+										TAGS
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/links">
+										LINKS
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/about">
+										ABOUT
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+				</ul>
+			</div>
+			<div class="h-right-close">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+					<path fill="none" d="M0 0h24v24H0z" />
+					<path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z" fill="rgba(68,68,68,1)" />
+				</svg>
+			</div>
+		</div>
+	</div>
+	<div class="sidebar">
+    <div class="topo">
+        <h2>ZZX-LiangXi</h2>
+    </div>
+    <ul>
+        
+        <li>
+            <a href="/">HOME</a>
+        </li>
+        
+        <li>
+            <a href="/archives">ARCHIVE</a>
+        </li>
+        
+        <li>
+            <a href="/categories">CATEGORIES</a>
+        </li>
+        
+        <li>
+            <a href="/tags">TAGS</a>
+        </li>
+        
+        <li>
+            <a href="/links">LINKS</a>
+        </li>
+        
+        <li>
+            <a href="/about">ABOUT</a>
+        </li>
+        
+    </ul>
+    <div class="my_foot">
+        
+        <a target="_blank" rel="noopener" href="https://github.com/79E/hexo-theme-quiet">
+            <img src="https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imggithub.png" alt="Quiet主题">
+        </a>
+        
+    </div>
+</div>
+<div class='shelter'>
+</div>
+<style>
+    .shelter{
+        background-color: #333;
+        opacity:0.5;
+        cursor: pointer;
+        display: none; 
+        position: fixed;
+        left: 0;
+        top: 0; 
+        right: 0;
+        bottom: 0;
+        z-index: 1998;
+    }
+    .sidebar {
+        width: 66%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        bottom: 0;
+        background: #fff;
+        z-index: 1999;
+        text-align: center;
+        box-shadow: -6px 0 20px rgba(98, 94, 94, .815);
+    }
+
+    .topo {
+        width: 100%;
+        height: 200px;
+        background: url(https://api.ixiaowai.cn/gqapi/gqapi.php) no-repeat;
+        background-size: 100% 100%;
+        position: relative;
+        display: flex;
+        align-items: flex-end
+    }
+
+    .topo h2 {
+        color: #fff;
+        z-index: 1;
+        position: relative;
+        margin: 0 0 10px 10px;
+        font-size: 1.2em;
+        box-sizing: border-box
+    }
+
+    .topo:before {
+        content: '';
+        background-image: url(/image/pattern.png);
+        background-repeat: repeat;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 1
+    }
+
+    .sidebar ul {
+        width: 100%;
+        margin-top: 50px
+    }
+
+    .sidebar ul li {
+        height: 50px;
+        list-style: none;
+        font-size: 1.2em;
+        text-align: right;
+        margin-right: 10px
+    }
+
+    .sidebar ul li a {
+        display: grid;
+        color: #5d606a;
+        text-overflow: ellipsis;
+        width: 100%;
+        text-decoration: none
+    }
+
+    .my_foot {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        position: absolute;
+        bottom: 0
+    }
+
+    .my_foot a {
+        text-decoration: none;
+        margin-right: 10px;
+        display: inline-block
+    }
+
+    .my_foot a img {
+        width: 30px;
+        height: 30px
+    }
+</style>
+
+<script>
+    $( function () {
+	$( '.h-right-close>svg' )
+		.click( function () {
+			$( '.sidebar' )
+				.animate( {
+					right: "0"
+				}, 500 );
+			$( '.shelter' )
+				.fadeIn( "slow" )
+		} );
+	$( '.shelter' )
+		.click( function ( e ) {
+			$( '.sidebar' )
+				.animate( {
+					right: "-100%"
+				}, 500 );
+			$( '.shelter' )
+				.fadeOut( "slow" )
+		} )
+} )
+
+</script>
+
+<div class="post">
+    <div class="post-header-background post-header-color"
+    style="background: url('')" 
+>
+    <div class="post-header-background-content">
+        <ul class="post-header-tag">
+            
+            
+            <li><a href="/tags/技术成长">技术成长</a></li>
+            
+            <li><a href="/tags/项目经历">项目经历</a></li>
+            
+            <li><a href="/tags/团队协作">团队协作</a></li>
+            
+            <li><a href="/tags/具身智能">具身智能</a></li>
+            
+            
+        </ul>
+        
+        <h1>亦智杯·亦庄具身智能挑战赛：线下真机突围成长记</h1>
+        <div class="post-header-info">
+            <div class="post-header-info-author">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                        <g>
+                            <path fill="#12183A"
+                                d="M6.187 15.265A6.47 6.47 0 0 0 10 16.5a6.47 6.47 0 0 0 3.813-1.235A4.99 4.99 0 0 0 10 13.5a4.99 4.99 0 0 0-3.813 1.765zM5.082 14.25A6.485 6.485 0 0 1 10 12c1.965 0 3.726.872 4.918 2.25a6.5 6.5 0 1 0-9.836 0zM10 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0-1.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z">
+                            </path>
+                        </g>
+                    </svg>
+                
+                <span class="post-header-info-author-text"> <a href="https://LiangXi07.github.io">ZZX-LiangXi</a></span>
+                <div class="post-header-info-author-categories">
+                    
+                         <a href="../../categories/竞赛实践/" target="_blank" >竞赛实践</a>
+                    
+                </div>
+                <p>2026-07-29 15:00:00</p>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="post-content" id="content">
+  
+  <div id="article" class="post-content-info">
+    
+
+    <blockquote>
+<p>一直深耕软件开发、长期依托云端服务器做算法与代码调试的我，从未真正接触过实体机器人硬件开发。以往的学习与项目实践，都在虚拟环境中完成迭代，无需适配真机设备、无需处理硬件适配问题，安稳而顺遂。抱着突破舒适区、挑战全新领域的心态，我报名参加了亦智杯·亦庄具身智能挑战赛，开启了一场从零到一的线下真机实战之旅。</p>
+<p>这场比赛，是我第一次近距离接触企业级具身智能开发，第一次操作灵心巧手公司的专业比赛机器人，更是我第一次与行业大牛、顶尖高校学子同台竞技。短短一个月的备赛与线下赛程，虽未斩获奖项，却让我收获了远超成绩的成长与眼界，成为我学习路上一段无比珍贵的难忘经历。</p>
+</blockquote>
+<h2 id="✨-初入赛场：沉浸式感受智能科技的魅力"><a href="#✨-初入赛场：沉浸式感受智能科技的魅力" class="headerlink" title="✨ 初入赛场：沉浸式感受智能科技的魅力"></a>✨ 初入赛场：沉浸式感受智能科技的魅力</h2><p>本次赛事流程严谨完整，分为<strong>线上仿真筛选</strong>、<strong>线下真机实操</strong>、<strong>方案调研</strong>答辩三个阶段。我们团队率先完成线上仿真调试，顺利突围晋级线下总决赛。踏入赛场的那一刻，我便被浓厚的科技氛围深深震撼。</p>
+<figure class="gallery">
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="/images/yzb2.jpg" alt="参赛现场大屏" loading="lazy">
+      <figcaption>参赛现场大屏</figcaption>
+    </div>
+  </div>
+</figure>
+
+<p>赛事开幕式上，各类智能机器人轮番登场，灵动的机器人舞蹈、联动的音乐交互表演，将具身智能的趣味性与实用性展现得淋漓尽致。看着一台台机器人精准完成各类拟人化动作，我真切感受到国内智能机器人技术的飞速发展，也彻底颠覆了我对实体智能设备的固有认知。</p>
+<p>更让我倍感压力也备受激励的是，本次大赛高手云集。赛场中汇聚了行业资深企业大牛、清华北大等顶尖985、211高校的研究生团队。相较于这群深耕硬件与具身智能领域多年的大神，作为一名普通一本院校的大二学生，且全程只接触过软件开发的我，属实感受到了“降维打击”的差距。</p>
+<p>我的年龄在队员里偏大，实操经验却几乎为零。过往所有的代码开发、算法调试，全部依托云端服务器完成，从未接触过真机设备、硬件适配、现场调试。零基础、零经验、弱背景，是我这次参赛最真实的开局写照。</p>
+<figure class="gallery">
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="/images/yzb1.jpg" alt="机器人舞蹈" loading="lazy">
+      <figcaption>机器人舞蹈</figcaption>
+    </div>
+    <div class="gallery-item">
+      <img src="/images/yzb3.jpg" alt="开题" loading="lazy">
+      <figcaption>赛题揭晓</figcaption>
+    </div>
+  </div>
+</figure>
+
+<h2 id="📌-第一阶段：真机实操，在绝境中摸索前行"><a href="#📌-第一阶段：真机实操，在绝境中摸索前行" class="headerlink" title="📌 第一阶段：真机实操，在绝境中摸索前行"></a>📌 第一阶段：真机实操，在绝境中摸索前行</h2><p>比赛第一阶段的核心任务，是让机械臂<strong>自主抓取随机放置的螺母并定点放置</strong>，这也是本次线下赛事最难啃的硬骨头。毫无硬件实操经验的我们，刚开赛就遭遇重重难题，开局便陷入被动。</p>
+<h3 id="🌐-第一天：网络适配，出师不利"><a href="#🌐-第一天：网络适配，出师不利" class="headerlink" title="🌐 第一天：网络适配，出师不利"></a>🌐 第一天：网络适配，出师不利</h3><p>线下实操第一天，最大的难题来自<strong>设备网络适配</strong>。我们习惯用虚拟机远程调试代码，但赛场专用机器人拥有独立的专属网段，与我们的虚拟机网段完全不兼容，导致设备始终无法连接、指令无法下发。为破解网段冲突，我们反复排查配置、修改参数，耗费整整半天依旧无果。</p>
+<p>无奈之下，我们只能选择<strong>重装系统、重新适配环境</strong>。漫长的系统重装、环境搭建、参数配置，耗尽了首日的全部赛程时间，第一天的线下实操最终一无所获。看着其他队伍稳步推进开发进度，内心的焦虑与落差感扑面而来。</p>
+<div style="text-align: center;">
+  <img src="/images/yzb21.jpg" alt="崩溃啦" style="max-width: 180px;border-radius: 6px;box-shadow: 0 2px 6px rgba(0,0,0,0.05);margin: 0 auto;">
+</div>
+
+<h3 id="🔧-手眼标定：零基础的艰难跨越"><a href="#🔧-手眼标定：零基础的艰难跨越" class="headerlink" title="🔧 手眼标定：零基础的艰难跨越"></a>🔧 手眼标定：零基础的艰难跨越</h3><p>直至比赛第二天，我们才正式开启核心代码开发与功能调试。本以为顺利接入设备就能快速推进任务，新的难题却接踵而至：团队全员没有任何机械工程相关知识，完全不懂<strong>手眼标定</strong>这一核心技术，难以实现视觉识别与机械臂运动的精准联动，也就无法完成螺母识别、定位、抓取、放置的全流程自主操作。</p>
+<figure class="gallery">
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="/images/yzb4.jpg" alt="手眼标定" loading="lazy">
+      <figcaption>手眼标定</figcaption>
+    </div>
+    <div class="gallery-item">
+      <img src="/images/yzb5.jpg" alt="摄像头找准位置" loading="lazy">
+      <figcaption>摄像头找准位置</figcaption>
+    </div>
+  </div>
+</figure>
+
+<h3 id="🙏-雪中送炭：赛场变课堂"><a href="#🙏-雪中送炭：赛场变课堂" class="headerlink" title="🙏 雪中送炭：赛场变课堂"></a>🙏 雪中送炭：赛场变课堂</h3><p>零基础的我们，在专业的硬件实操赛场中举步维艰。幸运的是，本次赛事的工作人员与技术工程师都极为耐心，全程为我们答疑解惑、现场指导教学，手把手讲解手眼标定原理、真机调试技巧、硬件适配逻辑。更让我们倍感温暖的是，组委会的学长本身就是行业工程师，为我们提供了针对性指导，帮我们梳理开发思路、攻克硬件适配难题。</p>
+<figure class="gallery">
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="/images/yzb6.jpg" alt="学长的帮助" loading="lazy">
+      <figcaption>学长的帮助</figcaption>
+    </div>
+  </div>
+</figure>
+
+<p>在各路大神的雪中送炭、耐心帮扶下，这场艰难的赛事，彻底变成了一场<strong>沉浸式、高强度的线下实战学习课堂</strong>。</p>
+<h3 id="🎯-最后一天：从零到一的突破"><a href="#🎯-最后一天：从零到一的突破" class="headerlink" title="🎯 最后一天：从零到一的突破"></a>🎯 最后一天：从零到一的突破</h3><p>赛程最后一天，我们终于完成了全部代码开发、参数调试与功能适配，实现了机械臂视觉识别、自主抓取的基础功能。受限于经验不足与调试时间有限，最终四次实操测试中仅成功抓取一次螺母。</p>
+<figure class="gallery">
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="/images/yzb7.jpg" alt="工程师的指导" loading="lazy">
+      <figcaption>工程师的指导</figcaption>
+    </div>
+  </div>
+</figure>
+
+<p>成功率并不理想，四次成功一次，但我们从未心生遗憾。从完全不会网段适配、不懂手眼标定，到成功跑通代码、实现真机自主抓取，短短三天的突破已经远超预期。相比于冰冷的比赛成绩，<strong>从零突破的勇气、实操积累的经验、前辈无私的帮扶</strong>，才是这一阶段最珍贵的收获。</p>
+<figure class="gallery">
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="/images/yzb10.jpg" alt="抓取螺母" loading="lazy">
+      <figcaption>抓取螺母</figcaption>
+    </div>
+    <div class="gallery-item">
+      <img src="/images/yzb9.jpg" alt="冲刺吧，少年！" loading="lazy">
+      <figcaption>冲刺吧，少年！</figcaption>
+    </div>
+  </div>
+</figure>
+
+
+<h2 id="📚-第二阶段：深耕源码，在复刻中沉淀技术"><a href="#📚-第二阶段：深耕源码，在复刻中沉淀技术" class="headerlink" title="📚 第二阶段：深耕源码，在复刻中沉淀技术"></a>📚 第二阶段：深耕源码，在复刻中沉淀技术</h2><p>第一阶段赛事结束后，我们没有停下学习的脚步。针对组委会公开的官方赛题代码，我们团队进行了逐行拆解、深度研读与完整复现。</p>
+<ul>
+<li><strong>逐行拆解</strong>：梳理代码逻辑，拆解功能模块，分析算法思路；</li>
+<li><strong>对比复盘</strong>：对照自身代码的短板与不足，复盘实操中出现的误差与 bug；</li>
+<li><strong>沉淀认知</strong>：补齐具身智能机械臂控制、视觉定位、真机适配的技术短板。</li>
+</ul>
+<figure class="gallery">
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="/images/yzb8.jpg" alt="讨论之余" loading="lazy">
+      <figcaption>讨论之余</figcaption>
+    </div>
+  </div>
+</figure>
+
+
+<p>通过源码复刻与深度复盘，我们对企业级机器人开发流程、代码规范与调试逻辑，有了更专业、更系统的认知。</p>
+<h2 id="💡-第三阶段：落地调研，打造场景化解决方案"><a href="#💡-第三阶段：落地调研，打造场景化解决方案" class="headerlink" title="💡 第三阶段：落地调研，打造场景化解决方案"></a>💡 第三阶段：落地调研，打造场景化解决方案</h2><p>比赛第三阶段为自主加分与方案答辩环节，核心要求是结合赛题技术，落地真实应用场景，输出完整解决方案。</p>
+<p>我们团队聚焦民生场景，针对性调研了<strong>社区医院</strong>的日常运营痛点。结合灵心巧手比赛机器人的机械臂分拣、自主抓取能力，我们设计了<strong>社区医院物资智能分拣解决方案</strong>——依托机械臂自主作业，替代人工完成药品、医疗耗材、小型器械的分拣、归类与定点存放，有效分担医护人员的重复性工作，提升社区医院物资管理效率，让具身智能技术真正落地民生场景。</p>
+<figure class="gallery">
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="/images/yzb11.jpg" alt="场景1" loading="lazy">
+    </div>
+    <div class="gallery-item">
+      <img src="/images/yzb12.jpg" alt="场景2" loading="lazy">
+    </div>
+    <div class="gallery-item">
+      <img src="/images/yzb13.jpg" alt="场景3" loading="lazy">
+    </div>
+    <div class="gallery-item">
+      <img src="/images/yzb14.jpg" alt="场景4" loading="lazy">
+    </div>
+    <div class="gallery-item">
+      <img src="/images/yzb15.jpg" alt="场景5" loading="lazy">
+    </div>
+    <div class="gallery-item">
+      <img src="/images/yzb16.jpg" alt="场景6" loading="lazy">
+    </div>
+  </div>
+</figure>
+
+<p>同时，组委会为每支参赛队伍配发了专业遥操设备，支持人机联动协同作业。我们利用剩余赛程时间，反复练习遥操操控、人机协同逻辑，优化方案细节、打磨答辩内容，最终顺利完成全程答辩，圆满完赛。</p>
+<h2 id="🌟-赛后感悟：最好的奖项是成长与蜕变"><a href="#🌟-赛后感悟：最好的奖项是成长与蜕变" class="headerlink" title="🌟 赛后感悟：最好的奖项是成长与蜕变"></a>🌟 赛后感悟：最好的奖项是成长与蜕变</h2><p>为期一个月的备赛与线下赛事，从线上仿真到线下真机，从软件小白到入门企业级硬件开发，我受益匪浅、感触良多。</p>
+<p>作为长期深耕软件领域的学生，这次比赛彻底打破了我的技术壁垒，让我跳出虚拟代码的舒适区，真切体验了企业级机器人的完整开发流程，摸清了具身智能软硬件结合的开发逻辑，极大拓宽了技术视野与行业认知。</p>
+<figure class="gallery">
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="/images/yzb20.jpg" alt="与学长的合影" loading="lazy">
+      <figcaption>与学长的合影</figcaption>
+    </div>
+  </div>
+</figure>
+
+<p>面对顶尖高校学子与行业大牛的同台竞争，我看清了自己的差距与不足，也褪去了浮躁，学会正视短板、踏实深耕。更珍贵的是，在一次次碰壁、一次次求助、一次次复盘的过程中，我收获了耐心、韧性与解决未知难题的能力，也遇见了一群温柔又专业的前辈与伙伴。</p>
+<figure class="gallery">
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="/images/yzb17.jpg" alt="收获颇丰" loading="lazy">
+      <figcaption>收获颇丰</figcaption>
+    </div>
+  </div>
+</figure>
+
+<blockquote>
+<p>本次比赛我们并未获奖，但我始终认为：竞赛的意义，从来不止于奖牌与名次。</p>
+</blockquote>
+<p>那些熬夜调试的时光、从零摸索的坚持、前辈雪中送炭的帮扶、突破自我的蜕变，远比一纸奖项更有价值。这场亦智杯的历练，不仅让我入门具身智能硬件开发，更让我明白：<strong>技术之路从无捷径，唯有躬身入局、脚踏实地、虚心求学，方能行稳致远。</strong></p>
+<p>未来，我会带着这次比赛的收获与感悟，继续深耕 AI 与具身智能领域，补齐硬件开发短板，打磨技术能力，在热爱的领域稳步前行、持续成长。</p>
+<figure class="gallery">
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="/images/yzb19.jpg" alt="闭幕式大合影" loading="lazy">
+      <figcaption>闭幕式大合影</figcaption>
+    </div>
+  </div>
+</figure>
+
+
+
+<style>
+  #article h1 {
+    border-bottom: 2px solid #8ab4f8 !important;
+    padding-bottom: 0.5rem !important;
+    margin: 2rem 0 1.2rem !important;
+    color: #334155 !important;
+  }
+  .intro-box {
+    background: #f5f8ff;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 25px 0;
+    font-family: 'Microsoft YaHei', sans-serif;
+    color: #334155;
+    border-left: 5px solid #8ab4f8;
+    line-height: 1.8;
+    font-size: 1.1em;
+    box-shadow: 0 4px 12px rgba(138, 180, 248, 0.1);
+  }
+  #article h2 {
+    margin-top: 2.5rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid #e2e8f0;
+    color: #2d3748;
+  }
+  #article h3 {
+    margin-top: 1.8rem;
+    color: #4299e1;
+  }
+  #article table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    background: #f8fafc;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+  #article th {
+    background: #8ab4f8;
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+  }
+  #article td {
+    padding: 15px;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  #article tr:hover {
+    background: #f0f7ff;
+  }
+  #article ul {
+    background: #f8fafc;
+    padding: 20px 20px 20px 40px;
+    border-radius: 8px;
+    margin: 20px 0;
+    border-left: 4px solid #8ab4f8;
+  }
+  #article li {
+    margin: 10px 0;
+    line-height: 1.7;
+  }
+  .gallery {
+    margin: 30px 0;
+  }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+  }
+  .gallery-item {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 15px;
+  }
+
+  .gallery-item figcaption {
+    font-weight: bold;
+    color: #2d3748;
+    text-align: center;
+    font-size: 0.9em;
+  }
+  @media (max-width: 768px) {
+    .gallery-grid {
+      grid-template-columns: 1fr;
+    }
+    #article table {
+      font-size: 0.9em;
+    }
+  }
+</style>
+  </div>
+  <div id=""></div>
+</div>
+
+<script>
+  
+Fancybox.bind('[data-fancybox="fancybox-gallery-img"]', {
+  dragToClose: true,
+  Toolbar: true,
+  closeButton: "top",
+  Image: {
+    zoom: true,
+  },
+  on: {
+    initCarousel: (fancybox) => {
+      const slide = fancybox.Carousel.slides[fancybox.Carousel.page];
+      fancybox.$container.style.setProperty(
+        "--bg-image",
+        `url("${slide.$thumb.src}")`
+      );
+    },
+    "Carousel.change": (fancybox, carousel, to, from) => {
+      const slide = carousel.slides[to];
+      fancybox.$container.style.setProperty(
+        "--bg-image",
+        `url("${slide.$thumb.src}")`
+      );
+    },
+  },
+});
+</script>
+
+<style>
+    #noneimg img {
+        display: none;
+        z-index: 9999;
+        /* width: 600px !important; */
+        min-width: 0%;
+        max-width: 90%;
+        max-height: 80%;
+        border-radius: 0px;
+        position: fixed;
+        box-shadow: 0 0 0px #c3c3c300 !important;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto !important;
+    }
+
+    @media screen and (max-width:600px) {
+        #noneimg img {
+            max-width: 88%
+        }
+    }
+</style>
+
+    <div class="post-paging">
+    
+    <a href="/whrg2/">
+        <div class="post-paging-last">
+            <span>上一篇</span>
+            <p>第二届世界人形机器人运动会：独立操盘灵巧手拆包</p>
+        </div>
+    </a>
+    
+
+    
+    <a href="/lingqiaoshou1/">
+        <div class="post-paging-next">
+            <span>下一篇</span>
+            <p>灵巧手大创纪实：一个AI小白的硬件突围战</p>
+        </div>
+    </a>
+    
+</div>
+</div>
+		
+<div class="footer">
+	<div class="Copyright">
+		©2026 By ZZX-LiangXi. 主题：<a
+			style="text-decoration: none;display: contents; color: #898F9F;"
+			target="_blank" rel="noopener" href="https://github.com/79e/hexo-theme-quiet">Quiet</a>
+	</div>
+	<div class="contact">
+		
+		<a target="_blank" rel="noopener" href="https://github.com/79E/hexo-theme-quiet">
+			<img src="https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imggithub.png" alt="Quiet主题">
+		</a>
+		
+	</div>
+</div>
+
+<script src="/js/gotop.js"></script>
+
+
+<style type="text/css">
+    @media screen and (min-width: 600px) {
+        .goTop>span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            opacity: 0.8;
+            background: rgba(18, 24, 58, 0.06);
+            text-align: center;
+            transition: border .5s;
+            border: 1px solid rgba(18, 24, 58, 0.06);
+
+            -moz-transition: border .5s;
+            /* Firefox 4 */
+            -webkit-transition: border .5s;
+            /* Safari 和 Chrome */
+            -o-transition: border .5s;
+            /* Opera */
+        }
+
+        .goTop>span:hover {
+            border: 1px solid #6680B3;
+        }
+
+
+        .goTop {
+            position: fixed;
+            right: 30px;
+            bottom: 80px;
+        }
+
+        .goTop>span>svg {
+            width: 20px;
+            height: 20px;
+            opacity: 0.7;
+        }
+
+    }
+
+    @media screen and (max-width: 600px) {
+        .goTop {
+            display: none;
+        }
+    }
+</style>
+<div class="goTop" id="js-go_top">
+    <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <g>
+                <path d="M13 12v8h-2v-8H4l8-8 8 8z"></path>
+            </g>
+        </svg>
+    </span>
+</div>
+<script>
+    $( '#js-go_top' )
+	.gotoTop( {
+		offset: 500,
+		speed: 300,
+		animationShow: {
+			'transform': 'translate(0,0)',
+			'transition': 'transform .5s ease-in-out'
+		},
+		animationHide: {
+			'transform': 'translate(100px,0)',
+			'transition': 'transform .5s ease-in-out'
+		}
+	} );
+</script>
+
+
+<!-- Baidu Analytics -->
+<script defer>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?4b5fe1472f22fadsfs";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+    <!-- Gitalk -->
+    <script>
+        const data = '{"clientID":"02b3c","clientSecret":"adfc7b4","repo":"gimment","owner":"duneng","admin":"duneng"}'
+        const gitalk = new Gitalk({
+            ...JSON.parse( data),
+            id:location.pathname,
+            distractionFreeMode:false
+        })
+        
+        if(Boolean('false')){
+            gitalk.render('gitalk-container')
+        }
+    </script>
+
+<script>
+	console.log('\n %c Hexo-Quiet 主题 %c https://github.com/79e/hexo-theme-quiet \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
+</script>
+	</body>
+</html>
+

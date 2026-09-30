@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+<title>校园迷你马拉松记录-Quiet</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" type="image/x-icon" href="/images/logo1.png">
+
+<link rel="stylesheet" href="/css/index.css">
+
+
+
+<meta name="keywords" content="校园生活,体育运动,成长经历,">
+<meta name="description" content="第一次参加校园迷你马拉松，穿着自己DIY的专属跑衣，和好友一起挑战6公里"半马"。虽然开跑时遭遇技术小插曲，但坚持完赛的成就感和志愿者的加油呐喊，让这场奔跑成为难忘的青春记忆。">
+
+
+<script src="/js/jquery.min.js"></script>
+
+
+<script src="/js/index.js"></script>
+
+
+<script src="/js/fancybox.umd.js"></script>
+
+
+<script src="/js/fancybox-images.js"></script>
+
+
+<script src="/js/gitalk.min.js"></script>
+
+
+<script src="/js/hljs.min.js"></script>
+ 
+<script>hljs.highlightAll();</script>
+<link rel="stylesheet" href="/css/custom.css">
+
+	<meta name="generator" content="Hexo 8.1.1"></head>
+
+	<body>
+		
+	<div class="header">
+		<div class="header-top" id="header-top">
+			<div class="h-left">
+				<a href="/">
+					<img src="/images/logo-min.png" alt="Quiet">
+				</a>
+			</div>
+			<div class="h-right">
+				<ul>
+					
+						
+								<li>
+									<a href="/">
+										HOME
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/archives">
+										ARCHIVE
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/categories">
+										CATEGORIES
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/tags">
+										TAGS
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/links">
+										LINKS
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/about">
+										ABOUT
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+				</ul>
+			</div>
+			<div class="h-right-close">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+					<path fill="none" d="M0 0h24v24H0z" />
+					<path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z" fill="rgba(68,68,68,1)" />
+				</svg>
+			</div>
+		</div>
+	</div>
+	<div class="sidebar">
+    <div class="topo">
+        <h2>ZZX-LiangXi</h2>
+    </div>
+    <ul>
+        
+        <li>
+            <a href="/">HOME</a>
+        </li>
+        
+        <li>
+            <a href="/archives">ARCHIVE</a>
+        </li>
+        
+        <li>
+            <a href="/categories">CATEGORIES</a>
+        </li>
+        
+        <li>
+            <a href="/tags">TAGS</a>
+        </li>
+        
+        <li>
+            <a href="/links">LINKS</a>
+        </li>
+        
+        <li>
+            <a href="/about">ABOUT</a>
+        </li>
+        
+    </ul>
+    <div class="my_foot">
+        
+        <a target="_blank" rel="noopener" href="https://github.com/79E/hexo-theme-quiet">
+            <img src="https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imggithub.png" alt="Quiet主题">
+        </a>
+        
+    </div>
+</div>
+<div class='shelter'>
+</div>
+<style>
+    .shelter{
+        background-color: #333;
+        opacity:0.5;
+        cursor: pointer;
+        display: none; 
+        position: fixed;
+        left: 0;
+        top: 0; 
+        right: 0;
+        bottom: 0;
+        z-index: 1998;
+    }
+    .sidebar {
+        width: 66%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        bottom: 0;
+        background: #fff;
+        z-index: 1999;
+        text-align: center;
+        box-shadow: -6px 0 20px rgba(98, 94, 94, .815);
+    }
+
+    .topo {
+        width: 100%;
+        height: 200px;
+        background: url(https://api.ixiaowai.cn/gqapi/gqapi.php) no-repeat;
+        background-size: 100% 100%;
+        position: relative;
+        display: flex;
+        align-items: flex-end
+    }
+
+    .topo h2 {
+        color: #fff;
+        z-index: 1;
+        position: relative;
+        margin: 0 0 10px 10px;
+        font-size: 1.2em;
+        box-sizing: border-box
+    }
+
+    .topo:before {
+        content: '';
+        background-image: url(/image/pattern.png);
+        background-repeat: repeat;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 1
+    }
+
+    .sidebar ul {
+        width: 100%;
+        margin-top: 50px
+    }
+
+    .sidebar ul li {
+        height: 50px;
+        list-style: none;
+        font-size: 1.2em;
+        text-align: right;
+        margin-right: 10px
+    }
+
+    .sidebar ul li a {
+        display: grid;
+        color: #5d606a;
+        text-overflow: ellipsis;
+        width: 100%;
+        text-decoration: none
+    }
+
+    .my_foot {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        position: absolute;
+        bottom: 0
+    }
+
+    .my_foot a {
+        text-decoration: none;
+        margin-right: 10px;
+        display: inline-block
+    }
+
+    .my_foot a img {
+        width: 30px;
+        height: 30px
+    }
+</style>
+
+<script>
+    $( function () {
+	$( '.h-right-close>svg' )
+		.click( function () {
+			$( '.sidebar' )
+				.animate( {
+					right: "0"
+				}, 500 );
+			$( '.shelter' )
+				.fadeIn( "slow" )
+		} );
+	$( '.shelter' )
+		.click( function ( e ) {
+			$( '.sidebar' )
+				.animate( {
+					right: "-100%"
+				}, 500 );
+			$( '.shelter' )
+				.fadeOut( "slow" )
+		} )
+} )
+
+</script>
+
+<div class="post">
+    <div class="post-header-background post-header-color"
+    style="background: url('')" 
+>
+    <div class="post-header-background-content">
+        <ul class="post-header-tag">
+            
+            
+            <li><a href="/tags/校园生活">校园生活</a></li>
+            
+            <li><a href="/tags/体育运动">体育运动</a></li>
+            
+            <li><a href="/tags/成长经历">成长经历</a></li>
+            
+            
+        </ul>
+        
+        <h1>校园迷你马拉松记录</h1>
+        <div class="post-header-info">
+            <div class="post-header-info-author">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                        <g>
+                            <path fill="#12183A"
+                                d="M6.187 15.265A6.47 6.47 0 0 0 10 16.5a6.47 6.47 0 0 0 3.813-1.235A4.99 4.99 0 0 0 10 13.5a4.99 4.99 0 0 0-3.813 1.765zM5.082 14.25A6.485 6.485 0 0 1 10 12c1.965 0 3.726.872 4.918 2.25a6.5 6.5 0 1 0-9.836 0zM10 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0-1.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z">
+                            </path>
+                        </g>
+                    </svg>
+                
+                <span class="post-header-info-author-text"> <a href="https://LiangXi07.github.io">ZZX-LiangXi</a></span>
+                <div class="post-header-info-author-categories">
+                    
+                         <a href="../../categories/生活随笔/" target="_blank" >生活随笔</a>
+                    
+                </div>
+                <p>2025-10-11 08:38:21</p>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="post-content" id="content">
+  
+  <div id="article" class="post-content-info">
+    
+
+    <blockquote>
+<p>人生中的第一件DIY跑衣，第一次正式参加的校园跑步比赛，6公里的”半马”挑战。从领取DIY体恤衫的兴奋，到起跑线上的紧张；从跑步App出问题的焦急，到坚持冲线时的释然——这场校园迷你马拉松，让我在奔跑中体验了坚持的力量，也收获了属于自己的完赛奖牌和难忘记忆。</p>
+</blockquote>
+<h2 id="🎽-赛前准备：拥有第一件DIY跑衣的兴奋"><a href="#🎽-赛前准备：拥有第一件DIY跑衣的兴奋" class="headerlink" title="🎽 赛前准备：拥有第一件DIY跑衣的兴奋"></a>🎽 赛前准备：拥有第一件DIY跑衣的兴奋</h2><p>比赛前一周，学校给所有参赛选手发放了可以自由设计的白色跑衣。拿到那件纯白T恤时，我心里涌起一阵兴奋——<strong>这是我人生中第一件可以完全按照自己想法设计的运动衣</strong>。</p>
+<figure class="gallery">
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="/images/diyT恤.jpg" alt="我的专属跑衣" loading="lazy">
+      <figcaption>我的专属跑衣</figcaption>
+    </div>
+   
+  </div>
+</figure>
+
+<p>穿上这件自己设计的跑衣站在起跑线上，感觉格外不同——<strong>它不是一件普通的运动服，而是专属于我的”战袍”</strong>，承载着我的期待和目标。</p>
+<h2 id="🏃-起跑时刻：技术小插曲与追赶"><a href="#🏃-起跑时刻：技术小插曲与追赶" class="headerlink" title="🏃 起跑时刻：技术小插曲与追赶"></a>🏃 起跑时刻：技术小插曲与追赶</h2><p>比赛当天清晨，校园里洋溢着兴奋的气氛。我和好友一起报名了6公里的”半马”项目，需要绕着学校指定的路线跑两圈。</p>
+<h3 id="🚦-起跑的意外：校园App的“小脾气”"><a href="#🚦-起跑的意外：校园App的“小脾气”" class="headerlink" title="🚦 起跑的意外：校园App的“小脾气”"></a>🚦 起跑的意外：校园App的“小脾气”</h3><p>站在起跑线前，我像往常一样打开校园跑App准备记录——<strong>结果发现因为没有及时开启权限，App完全无法使用</strong>。</p>
+<p><strong>那一刻真的有点慌</strong>：</p>
+<ul>
+<li><strong>发令枪已响</strong>：周围的同学都开始奔跑</li>
+<li><strong>手机还在手里</strong>：需要快速设置权限</li>
+<li><strong>好友已经出发</strong>：看到朋友的身影逐渐远去</li>
+<li><strong>边跑边操作</strong>：在移动中试图解决问题，步伐都乱了</li>
+</ul>
+<p>大概花了2-3分钟，我终于调试好App开始正常记录。抬头一看，<strong>好友已经跑到了前面几十米的地方</strong>。</p>
+<h3 id="🏃‍♂️-第一次追赶：不想掉链子的决心"><a href="#🏃‍♂️-第一次追赶：不想掉链子的决心" class="headerlink" title="🏃‍♂️ 第一次追赶：不想掉链子的决心"></a>🏃‍♂️ 第一次追赶：不想掉链子的决心</h3><p>看着朋友的背影，我心里只有一个念头：<strong>不能掉链子，要追上去！</strong></p>
+<ul>
+<li><strong>调整呼吸</strong>：深呼吸几次，找回跑步节奏</li>
+<li><strong>加快步频</strong>：用比平时更快的频率迈步</li>
+<li><strong>目光锁定</strong>：盯着前方那个熟悉的身影</li>
+<li><strong>心里默念</strong>：“慢慢追，保持节奏，不能急”</li>
+</ul>
+<h2 id="🏁-赛中坚持：疲惫与毅力的较量"><a href="#🏁-赛中坚持：疲惫与毅力的较量" class="headerlink" title="🏁 赛中坚持：疲惫与毅力的较量"></a>🏁 赛中坚持：疲惫与毅力的较量</h2><h3 id="🔄-第一圈结束：疲惫感的突袭"><a href="#🔄-第一圈结束：疲惫感的突袭" class="headerlink" title="🔄 第一圈结束：疲惫感的突袭"></a>🔄 第一圈结束：疲惫感的突袭</h3><p>我们学校的马拉松路线设计得很美——穿过林荫道、经过图书馆、绕过宿舍楼，最后回到起点完成一圈。但<strong>跑完第一圈（3公里）时，真实的疲惫感开始袭来</strong>。</p>
+<div style="text-align: center;">
+  <img src="/images/跑路.png" alt="跑路了" style="max-width: 180px;border-radius: 6px;box-shadow: 0 2px 6px rgba(0,0,0,0.05);margin: 0 auto;">
+</div>
+
+<p><strong>身体的反应很诚实</strong>：</p>
+<ul>
+<li><strong>腿部发酸</strong>：大腿和小腿肌肉开始发出抗议</li>
+<li><strong>呼吸加重</strong>：需要更用力地呼吸才能保持供氧</li>
+<li><strong>速度下降</strong>：不自觉地放慢了脚步</li>
+<li><strong>思想动摇</strong>：“要不走一段吧”的念头开始出现</li>
+</ul>
+<p>经过起点线时，我看到一些只报名3公里的同学已经完成比赛，正在领取完赛物资，心里不免有些羡慕。</p>
+<h3 id="💪-第二圈坚持：与自己的对话"><a href="#💪-第二圈坚持：与自己的对话" class="headerlink" title="💪 第二圈坚持：与自己的对话"></a>💪 第二圈坚持：与自己的对话</h3><p><strong>第二圈是最考验意志力的阶段</strong>。每一公里都显得格外漫长，但我告诉自己：</p>
+<p><strong>“已经完成一半了，不能放弃”</strong><br><strong>“这件DIY跑衣不能白设计”</strong><br><strong>“说好要拿奖牌的，一定要坚持”</strong></p>
+<p>我鼓励着自己：</p>
+<ul>
+<li><strong>配速提醒</strong>：“慢一点没关系，保持节奏”</li>
+<li><strong>呼吸同步</strong>：尽量调整到相同的呼吸频率</li>
+<li><strong>目标分解</strong>：“再跑500米就能看到图书馆了”</li>
+<li><strong>互相打气</strong>：“加油，马上就剩最后一公里了”</li>
+</ul>
+<h2 id="🎉-冲线时刻：掌声与喝彩中的感动"><a href="#🎉-冲线时刻：掌声与喝彩中的感动" class="headerlink" title="🎉 冲线时刻：掌声与喝彩中的感动"></a>🎉 冲线时刻：掌声与喝彩中的感动</h2><h3 id="🌟-最后冲刺：志愿者的力量"><a href="#🌟-最后冲刺：志愿者的力量" class="headerlink" title="🌟 最后冲刺：志愿者的力量"></a>🌟 最后冲刺：志愿者的力量</h3><p>当看到终点线越来越近时，身体的疲惫似乎被一股新的力量取代。最让我感动的是<strong>冲线区域的志愿者们</strong>。</p>
+<p><strong>那一幕至今难忘</strong>：</p>
+<ul>
+<li><strong>整齐的加油声</strong>：”加油！马上就到了！”</li>
+<li><strong>热烈的掌声</strong>：为每一个冲线的选手鼓掌</li>
+<li><strong>鼓励的眼神</strong>：志愿者们真诚的笑脸和眼神</li>
+<li><strong>此起彼伏的喝彩</strong>：整个终点区域充满正能量</li>
+</ul>
+<p>在欢呼声中，我冲过了终点线。那一刻，<strong>6公里的疲惫仿佛瞬间释放，取而代之的是巨大的成就感</strong>。</p>
+<h3 id="🏅-完赛喜悦：属于自己的奖牌"><a href="#🏅-完赛喜悦：属于自己的奖牌" class="headerlink" title="🏅 完赛喜悦：属于自己的奖牌"></a>🏅 完赛喜悦：属于自己的奖牌</h3><p>虽然最终成绩没有进入排行榜前列，但我得到了更珍贵的东西：</p>
+<figure class="gallery">
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="/images/完赛奖牌.jpg" alt="完赛证书和奖牌" loading="lazy">
+      <figcaption>属于自己的奖牌和完赛证书</figcaption>
+    </div>
+  </div>
+</figure>
+
+<p><strong>捧着那块完赛奖牌，我感到无比满足</strong>：</p>
+<ul>
+<li><strong>沉甸甸的分量</strong>：不仅是金属的重量，更是坚持的重量</li>
+<li><strong>纪念意义</strong>：这是我第一次参加校园马拉松正式跑步比赛的见证</li>
+<li><strong>未来的起点</strong>：”希望这不是最后一块奖牌”</li>
+</ul>
+<h2 id="📊-跑步感悟：数字之外的收获"><a href="#📊-跑步感悟：数字之外的收获" class="headerlink" title="📊 跑步感悟：数字之外的收获"></a>📊 跑步感悟：数字之外的收获</h2><h3 id="🌈-这场马拉松教给我的事"><a href="#🌈-这场马拉松教给我的事" class="headerlink" title="🌈 这场马拉松教给我的事"></a>🌈 这场马拉松教给我的事</h3><p><strong>关于坚持</strong>：</p>
+<ul>
+<li><strong>起步不顺不代表全程失败</strong>：App问题影响了开始，但不影响最终完赛</li>
+<li><strong>疲惫时继续前进的每一步都有意义</strong>：第二圈的每一步都在锻炼意志力</li>
+<li><strong>外界的鼓励能激发内在力量</strong>：志愿者的加油给了我最后冲刺的动力</li>
+</ul>
+<p><strong>关于友谊</strong>：</p>
+<ul>
+<li><strong>好朋友是坚持的动力之一</strong>：知道有人在前面等我，让我必须追上去</li>
+<li><strong>相互鼓励比独自奔跑更有力量</strong>：途中简单的”加油”就能带来能量</li>
+<li><strong>共同的经历加深情感连接</strong>：一起流汗、一起坚持、一起冲线的记忆很珍贵</li>
+</ul>
+<p><strong>关于自我认知</strong>：</p>
+<ul>
+<li><strong>我比想象中更能坚持</strong>：原以为自己会在第二圈放弃</li>
+<li><strong>小障碍不影响大目标</strong>：技术问题只是小插曲，不影响完赛目标</li>
+<li><strong>每一次尝试都在拓展边界</strong>：这次6公里，下次也许可以挑战更长距离</li>
+</ul>
+<figure class="gallery">
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="/images/完赛合影.jpg" alt="完赛合影" loading="lazy">
+      <figcaption>和好友完赛后的纪念合影</figcaption>
+    </div>
+  </div>
+</figure>
+
+<h2 id="❤️-赛后感想：奔跑中的青春印记"><a href="#❤️-赛后感想：奔跑中的青春印记" class="headerlink" title="❤️ 赛后感想：奔跑中的青春印记"></a>❤️ 赛后感想：奔跑中的青春印记</h2><p>这场校园迷你马拉松，对我而言意义远不止一次体育活动。</p>
+<p><strong>那件DIY跑衣</strong>，从设计到完成，再到穿着它跑完全程，<strong>见证了我从准备到实现的完整过程</strong>。每次看到它，都会想起起跑前的期待和冲线后的喜悦。</p>
+<p><strong>那块完赛奖牌</strong>，虽然材质普通，但<strong>承载的是6公里的汗水、坚持和突破</strong>。它提醒我：只要不放弃，就能到达终点。</p>
+<p><strong>最珍贵的是那些瞬间</strong>：</p>
+<ul>
+<li>调试手机时的焦急</li>
+<li>追赶朋友时的决心  </li>
+<li>第二圈时的自我对话</li>
+<li>冲线时听到的欢呼</li>
+<li>拿到奖牌时的笑容</li>
+</ul>
+<p><strong>这场奔跑让我明白</strong>：人生就像一场马拉松，起步可能有波折，途中会有疲惫，但只要保持前进的步伐，终能到达自己的终点。重要的不是速度多快、名次多高，而是<strong>那份坚持到底的勇气和冲线时刻的坦然</strong>。</p>
+<p>感谢这次校园迷你马拉松，让我在奔跑中遇见了更坚韧的自己。我依然会继续在奔跑中，书写青春的篇章。</p>
+<p><strong>奔跑的意义，不在于超越多少人，而在于每一次都比昨天的自己前进了一步。</strong></p>
+<hr>
+<style>
+  #article h1 {
+    border-bottom: 2px solid #8ab4f8 !important;
+    padding-bottom: 0.5rem !important;
+    margin: 2rem 0 1.2rem !important;
+    color: #334155 !important;
+  }
+  .intro-box {
+    background: #f5f8ff;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 25px 0;
+    font-family: 'Microsoft YaHei', sans-serif;
+    color: #334155;
+    border-left: 5px solid #8ab4f8;
+    line-height: 1.8;
+    font-size: 1.1em;
+    box-shadow: 0 4px 12px rgba(138, 180, 248, 0.1);
+  }
+  #article h2 {
+    margin-top: 2.5rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid #e2e8f0;
+    color: #2d3748;
+  }
+  #article h3 {
+    margin-top: 1.8rem;
+    color: #4299e1;
+  }
+  #article table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    background: #f8fafc;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+  #article th {
+    background: #8ab4f8;
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+  }
+  #article td {
+    padding: 15px;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  #article tr:hover {
+    background: #f0f7ff;
+  }
+  #article ul {
+    background: #f8fafc;
+    padding: 20px 20px 20px 40px;
+    border-radius: 8px;
+    margin: 20px 0;
+    border-left: 4px solid #8ab4f8;
+  }
+  #article li {
+    margin: 10px 0;
+    line-height: 1.7;
+  }
+  .thank-box {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f8ff 100%);
+    padding: 30px;
+    border-radius: 12px;
+    margin: 40px 0;
+    border: 2px dashed #8ab4f8;
+    text-align: center;
+  }
+  .gallery {
+    margin: 30px 0;
+  }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+  }
+  .gallery-item {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 15px;
+  }
+
+  .gallery-item figcaption {
+    font-weight: bold;
+    color: #2d3748;
+    text-align: center;
+    font-size: 0.9em;
+  }
+  @media (max-width: 768px) {
+    .gallery-grid {
+      grid-template-columns: 1fr;
+    }
+    #article table {
+      font-size: 0.9em;
+    }
+  }
+</style>
+  </div>
+  <div id=""></div>
+</div>
+
+<script>
+  
+Fancybox.bind('[data-fancybox="fancybox-gallery-img"]', {
+  dragToClose: true,
+  Toolbar: true,
+  closeButton: "top",
+  Image: {
+    zoom: true,
+  },
+  on: {
+    initCarousel: (fancybox) => {
+      const slide = fancybox.Carousel.slides[fancybox.Carousel.page];
+      fancybox.$container.style.setProperty(
+        "--bg-image",
+        `url("${slide.$thumb.src}")`
+      );
+    },
+    "Carousel.change": (fancybox, carousel, to, from) => {
+      const slide = carousel.slides[to];
+      fancybox.$container.style.setProperty(
+        "--bg-image",
+        `url("${slide.$thumb.src}")`
+      );
+    },
+  },
+});
+</script>
+
+<style>
+    #noneimg img {
+        display: none;
+        z-index: 9999;
+        /* width: 600px !important; */
+        min-width: 0%;
+        max-width: 90%;
+        max-height: 80%;
+        border-radius: 0px;
+        position: fixed;
+        box-shadow: 0 0 0px #c3c3c300 !important;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto !important;
+    }
+
+    @media screen and (max-width:600px) {
+        #noneimg img {
+            max-width: 88%
+        }
+    }
+</style>
+
+    <div class="post-paging">
+    
+    <a href="/yishuzhilian0/">
+        <div class="post-paging-last">
+            <span>上一篇</span>
+            <p>医枢智链第0版：我们的项目成长之路</p>
+        </div>
+    </a>
+    
+
+    
+    <a href="/shixi/">
+        <div class="post-paging-next">
+            <span>下一篇</span>
+            <p>实习初体验</p>
+        </div>
+    </a>
+    
+</div>
+</div>
+		
+<div class="footer">
+	<div class="Copyright">
+		©2026 By ZZX-LiangXi. 主题：<a
+			style="text-decoration: none;display: contents; color: #898F9F;"
+			target="_blank" rel="noopener" href="https://github.com/79e/hexo-theme-quiet">Quiet</a>
+	</div>
+	<div class="contact">
+		
+		<a target="_blank" rel="noopener" href="https://github.com/79E/hexo-theme-quiet">
+			<img src="https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imggithub.png" alt="Quiet主题">
+		</a>
+		
+	</div>
+</div>
+
+<script src="/js/gotop.js"></script>
+
+
+<style type="text/css">
+    @media screen and (min-width: 600px) {
+        .goTop>span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            opacity: 0.8;
+            background: rgba(18, 24, 58, 0.06);
+            text-align: center;
+            transition: border .5s;
+            border: 1px solid rgba(18, 24, 58, 0.06);
+
+            -moz-transition: border .5s;
+            /* Firefox 4 */
+            -webkit-transition: border .5s;
+            /* Safari 和 Chrome */
+            -o-transition: border .5s;
+            /* Opera */
+        }
+
+        .goTop>span:hover {
+            border: 1px solid #6680B3;
+        }
+
+
+        .goTop {
+            position: fixed;
+            right: 30px;
+            bottom: 80px;
+        }
+
+        .goTop>span>svg {
+            width: 20px;
+            height: 20px;
+            opacity: 0.7;
+        }
+
+    }
+
+    @media screen and (max-width: 600px) {
+        .goTop {
+            display: none;
+        }
+    }
+</style>
+<div class="goTop" id="js-go_top">
+    <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <g>
+                <path d="M13 12v8h-2v-8H4l8-8 8 8z"></path>
+            </g>
+        </svg>
+    </span>
+</div>
+<script>
+    $( '#js-go_top' )
+	.gotoTop( {
+		offset: 500,
+		speed: 300,
+		animationShow: {
+			'transform': 'translate(0,0)',
+			'transition': 'transform .5s ease-in-out'
+		},
+		animationHide: {
+			'transform': 'translate(100px,0)',
+			'transition': 'transform .5s ease-in-out'
+		}
+	} );
+</script>
+
+
+<!-- Baidu Analytics -->
+<script defer>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?4b5fe1472f22fadsfs";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+    <!-- Gitalk -->
+    <script>
+        const data = '{"clientID":"02b3c","clientSecret":"adfc7b4","repo":"gimment","owner":"duneng","admin":"duneng"}'
+        const gitalk = new Gitalk({
+            ...JSON.parse( data),
+            id:location.pathname,
+            distractionFreeMode:false
+        })
+        
+        if(Boolean('false')){
+            gitalk.render('gitalk-container')
+        }
+    </script>
+
+<script>
+	console.log('\n %c Hexo-Quiet 主题 %c https://github.com/79e/hexo-theme-quiet \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
+</script>
+	</body>
+</html>
+
