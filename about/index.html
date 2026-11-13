@@ -289,51 +289,108 @@
     <div class="about-content" id="content" >
         <div id="article" class="about-content-info">
             <style>
-
   #article h1 {
-  border-bottom: 2px solid #8ab4f8 !important; /* 浅蓝紫色分割线，可替换为你想要的颜色 */
-  padding-bottom: 0.5rem !important; /* 标题与分割线的间距，确保不被覆盖 */
-  margin: 2rem 0 1.2rem !important; /* 标题上下间距，保持排版 */
-  color: #334155 !important; /* 可选：统一标题文字色，避免主题默认色干扰 */
-}
+    border-bottom: 2px solid #8ab4f8 !important;
+    padding-bottom: 0.5rem !important;
+    margin: 2rem 0 1.2rem !important;
+    color: #334155 !important;
+  }
+  .intro-box {
+    background: #f5f8ff;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 25px 0;
+    font-family: 'Microsoft YaHei', sans-serif;
+    color: #334155;
+    border-left: 5px solid #8ab4f8;
+    line-height: 1.8;
+    font-size: 1.1em;
+    box-shadow: 0 4px 12px rgba(138, 180, 248, 0.1);
+  }
+  #article h2 {
+    margin-top: 2.5rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid #e2e8f0;
+    color: #2d3748;
+  }
+  #article h3 {
+    margin-top: 1.8rem;
+    color: #4299e1;
+  }
+  #article table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    background: #f8fafc;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+  #article th {
+    background: #8ab4f8;
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+  }
+  #article td {
+    padding: 15px;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  #article tr:hover {
+    background: #f0f7ff;
+  }
+  #article ul {
+    background: #f8fafc;
+    padding: 20px 20px 20px 40px;
+    border-radius: 8px;
+    margin: 20px 0;
+    border-left: 4px solid #8ab4f8;
+  }
+  #article li {
+    margin: 10px 0;
+    line-height: 1.7;
+  }
+  .thank-box {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f8ff 100%);
+    padding: 30px;
+    border-radius: 12px;
+    margin: 40px 0;
+    border: 2px dashed #8ab4f8;
+    text-align: center;
+  }
+  .gallery {
+    margin: 30px 0;
+  }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+  }
+  .gallery-item {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 15px;
+  }
 
-.intro-box {
-  background: #f5f8ff; /* 浅蓝背景，比原 #f0fbffff 更柔和，呼应按钮浅背景 */
-  padding: 15px;
-  border-radius: 8px;
-  margin: 15px 0;
-  font-family: 'Consolas', monospace;
-  color: #334155; /* 深灰文字，比原 #333 更易读，与标题文字色统一 */
-  border-left: 4px solid #8ab4f8; /* 与一级标题分割线同色，强化页面色彩统一性 */
-  line-height: 1.7; /* 增加行高，提升阅读舒适度 */
-}
-  .intro-highlight {
-font-size: 1.3rem; 
-font-weight: 700;
-color: #5a67d8; 
-margin: 2rem 0 1.5rem; 
-line-height: 1.6; 
-padding: 0.5rem 0; 
-border-left: 4px solid #667eea; 
-padding-left: 1rem; }
-.work-title {
-color: #667eea;
-font-size: 1.1rem;
-font-weight: 600;
-margin-bottom: 0.8rem; 
-display: inline-block;
-padding-left: 0.5rem;
-position: relative;
-}
-.work-img {
-max-width: 80%; 
-border-radius: 12px;
-box-shadow: 0 4px 12px rgba(0,0,0,0.08); 
-border: 1px solid #f5f5f5; 
-transition: transform 0.3s ease; 
-}
-.work-img:hover {transform: scale(1.02);}
-  </style>
+  .gallery-item figcaption {
+    font-weight: bold;
+    color: #2d3748;
+    text-align: center;
+    font-size: 0.9em;
+  }
+  @media (max-width: 768px) {
+    .gallery-grid {
+      grid-template-columns: 1fr;
+    }
+    #article table {
+      font-size: 0.9em;
+    }
+  }
+</style>
 
 
 
@@ -350,7 +407,7 @@ transition: transform 0.3s ease;
       <span style="color: #ffd700; font-size: 14px;">50%</span>
     </div>
     <div style="background: rgba(255,255,255,0.2); height: 8px; border-radius: 4px; overflow: hidden;">
-      <div style="background: linear-gradient(90deg, #ffd700, #ffed4e); height: 100%; width: 85%; transition: width 0.3s ease;"></div>
+      <div style="background: linear-gradient(90deg, #ffd700, #ffed4e); height: 100%; width: 50%; transition: width 0.3s ease;"></div>
     </div>
   </div>
 
@@ -360,7 +417,7 @@ transition: transform 0.3s ease;
       <span style="color: #4ecdc4; font-size: 14px;">30%</span>
     </div>
     <div style="background: rgba(255,255,255,0.2); height: 8px; border-radius: 4px; overflow: hidden;">
-      <div style="background: linear-gradient(90deg, #4ecdc4, #44a08d); height: 100%; width: 70%; transition: width 0.3s ease;"></div>
+      <div style="background: linear-gradient(90deg, #4ecdc4, #44a08d); height: 100%; width: 30%; transition: width 0.3s ease;"></div>
     </div>
   </div>
 
@@ -370,7 +427,7 @@ transition: transform 0.3s ease;
       <span style="color: #ff6b6b; font-size: 14px;">15%</span>
     </div>
     <div style="background: rgba(255,255,255,0.2); height: 8px; border-radius: 4px; overflow: hidden;">
-      <div style="background: linear-gradient(90deg, #ff6b6b, #ee5a52); height: 100%; width: 60%; transition: width 0.3s ease;"></div>
+      <div style="background: linear-gradient(90deg, #ff6b6b, #ee5a52); height: 100%; width: 15%; transition: width 0.3s ease;"></div>
     </div>
   </div>
 
@@ -380,7 +437,7 @@ transition: transform 0.3s ease;
       <span style="color: #a8e6cf; font-size: 14px;">5%</span>
     </div>
     <div style="background: rgba(255,255,255,0.2); height: 8px; border-radius: 4px; overflow: hidden;">
-      <div style="background: linear-gradient(90deg, #a8e6cf, #88d8a3); height: 100%; width: 45%; transition: width 0.3s ease;"></div>
+      <div style="background: linear-gradient(90deg, #a8e6cf, #88d8a3); height: 100%; width: 5%; transition: width 0.3s ease;"></div>
     </div>
   </div>
 </div>
@@ -391,20 +448,34 @@ transition: transform 0.3s ease;
 
 <h1 id="📖关于这个小站"><a href="#📖关于这个小站" class="headerlink" title="📖关于这个小站"></a>📖关于这个小站</h1><p>开这个博客的初衷很简单：想把生活里的细碎思考、项目的进度、学习中的踩坑记录，还有偶尔画的小画都攒起来。这里没有华丽的辞藻，只有真实的分享——可能是一篇编程笔记，可能是一幅随手画的插画，也可能只是一段碎碎念。</p>
 <p><span style="color: blue">如果你也对代码、绘画或者生活中的小确幸感兴趣，欢迎常来逛逛～ 毕竟，能在互联网的角落相遇，本身就是件很奇妙的事。</span></p>
-<h4 style="color: #475569; font-size: 1.1rem; font-weight: 600; margin: 1.5rem 0 0.8rem; text-align: center;">这是最近我的一些作品：</h4>
-<div class="work-card"><div class="work-title"></div>
-<img src="/images/draw1.jpg" alt="我家的多肉--马克笔绘制" class="work-img"></div>
-<div class="work-card"><div class="work-title" style="text-align: right;">............................................................................................................................................... </div>
-<br>
-<div class="work-card"><div class="work-title">\\\\\\\\\\\\\</div><img src="/images/draw2.png" alt="二刺螈真是的" class="work-img"></div>
-<br>
-<div class="work-card"><div class="work-title"></div><img src="/images/draw3.png" alt="明信片绘制" class="work-img"></div>
-<div class="work-card"><div class="work-title" style="text-align: right;">............................................................................................................................................... </div>
-<br>
-（如果你喜欢我的作品，那真是太好啦～偷偷的说，界面上图标基本上都是我自己画的，所以如果有什么问题或者建议，欢迎联系我）
+<h3>🎨 作品展示</h3>
+<figure class="gallery">
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="/images/draw1.jpg" alt="我家的多肉--马克笔绘制" loading="lazy">
+      <figcaption>马克笔作品</figcaption>
+    </div>
+    <div class="gallery-item">
+      <img src="/images/draw2.png" alt="二刺螈真是的" loading="lazy">
+      <figcaption>指绘动漫作品</figcaption>
+    </div>
+    <div class="gallery-item">
+      <img src="/images/draw3.png" alt="明信片作品" loading="lazy">
+      <figcaption>明信片作品</figcaption>
+    </div>
+  </div>
+</figure>
+<p>（如果你喜欢我的作品，那真是太好啦～偷偷的说，界面上图标基本上都是我自己画的，所以如果有什么问题或者建议，欢迎联系我）</p>
 
 
-<h3 style="color: #667eea;margin-top: 0;margin-bottom: 15px;font-size: 18px;font-weight: 600;padding-bottom: 8px;border-bottom: 1px solid #f0f2f5;">联系我：期待和你聊聊</h3><div style="line-height: 1.7; font-size: 15px;"><p style="margin: 0 0 8px 0;">你可以通过以下方式找到我：</p><ul style="margin: 0; padding-left: 20px; list-style-type: disc;"><li style="margin-bottom: 6px;">📧 邮箱：3452044203@qq.com</li><li style="margin-bottom: 6px;">💬 微信：mat13261672950</li><li>🌐 个人博客：<a href="https://LiangXi07.github.io" style="color: #667eea; text-decoration: none; border-bottom: 1px dashed #667eea;" target="_blank"> https://LiangXi07.github.io</a></li></ul><p style="margin: 15px 0 0 0; color: #475569;">感谢你的阅读～我会持续更新个人动态，欢迎关注呀！</p></div></div>
+<h3>联系我：期待和你聊聊</h3>
+<p>你可以通过以下方式找到我：</p>
+<ul>
+  <li>📧 邮箱：3452044203@qq.com</li>
+  <li>💬 微信：mat13261672950</li>
+  <li>🌐 个人博客：<a href="https://LiangXi07.github.io" target="_blank">https://LiangXi07.github.io</a></li>
+</ul>
+<p>感谢你的阅读～我会持续更新个人动态，欢迎关注呀！</p>
         </div>
         <div id=""></div>
     </div>
