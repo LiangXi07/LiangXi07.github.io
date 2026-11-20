@@ -12,7 +12,7 @@
 
 
 
-<meta name="keywords" content="技术成长,项目经历,团队协作,大创项目,">
+<meta name="keywords" content="技术成长,项目经历,团队协作,大创项目,VLA,">
 <meta name="description" content="从操控六个陌生数值开始，到在云端服务器和网络代理的泥潭中挣扎。作为大创队员，我经历了硬件带来的新奇、接入大模型时的震撼，以及跑通开源代码的九九八十一难。这是一篇关于VLA灵巧手项目的真实体验，也是一次痛并快乐着的AI之旅。">
 
 
@@ -293,6 +293,8 @@
             
             <li><a href="/tags/大创项目">大创项目</a></li>
             
+            <li><a href="/tags/VLA">VLA</a></li>
+            
             
         </ul>
         
@@ -311,7 +313,7 @@
                 <span class="post-header-info-author-text"> <a href="https://LiangXi07.github.io">ZZX-LiangXi</a></span>
                 <div class="post-header-info-author-categories">
                     
-                         <a href="../../categories/项目实践/" target="_blank" >项目实践</a>
+                         <a href="../../categories/科研实践/" target="_blank" >科研实践</a>
                     
                 </div>
                 <p>2026-05-20 10:41:00</p>
@@ -403,20 +405,7 @@
 <p>为了落地这一功能，我们选用DeepSeek大模型进行对接开发，搭建出<strong>S6灵巧手纯AI自然语言控制系统</strong>。该系统摒弃传统预设动作库的开发模式，完全依靠大模型自主理解语义生成关节角度，严格遵循硬件<code>0代表握拳弯曲、100代表伸直张开</code>的数值规则，同时适配灵巧手自带的压力、温度传感数据，让动作生成更贴合真实物理交互场景。</p>
 <ul>
 <li><p><strong>标准流程</strong>：</p>
-<pre><code class="language-python">
-
-# 1. 数据加载
-def execute_command(self, command: str):
-  # 调用DeepSeek大模型解析自然语言指令
-  action_data = self._call_ai_for_action(command)
-  
-  # 区分单动作与连续动作序列，自动适配执行
-  if action_data[&#39;type&#39;] == &#39;sequence&#39;:
-      # 分步有序执行模型生成的全套连贯动作
-      for step in action_data[&#39;actions&#39;]:
-          self.set_angles_safe(step[&#39;angles&#39;], step[&#39;name&#39;])
-</code></pre>
-</li>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><br><br><span class="hljs-comment"># 1. 数据加载</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">execute_command</span>(<span class="hljs-params">self, command: <span class="hljs-built_in">str</span></span>):<br>  <span class="hljs-comment"># 调用DeepSeek大模型解析自然语言指令</span><br>  action_data = <span class="hljs-variable language_">self</span>._call_ai_for_action(command)<br>  <br>  <span class="hljs-comment"># 区分单动作与连续动作序列，自动适配执行</span><br>  <span class="hljs-keyword">if</span> action_data[<span class="hljs-string">&#x27;type&#x27;</span>] == <span class="hljs-string">&#x27;sequence&#x27;</span>:<br>      <span class="hljs-comment"># 分步有序执行模型生成的全套连贯动作</span><br>      <span class="hljs-keyword">for</span> step <span class="hljs-keyword">in</span> action_data[<span class="hljs-string">&#x27;actions&#x27;</span>]:<br>          <span class="hljs-variable language_">self</span>.set_angles_safe(step[<span class="hljs-string">&#x27;angles&#x27;</span>], step[<span class="hljs-string">&#x27;name&#x27;</span>])<br><br></code></pre></td></tr></table></figure></li>
 </ul>
 <p>整套代码还内置智能容错机制，在动作执行受阻时可自动复位手掌重新执行，大幅提升硬件运行稳定性。在实际调试运行过程中，我们通过终端交互界面下发各类日常指令，无论是简单的比耶、点赞手势，还是抓取棋子、拿捏物品等实操指令，大模型都能快速解析语义，匹配对应关节角度。</p>
 <figure class="gallery">
@@ -430,40 +419,104 @@ def execute_command(self, command: str):
 </figure>
 
 <p>当大模型精准输出合规的六维动作数值，实体灵巧手顺利复刻出对应手势与抓取动作时，真切实现了自然语言指令到实体机器人动作的完整落地。这也让我们切实体会到，借助大模型赋能实体硬件，能够极大降低智能机械手的操控门槛，让灵巧手摆脱固定程序束缚，真正实现智能化、拟人化自主动作执行。</p>
-<h2 id="📖-九九八十一难：UniDex与ManipTrans的“地狱级”复现之路"><a href="#📖-九九八十一难：UniDex与ManipTrans的“地狱级”复现之路" class="headerlink" title="📖 九九八十一难：UniDex与ManipTrans的“地狱级”复现之路"></a>📖 九九八十一难：UniDex与ManipTrans的“地狱级”复现之路</h2><p>但兴奋感来得快，去得也快。我们很快发现，简单的LLM映射对于复杂动作（比如“用两根手指捏起一颗螺丝”）就完全失效了。它缺乏对物理世界和接触力学的理解。<br>为了解决这个问题，UniDex，一个基于扩散模型的灵巧手抓取生成算法。如果能把它跑通，融入到我们的VLA框架里，那项目的技术深度将直接起飞。<br>组长把这个光荣而艰巨的任务交给了我：“你去把UniDex的代码跑起来，环境就用AutoDL。”<br>当时我心想：Git Clone嘛，Pip Install嘛，能有多难？<br>事实证明，我太天真了。这是一场真正的“恶战”，而UniDex的通关，仅仅是这场战役的上半场。</p>
-<div style="text-align: center;">
-  <img src="/images/lqs0.png" alt="吓哭了" style="max-width: 180px;border-radius: 6px;box-shadow: 0 2px 6px rgba(0,0,0,0.05);margin: 0 auto;">
-</div>
+<h2 id="📖-论文攻坚：DemoGrasp-复现与我的“成功率”突围战"><a href="#📖-论文攻坚：DemoGrasp-复现与我的“成功率”突围战" class="headerlink" title="📖 论文攻坚：DemoGrasp 复现与我的“成功率”突围战"></a>📖 论文攻坚：DemoGrasp 复现与我的“成功率”突围战</h2><blockquote>
+<p>如果说大创项目让我第一次“摸”到了灵巧手，那这篇论文则把我真正拽进了强化学习的深水区。我的角色是一名<strong>实验复现者</strong>：任务很直白——把基线模型 DemoGrasp 跑起来，再想办法让它在灵巧手抓取任务上的成功率，往上走一步。</p>
+</blockquote>
+<h3 id="🔬-起点：DemoGrasp-与“躺着的物体”"><a href="#🔬-起点：DemoGrasp-与“躺着的物体”" class="headerlink" title="🔬 起点：DemoGrasp 与“躺着的物体”"></a>🔬 起点：DemoGrasp 与“躺着的物体”</h3><p>DemoGrasp 是一套基于强化学习（PPO）的灵巧手抓取框架，目标就是让一只仿真灵巧手，把桌面上形形色色的物体稳稳抓起来。</p>
+<p>但基线模型有个很明显的短板：一旦物体是“躺”在桌面上的——比如平放的薄片、棋子——成功率就会明显下滑。原因很直观：物体贴着桌面，手伸过去时会被桌面的碰撞体挡住，指尖根本够不到物体底部，更别提抓起来了。</p>
+<h3 id="🛠️-改动一：让手“穿过”桌子-——-穿桌比例-1-2-→-2-3"><a href="#🛠️-改动一：让手“穿过”桌子-——-穿桌比例-1-2-→-2-3" class="headerlink" title="🛠️ 改动一：让手“穿过”桌子 —— 穿桌比例 1&#x2F;2 → 2&#x2F;3"></a>🛠️ 改动一：让手“穿过”桌子 —— 穿桌比例 1&#x2F;2 → 2&#x2F;3</h3><p>第一个突破口，藏在一个不起眼的配置参数里：<code>enableRobotTableCollision</code>（是否开启“机械手—桌面”碰撞）。</p>
+<p>原始代码里，只有一半（1&#x2F;2）的环境关闭了机器人—桌面的碰撞；换句话说，另一半环境里，手被桌子死死挡住，压根够不到躺在桌上的物体。</p>
+<p>我把这个比例从 <strong>1&#x2F;2 调到了 2&#x2F;3</strong>，让更多环境允许手“穿过”甚至“贴着”桌面去够物体。这个改动看起来很小，却精准命中了“躺着的物体”这一最难的场景——手不再被桌面绊住，指尖终于能够到物体底部，把它稳稳托起来。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># Reward.py —— 让前 2/3 的环境关闭“机械手—桌面”碰撞</span><br><span class="hljs-keyword">if</span> (<span class="hljs-keyword">not</span> <span class="hljs-variable language_">self</span>.cfg[<span class="hljs-string">&quot;env&quot;</span>][<span class="hljs-string">&quot;enableRobotTableCollision&quot;</span>]) <span class="hljs-keyword">and</span> \<br>    i &lt; <span class="hljs-built_in">int</span>(<span class="hljs-variable language_">self</span>.num_envs * <span class="hljs-number">2</span> / <span class="hljs-number">3</span>):<br></code></pre></td></tr></table></figure>
 
-<h3 id="🚧-第一关：网络天堑（UniDex篇）"><a href="#🚧-第一关：网络天堑（UniDex篇）" class="headerlink" title="🚧 第一关：网络天堑（UniDex篇）"></a>🚧 第一关：网络天堑（UniDex篇）</h3><p>问题：git clone UniDex官方仓库，速度堪比蜗牛，频繁超时失败，偶尔好不容易走到一半，直接弹出“fatal: the remote end hung up unexpectedly”。<br>尝试1：换用代理、国内镜像。结果仓库里有子模块（submodule），镜像站根本拉不全，要么缺少关键配置文件，要么依赖路径错乱。<br>尝试2：手动下载每个子模块的压缩包，再解压到对应目录。折腾一下午，依赖路径乱成一锅粥，后续安装依赖时，各种“找不到模块”的报错接踵而至。<br>最终：在组长的远程协助下，用了一台能稳定访问外网的服务器，才把完整的代码库拖下来，那一刻，我仿佛看到了曙光。</p>
-<h3 id="🚧-第二关：版本地狱（UniDex篇）"><a href="#🚧-第二关：版本地狱（UniDex篇）" class="headerlink" title="🚧 第二关：版本地狱（UniDex篇）"></a>🚧 第二关：版本地狱（UniDex篇）</h3><p>问题：好不容易不报OOM了，开始报各种ImportError和AttributeError——PyTorch、CUDA、cuDNN、Transformers的版本之间在“打架”，你依赖我，我不兼容你，陷入死循环。<br>解决：用 conda 创建了一个“纯净”的虚拟环境，照着论文作者提供的environment.yml，一个一个库手动手动安装。降级、升级、再降级……循环往复，有时候为了一个兼容的版本，要来回测试十几次。<br>那段时间，我的浏览器历史记录全是：<br>“AutoDL 如何提高 git clone 速度”<br>“conda 安装指定版本 pytorch”<br>“ImportError: cannot import name ‘xxx’ from ‘yyy’”<br>“RuntimeError: CUDA error: no kernel image is available for device”</p>
-<h3 id="✨-曙光初现（UniDex篇）"><a href="#✨-曙光初现（UniDex篇）" class="headerlink" title="✨ 曙光初现（UniDex篇）"></a>✨ 曙光初现（UniDex篇）</h3><p>在经历了无数个“想砸电脑”的瞬间后，某个深夜，当我再次运行训练脚本，看到终端里开始飞速滚动 loss: 0.234 的训练日志时，我甚至有点不敢相信自己的眼睛。<br>它……跑起来了？<br>我赶紧打开可视化界面，看着loss曲线稳步下降，生成的动作序列也越来越平滑。那一刻，实验室里只有我一个人，但我激动得差点喊出来。</p>
-<h3 id="🚧-第四关：网络再劫（ManipTrans篇）"><a href="#🚧-第四关：网络再劫（ManipTrans篇）" class="headerlink" title="🚧 第四关：网络再劫（ManipTrans篇）"></a>🚧 第四关：网络再劫（ManipTrans篇）</h3><p>本以为UniDex跑通后，后续的部署会一帆风顺。没想到，组长又给了一个新任务：部署ManipTrans项目，还要和UniDex联动，生成老师要的3D可视化抓取效果。<br>噩梦再次上演——git clone ManipTrans官方仓库，依旧是熟悉的超时、报错，“fatal: unable to access ‘<a target="_blank" rel="noopener" href="https://ghproxy.com/xxx%E2%80%99">https://ghproxy.com/xxx’</a>: Failed to connect to ghproxy.com port 443: Connection timed out”。<br>尝试1：用ghproxy代理克隆，结果网页解析失败，代理链接直接失效，连仓库页面都打不开。<br>尝试2：换用国内GitCode镜像，克隆倒是能启动，结果克隆下来的仓库内容错乱，根本不是ManipTrans的代码，而是无关的历史文档，白忙活一场。<br>尝试3：用wget下载ZIP压缩包，要么链接失效，要么下载到一半中断，反复尝试几十次，始终无法获得完整的项目文件。</p>
+<h3 id="🎯-改动二：把奖励“打散”-——-奖励塑形，给-PPO-一条明路"><a href="#🎯-改动二：把奖励“打散”-——-奖励塑形，给-PPO-一条明路" class="headerlink" title="🎯 改动二：把奖励“打散” —— 奖励塑形，给 PPO 一条明路"></a>🎯 改动二：把奖励“打散” —— 奖励塑形，给 PPO 一条明路</h3><p>框架的训练基于 PPO，本身已经足够成熟；真正决定成败的，其实是如何喂给它一个更好的奖励信号。我的改动，正是在这个基础上“锦上添花”。</p>
+<p>原始的奖励设计太“抠门”了：除了最终抓取成功，中间过程几乎没有反馈，模型学得又慢又懵。我的思路是给 PPO 铺一条清晰的“梯度路标”——把“抓取”这条长链条拆成四段，每一段都给出即时奖励：</p>
+<table>
+<thead>
+<tr>
+<th align="center">阶段</th>
+<th align="center">原奖励</th>
+<th align="center">改进后</th>
+<th align="left">设计意图</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">手靠近物体</td>
+<td align="center">0</td>
+<td align="center">↑</td>
+<td align="left">引导手掌先靠过去</td>
+</tr>
+<tr>
+<td align="center">碰到物体</td>
+<td align="center">0</td>
+<td align="center">↑↑</td>
+<td align="left">鼓励指尖真正接触物体</td>
+</tr>
+<tr>
+<td align="center">抬起一点</td>
+<td align="center">1</td>
+<td align="center">↑↑↑</td>
+<td align="left">鼓励把物体微微托离桌面</td>
+</tr>
+<tr>
+<td align="center">成功抓起</td>
+<td align="center">1</td>
+<td align="center">↑↑↑↑↑</td>
+<td align="left">用强奖励锁定最终成功</td>
+</tr>
+</tbody></table>
+<p>对应的核心代码，是把四个奖励项叠加起来，让每一步都有方向、每一段都有激励：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python">success_reward = <span class="hljs-number">2.0</span> * current_successes.<span class="hljs-built_in">float</span>()          <span class="hljs-comment"># 成功抓起</span><br>approach_reward = <span class="hljs-number">0.2</span> * (<span class="hljs-number">0.5</span> - palm_object_dist)          <span class="hljs-comment"># 手掌靠近</span><br>finger_reward = <span class="hljs-number">0.02</span> * (<span class="hljs-number">3.0</span> - fingertips_object_dist)      <span class="hljs-comment"># 指尖靠近</span><br>lift_reward = <span class="hljs-number">5.0</span> * torch.clamp(object_delta_z, <span class="hljs-built_in">min</span>=<span class="hljs-number">0.0</span>)   <span class="hljs-comment"># 物体被抬起</span><br>reward = (success_reward + approach_reward + finger_reward + lift_reward)<br></code></pre></td></tr></table></figure>
+
+<p>本质上，这是在稀疏的成功奖励之上，铺了一层稠密（dense）的引导信号：让模型每一步都知道自己“离成功还有多远”，而不是像无头苍蝇一样乱撞。这也是 <code>Reward.py</code> 与 <code>Grasp.py</code> 里改动最多的部分。</p>
+<h3 id="📈-结果：成功率真的上去了"><a href="#📈-结果：成功率真的上去了" class="headerlink" title="📈 结果：成功率真的上去了"></a>📈 结果：成功率真的上去了</h3><p>两处改动叠加，最终让整体成功率有了肉眼可见的提升。下面是基线 DemoGrasp 与我们方法（Ours）的成功率对比：</p>
 <figure class="gallery">
   <div class="gallery-grid">
-      <div class="gallery-item">
-      <img src="/images/lqs3.png" alt="报错啊！！报错！！" loading="lazy">
-      <figcaption>报错啊！！报错！！</figcaption>
+    <div class="gallery-item">
+      <img src="/images/demograsp_success1.png" alt="成功率对比（一）" loading="lazy">
+      <figcaption>成功率对比（一）</figcaption>
     </div>
     <div class="gallery-item">
-       <img src="/images/lqs4.png" alt="我已红温" loading="lazy">
-      <figcaption>我已红温</figcaption>
+      <img src="/images/demograsp_success2.png" alt="成功率对比（二）" loading="lazy">
+      <figcaption>成功率对比（二）</figcaption>
     </div>
   </div>
 </figure>
 
-<p>疑惑：难道AutoDL的无卡机器，就注定无法克隆海外项目？直到我偶然发现，AutoDL有卡机器的网络优化远好于无卡机器——哪怕开最低配的GPU，海外访问速度也会瞬间提升。<br>最终：咬牙开了一小时最低配GPU，运行官方克隆命令，这一次，没有超时，没有报错，代码秒速克隆完成，那一刻，我差点喜极而泣。</p>
-<h3 id="🚧-第五关：环境隔离与依赖混战（ManipTrans篇）"><a href="#🚧-第五关：环境隔离与依赖混战（ManipTrans篇）" class="headerlink" title="🚧 第五关：环境隔离与依赖混战（ManipTrans篇）"></a>🚧 第五关：环境隔离与依赖混战（ManipTrans篇）</h3><p>新的难题又出现了：ManipTrans的依赖的版本，和UniDex的环境严重冲突——UniDex需要PyTorch 2.0+，而ManipTrans对部分库的版本有严格限制，直接在同一个环境安装，会导致其中一个项目无法运行。<br>更棘手的是，ManipTrans官方要求Python 3.8，而UniDex用的是Python 3.9，一旦混用，各种版本不兼容的报错会瞬间淹没终端。<br>解决：再次求助conda，为ManipTrans创建独立的虚拟环境“maniptrans”，和UniDex的“unidex”环境完全隔离，两个环境的依赖互不干扰、互不覆盖。然后照着官方文档，一步步安装依赖，从PyTorch的指定版本，到pybullet、open3d等仿真库，每一步都小心翼翼，生怕一个版本选错，又要从头再来。<br>期间，还遇到了“pip install 依赖时报错”“模型权重下载超时”等小插曲，只能一次次换下载链接、手动下载权重放到指定目录，慢慢磨，慢慢试。</p>
-<h3 id="🚧-第六关：可视化的最后一道坎（ManipTrans篇）"><a href="#🚧-第六关：可视化的最后一道坎（ManipTrans篇）" class="headerlink" title="🚧 第六关：可视化的最后一道坎（ManipTrans篇）"></a>🚧 第六关：可视化的最后一道坎（ManipTrans篇）</h3><p>环境搭好、模型下载完成，本以为运行demo就能出老师要的3D可视化效果，结果又出问题：AutoDL无卡机器无法弹出PyBullet的GUI窗口，有卡机器虽然能运行，但可视化窗口无法正常渲染，只能看到黑屏。<br>解决：查阅官方文档，发现可以用“–save_video”参数，让脚本在无界面模式下生成可视化视频，不需要弹出窗口。调整命令，加上“–device cpu”强制用CPU运行（避免GPU显存不足），运行后，终端缓慢滚动日志，每一秒都过得格外漫长。<br>当看到项目目录里出现“demo_result.mp4”文件的那一刻，我知道，这场持久战，我终于赢了。</p>
-<div style="text-align: center; margin: 20px auto;">
-  <video controls style="width: 100%; max-width: 600px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-    <source src="/videos/Mshow.mp4" type="video/mp4">
-    您的浏览器不支持视频标签。
-  </video>
-  <figcaption style="color:#666; font-size:0.9em; margin-top: 8px;"跑通视频</figcaption>
-</div>
+<h3 id="🧩-我们的-Method"><a href="#🧩-我们的-Method" class="headerlink" title="🧩 我们的 Method"></a>🧩 我们的 Method</h3><p>除了上面两个“看得见摸得着”的改动，方法层面的完整设计，我放几张论文配图在这里，方便直观理解整条技术链路：</p>
+<figure class="gallery">
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="/images/demograsp_method1.png" alt="方法配图一" loading="lazy">
+      <figcaption>方法配图一</figcaption>
+    </div>
+  </div>
+</figure>
+<figure class="gallery">
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="/images/demograsp_method2.png" alt="方法配图二" loading="lazy">
+      <figcaption>方法配图二</figcaption>
+    </div>
+  </div>
+</figure><figure class="gallery">
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="/images/demograsp_method3.png" alt="方法配图三" loading="lazy">
+      <figcaption>方法配图三</figcaption>
+    </div>
+  </div>
+</figure>
+### 🔥 调试：一场真正的“地狱级”拉锯战
 
-<h3 id="🌟-终章：不止于“跑通”"><a href="#🌟-终章：不止于“跑通”" class="headerlink" title="🌟 终章：不止于“跑通”"></a>🌟 终章：不止于“跑通”</h3><p>回望这段跨越两个项目的复现之路，从UniDex的网络天堑、显存刺客、版本地狱，到ManipTrans的网络再劫、环境隔离、可视化难题，每一步都走得异常艰难。无数个深夜的debug，无数次失败后的重新尝试，无数次对着终端里的报错发呆，甚至有过“放弃算了”的念头。<br>但现在回头看，跑通UniDex和ManipTrans本身，或许不是最大的收获。<br>我学会了如何在网络受限的情况下，寻找各种替代方案，从镜像、代理到手动下载，不放过任何一丝可能；学会了如何在版本冲突的“泥潭”里，理清依赖关系，耐心调试，步步为营；学会了如何在无卡、有卡环境之间灵活切换，利用有限的资源解决问题；更学会了在一片混乱和未知中，像一个侦探一样，耐心地寻找线索、解决问题。<br>这种“debug耐力”，这种“不撞南墙不回头”的韧劲，这种在困境中寻找解决办法的能力，是任何课堂都教不会的，也是这段“地狱级”复现之路，给我最珍贵的礼物。<br>原来，所有看似“不可能”的难题，只要一步步拆解、一点点尝试，终会迎来曙光。而那些熬夜debug的时光，那些咬牙坚持的瞬间，终会成为成长路上最坚实的印记。</p>
+<p>如果只把上面几段话读一遍，你可能会觉得“这也没多难嘛”。但真正折磨人的，从来不是想法，而是把它跑出来的过程。</p>
+<p>我的日常是这样的：<strong>一个改动、一个改动地改代码，然后丢到服务器上训练一整天，攒一个 checkpoint。</strong> 等训练结束，兴冲冲地打开评测，结果一看——训练出来的模型，成功率居然还不如基线好。</p>
+<p>那种感觉，就像辛苦熬了一宿的汤，端上来一尝是苦的。</p>
+<p>可代码已经改了一堆，到底哪一步出问题？是穿桌比例调错了？还是奖励系数给重了？没人能告诉你答案，只能<strong>反反复复地训练、一遍又一遍地重来</strong>。每一次“重来”，都是一整天的 GPU 时间，和一次漫长的等待。</p>
+<p>就在快要怀疑人生的时候，某一轮的 checkpoint 终于争气了一回——成功率第一次稳稳超过了基线。那一刻，屏幕上那几个数字，比我见过的任何画面都要好看。</p>
+<h3 id="🙏-写在最后：三位朋友，与一篇论文"><a href="#🙏-写在最后：三位朋友，与一篇论文" class="headerlink" title="🙏 写在最后：三位朋友，与一篇论文"></a>🙏 写在最后：三位朋友，与一篇论文</h3><p>方法最终 work 了，但要把它变成一篇像样的论文，又是另一道坎。好在，我不是一个人在战斗。在<strong>三位朋友</strong>的帮助下，我们一点点把实验、图表、文字都补齐，终于把这篇论文写了出来。</p>
+<p>回头再看这段经历，它和大创项目一样“地狱”，却又多了一层不同的意义：大创教会我“把别人的代码跑通”，而这篇论文教会我“在别人的肩膀上，做出一点点属于自己的东西”。</p>
+<p>原来所谓“复现”，从来不是照着文档敲一遍命令那么简单——它是在无数个训练失败的夜晚里，仍然愿意再试一次的那股劲。</p>
 <h2 id="📖-我们的VLA灵巧手：项目全景与我的角色"><a href="#📖-我们的VLA灵巧手：项目全景与我的角色" class="headerlink" title="📖 我们的VLA灵巧手：项目全景与我的角色"></a>📖 我们的VLA灵巧手：项目全景与我的角色</h2><p>至此，我们项目“多模态环境感知的灵巧手自主行为生成算法研究”的完整技术链条，终于在我眼前清晰了起来。下面这张图就是我们项目的核心路线，而我的工作，就像胶水一样，把图中的多个模块粘合在了一起。</p>
 <figure class="gallery">
   <div class="gallery-grid">
@@ -471,14 +524,13 @@ def execute_command(self, command: str):
       <img src="/images/lqs2.png" alt="完整技术链条" loading="lazy">
       <figcaption>完整技术链条</figcaption>
     </div>
-   
   </div>
 </figure>
 
 <p>简单来说：我的工作就是让AI“大脑”里想的动作，变成灵巧手“身体”的真实运动。</p>
 <h2 id="📖-写在最后：痛并快乐着的AI探索之旅"><a href="#📖-写在最后：痛并快乐着的AI探索之旅" class="headerlink" title="📖 写在最后：痛并快乐着的AI探索之旅"></a>📖 写在最后：痛并快乐着的AI探索之旅</h2><p>“加油吧，自嘲一下！” 这是我在项目日志里写过的一句话，也是我此刻心情的真实写照。</p>
 <p>参加这个大创项目，让我一个连硬件都没摸过的小白，硬生生地被逼成了“全栈工程师”——从前端指令理解，到后端模型部署，再到底层硬件通信。</p>
-<p>我体验过成功驱动灵巧手挥手的狂喜，也经历过被UniDex按在地上摩擦的绝望；我见识过大模型“一本正经地胡说八道”的幽默，也感受过debug到凌晨三点，屏幕上终于出现正确结果的激动。</p>
+<p>我体验过成功驱动灵巧手挥手的狂喜，也经历过被Demograsp按在地上摩擦的绝望；我见识过大模型“一本正经地胡说八道”的幽默，也感受过debug到凌晨三点，屏幕上终于出现正确结果的激动。</p>
 <p>这段经历让我深刻体会到：</p>
 <p><strong>纸上得来终觉浅</strong>：教科书里的算法，只有当它在真实硬件上产生物理运动时，你才算真正“学会”了。</p>
 <p><strong>工程师的浪漫在于“解决问题”</strong>：跑通代码的成就感，远大于写出完美代码。因为前者意味着你征服了一个充满不确定性的真实世界。</p>
@@ -639,10 +691,10 @@ Fancybox.bind('[data-fancybox="fancybox-gallery-img"]', {
 
     <div class="post-paging">
     
-    <a href="/lingqiaoshou2/">
+    <a href="/shengri/">
         <div class="post-paging-last">
             <span>上一篇</span>
-            <p>亦智杯·亦庄具身智能挑战赛：线下真机突围成长记</p>
+            <p>二十岁：写给自己</p>
         </div>
     </a>
     

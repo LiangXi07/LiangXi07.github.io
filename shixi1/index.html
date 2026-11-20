@@ -359,31 +359,7 @@
 <li><p><strong>基础框架</strong>：理解特征（Features&#x2F;X）与目标变量（Target&#x2F;y）的定义，掌握训练集 &#x2F; 测试集划分的意义。</p>
 </li>
 <li><p><strong>标准流程</strong>：</p>
-<pre><code class="language-python">
-
-# 1. 数据加载
-import pandas as pd
-data = pd.read_csv(&#39;data.csv&#39;)
-
-# 2. 数据准备
-X = data[[&#39;feature1&#39;, &#39;feature2&#39;]]
-y = data[&#39;target&#39;]
-
-# 3. 数据分割
-from sklearn.model_selection import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-# 4. 模型训练
-from sklearn.linear_model import LinearRegression
-model = LinearRegression()
-model.fit(X_train, y_train)
-
-# 5. 预测评估
-y_pred = model.predict(X_test)
-from sklearn.metrics import mean_squared_error
-mse = mean_squared_error(y_test, y_pred)
-</code></pre>
-</li>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><br><br><span class="hljs-comment"># 1. 数据加载</span><br><span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd<br>data = pd.read_csv(<span class="hljs-string">&#x27;data.csv&#x27;</span>)<br><br><span class="hljs-comment"># 2. 数据准备</span><br>X = data[[<span class="hljs-string">&#x27;feature1&#x27;</span>, <span class="hljs-string">&#x27;feature2&#x27;</span>]]<br>y = data[<span class="hljs-string">&#x27;target&#x27;</span>]<br><br><span class="hljs-comment"># 3. 数据分割</span><br><span class="hljs-keyword">from</span> sklearn.model_selection <span class="hljs-keyword">import</span> train_test_split<br>X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=<span class="hljs-number">0.2</span>, random_state=<span class="hljs-number">42</span>)<br><br><span class="hljs-comment"># 4. 模型训练</span><br><span class="hljs-keyword">from</span> sklearn.linear_model <span class="hljs-keyword">import</span> LinearRegression<br>model = LinearRegression()<br>model.fit(X_train, y_train)<br><br><span class="hljs-comment"># 5. 预测评估</span><br>y_pred = model.predict(X_test)<br><span class="hljs-keyword">from</span> sklearn.metrics <span class="hljs-keyword">import</span> mean_squared_error<br>mse = mean_squared_error(y_test, y_pred)<br><br></code></pre></td></tr></table></figure></li>
 </ul>
 <h2 id="🧠-核心算法"><a href="#🧠-核心算法" class="headerlink" title="🧠 核心算法"></a>🧠 核心算法</h2><ul>
 <li><strong>决策树</strong>：通过递归划分数据追求子集纯度，可解释性强但易过拟合，需剪枝优化。</li>
@@ -474,7 +450,7 @@ mse = mean_squared_error(y_test, y_pred)
 <h3 id="🧠-思维模式转变"><a href="#🧠-思维模式转变" class="headerlink" title="🧠 思维模式转变"></a>🧠 思维模式转变</h3><p>这次实习最大的收获，是建立了<strong>数据驱动决策</strong>与<strong>模式驱动决策</strong>的思维模式：</p>
 <ul>
 <li>面对问题时，不再凭感觉判断，而是先思考 “有什么数据可以验证 &#x2F; 回答这个问题？”。</li>
-<li>不再追求 “完美分析” 或 “完美模型”，而是聚焦于产出 “及时且有价值”、”可解释、可应用” 的实用结果。</li>
+<li>不再追求 “完美分析” 或 “完美模型”，而是聚焦于产出 “及时且有价值”、“可解释、可应用” 的实用结果。</li>
 <li>理解了优秀数据从业者的核心能力模型：<ul>
 <li><strong>数据分析师</strong>：技术能力 × 业务理解 × 沟通能力</li>
 <li><strong>数据挖掘工程师</strong>：算法能力 × 业务洞察 × 落地能力</li>
